@@ -63,7 +63,7 @@ const Navbar = () => {
       >
         <Box
           component="img"
-          src="/LogoFullName.png"
+          src="/techsergy_logo_transparent.png"
           alt="DheLogic"
           sx={{
             width: 100,
@@ -145,7 +145,7 @@ const Navbar = () => {
             >
               <Box
                 component="img"
-                src="/LogoFullName.png"
+                src="/techsergy_logo_transparent.png"
                 alt="DheLogic"
                 sx={{
                   width: { xs: 110, md: 140 },
