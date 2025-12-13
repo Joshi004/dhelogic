@@ -221,7 +221,7 @@ const About = () => {
                     width: 50,
                     height: 50,
                     borderRadius: 2,
-                    bgcolor: 'rgba(126, 203, 212, 0.1)',
+                    bgcolor: 'rgba(2, 96, 168, 0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
