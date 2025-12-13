@@ -45,7 +45,7 @@ const SectionHeader = ({
         sx={{
           mb: subtitle ? 2 : 0,
           ...(titleGradient && {
-            background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+            background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
           }),

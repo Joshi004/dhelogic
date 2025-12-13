@@ -38,13 +38,13 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: #68bac5;
+  background-color: #014584;
   color: #FFFFFF;
 }
 
 /* Gradient Text Utility */
 .gradient-text {
-  background: linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%);
+  background: linear-gradient(135deg, #014584 0%, #0260a8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -65,7 +65,7 @@ img {
 
 /* Focus Visible */
 :focus-visible {
-  outline: 2px solid #68bac5;
+  outline: 2px solid #014584;
   outline-offset: 2px;
 }
 

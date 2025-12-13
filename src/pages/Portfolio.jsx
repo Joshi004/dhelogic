@@ -50,7 +50,7 @@ const caseStudies = [
       { metric: '100+', label: 'Concurrent Streams' },
     ],
     technologies: ['AI/ML', 'Computer Vision', 'Python', 'TensorFlow', 'Real-time Processing'],
-    color: '#68bac5',
+    color: '#014584',
     icon: <PlayCircleOutlineIcon sx={{ fontSize: 48 }} />,
   },
 ];
@@ -72,8 +72,8 @@ const Portfolio = () => {
             position: 'absolute',
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(104, 186, 197, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(104, 186, 197, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
           }}
@@ -103,7 +103,7 @@ const Portfolio = () => {
               <Box
                 component="span"
                 sx={{
-                  background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
@@ -383,7 +383,7 @@ const Portfolio = () => {
                 width: 80,
                 height: 80,
                 borderRadius: '50%',
-                bgcolor: 'rgba(104, 186, 197, 0.1)',
+                bgcolor: 'rgba(1, 69, 132, 0.1)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -420,7 +420,7 @@ const Portfolio = () => {
       <Box
         sx={{
           py: { xs: 8, md: 10 },
-          background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+          background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
         }}
       >
         <Container maxWidth="md">

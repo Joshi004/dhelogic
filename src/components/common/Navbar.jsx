@@ -64,7 +64,7 @@ const Navbar = () => {
         <Box
           component="img"
           src="/techsergy_logo_transparent.png"
-          alt="DheLogic"
+          alt="TechSergy"
           sx={{
             width: 100,
             height: 'auto',
@@ -146,7 +146,7 @@ const Navbar = () => {
               <Box
                 component="img"
                 src="/techsergy_logo_transparent.png"
-                alt="DheLogic"
+                alt="TechSergy"
                 sx={{
                   width: { xs: 110, md: 140 },
                   height: 'auto',
@@ -176,7 +176,7 @@ const Navbar = () => {
                     borderRadius: 2,
                     position: 'relative',
                     '&:hover': {
-                      bgcolor: 'rgba(104, 186, 197, 0.04)',
+                      bgcolor: 'rgba(1, 69, 132, 0.04)',
                     },
                     '&::after': isActive(item.path)
                       ? {

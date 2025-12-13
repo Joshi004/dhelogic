@@ -35,7 +35,7 @@ const contactInfo = [
   {
     icon: <EmailIcon sx={{ fontSize: 24 }} />,
     title: 'Email Us',
-    content: 'hello@dhelogic.com',
+    content: 'hello@techsergy.com',
     subtitle: 'We respond within 24 hours',
   },
   {
@@ -115,8 +115,8 @@ const Contact = () => {
             position: 'absolute',
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(104, 186, 197, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(104, 186, 197, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
           }}
@@ -146,7 +146,7 @@ const Contact = () => {
               <Box
                 component="span"
                 sx={{
-                  background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
@@ -344,7 +344,7 @@ const Contact = () => {
                           width: 52,
                           height: 52,
                           borderRadius: 2.5,
-                          bgcolor: 'rgba(104, 186, 197, 0.1)',
+                          bgcolor: 'rgba(1, 69, 132, 0.1)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -384,7 +384,7 @@ const Contact = () => {
                   transition={{ duration: 0.4, delay: 0.5 }}
                   sx={{
                     p: 4,
-                    background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                    background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                     color: 'white',
                     textAlign: 'center',
                     mb: 4,
@@ -408,7 +408,7 @@ const Contact = () => {
                   <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                     Quick Response Guaranteed
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.95)' }}>
+                  <Typography variant="body2Light" sx={{ opacity: 1 }}>
                     We pride ourselves on fast, thoughtful responses. Expect to hear 
                     from us within 24 hours.
                   </Typography>
@@ -450,7 +450,7 @@ const Contact = () => {
                           '&:hover': {
                             color: 'primary.main',
                             borderColor: 'primary.main',
-                            bgcolor: 'rgba(104, 186, 197, 0.04)',
+                            bgcolor: 'rgba(1, 69, 132, 0.04)',
                           },
                         }}
                       >

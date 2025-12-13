@@ -1,6 +1,6 @@
-# DheLogic - IT Consultancy Website
+# TechSergy - IT Consultancy Website
 
-A modern, professional website for DheLogic IT consultancy built with React, Material UI, and Framer Motion.
+A modern, professional website for TechSergy IT consultancy built with React, Material UI, and Framer Motion.
 
 ## 🚀 Features
 
@@ -41,7 +41,7 @@ A modern, professional website for DheLogic IT consultancy built with React, Mat
 ## 📁 Project Structure
 
 ```
-dhelogic-website/
+techsergy-website/
 ├── public/
 │   └── assets/
 ├── src/
@@ -75,7 +75,7 @@ dhelogic-website/
 1. Clone the repository
 2. Navigate to the project directory:
    ```bash
-   cd dhelogic-website
+   cd techsergy-website
    ```
 3. Install dependencies:
    ```bash
@@ -123,9 +123,9 @@ Edit the color palette in `src/theme/theme.js`
 
 ## 📝 License
 
-This project is proprietary to DheLogic.
+This project is proprietary to TechSergy.
 
 ## 👥 Contact
 
-- Website: [dhelogic.com](https://dhelogic.com)
-- Email: hello@dhelogic.com
+- Website: [techsergy.com](https://techsergy.com)
+- Email: hello@techsergy.com

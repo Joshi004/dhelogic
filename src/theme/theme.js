@@ -1,11 +1,11 @@
 import { createTheme } from '@mui/material/styles';
 
-// Color Palette - Clean & Modern (Stripe-inspired)
+// Color Palette - Clean & Modern (TechSergy Blue)
 const colors = {
   primary: {
-    main: '#68bac5',      // Cyan
-    light: '#7ecbd4',
-    dark: '#5aa9b5',
+    main: '#014584',      // Deep Blue
+    light: '#0260a8',
+    dark: '#013566',
     contrastText: '#FFFFFF',
   },
   secondary: {
@@ -29,7 +29,7 @@ const colors = {
     secondary: '#64748B', // Cool Gray
   },
   gradient: {
-    primary: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+    primary: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
     subtle: 'linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%)',
   },
 };
@@ -110,6 +110,12 @@ const theme = createTheme({
       lineHeight: 1.6,
       color: colors.text.secondary,
     },
+    body2Light: {
+      fontFamily: '"Inter", sans-serif',
+      fontSize: '0.875rem',
+      lineHeight: 1.6,
+      color: 'rgba(255, 255, 255, 0.9)',
+    },
     subtitle1: {
       fontFamily: '"Inter", sans-serif',
       fontSize: '1.125rem',
@@ -152,7 +158,7 @@ const theme = createTheme({
           fontSize: '0.9375rem',
           boxShadow: 'none',
           '&:hover': {
-            boxShadow: '0px 4px 12px rgba(104, 186, 197, 0.25)',
+            boxShadow: '0px 4px 12px rgba(1, 69, 132, 0.25)',
           },
         },
         contained: {
@@ -164,7 +170,7 @@ const theme = createTheme({
           background: colors.gradient.primary,
           '&:hover': {
             background: colors.gradient.primary,
-            boxShadow: '0px 8px 20px rgba(104, 186, 197, 0.35)',
+            boxShadow: '0px 8px 20px rgba(1, 69, 132, 0.35)',
           },
         },
         outlined: {

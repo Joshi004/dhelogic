@@ -47,7 +47,7 @@ const Hero = () => {
             width: { xs: 300, md: 500 },
             height: { xs: 300, md: 500 },
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(104, 186, 197, 0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(1, 69, 132, 0.15) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -70,7 +70,7 @@ const Hero = () => {
             width: { xs: 250, md: 400 },
             height: { xs: 250, md: 400 },
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(126, 203, 212, 0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(2, 96, 168, 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -81,8 +81,8 @@ const Hero = () => {
             position: 'absolute',
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(104, 186, 197, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(104, 186, 197, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
           }}
@@ -147,7 +147,7 @@ const Hero = () => {
             sx={{
               mb: 3,
               '& .gradient': {
-                background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               },
@@ -216,7 +216,7 @@ const Hero = () => {
                 color: 'text.primary',
                 '&:hover': {
                   borderColor: 'primary.main',
-                  bgcolor: 'rgba(104, 186, 197, 0.04)',
+                  bgcolor: 'rgba(1, 69, 132, 0.04)',
                 },
               }}
             >

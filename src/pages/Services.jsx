@@ -36,8 +36,8 @@ const services = [
       'AI Integration & Deployment',
     ],
     technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'scikit-learn', 'AWS SageMaker'],
-    color: '#68bac5',
-    bgColor: 'rgba(104, 186, 197, 0.08)',
+    color: '#014584',
+    bgColor: 'rgba(1, 69, 132, 0.08)',
   },
   {
     id: 'web-dev',
@@ -54,8 +54,8 @@ const services = [
       'Performance Optimization',
     ],
     technologies: ['React', 'Next.js', 'React Native', 'Node.js', 'TypeScript', 'GraphQL'],
-    color: '#68bac5',
-    bgColor: 'rgba(104, 186, 197, 0.08)',
+    color: '#014584',
+    bgColor: 'rgba(1, 69, 132, 0.08)',
   },
   {
     id: 'cloud',
@@ -148,8 +148,8 @@ const Services = () => {
             position: 'absolute',
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(104, 186, 197, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(104, 186, 197, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
           }}
@@ -179,7 +179,7 @@ const Services = () => {
               <Box
                 component="span"
                 sx={{
-                  background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
@@ -430,7 +430,7 @@ const Services = () => {
             sx={{
               textAlign: 'center',
               p: { xs: 4, md: 6 },
-              background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+              background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
               color: 'white',
               borderRadius: 4,
             }}

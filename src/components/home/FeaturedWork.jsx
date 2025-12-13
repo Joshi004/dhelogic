@@ -48,7 +48,7 @@ const FeaturedWork = () => {
                   position: 'relative',
                   height: { xs: 300, md: '100%' },
                   minHeight: { md: 450 },
-                  background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -105,8 +105,7 @@ const FeaturedWork = () => {
                     Video Analysis AI
                   </Typography>
                   <Typography
-                    variant="body2"
-                    sx={{ opacity: 0.8 }}
+                    variant="body2Light"
                   >
                     Intelligent Video Processing
                   </Typography>
@@ -152,7 +151,7 @@ const FeaturedWork = () => {
                     label="AI/ML"
                     size="small"
                     sx={{
-                      bgcolor: 'rgba(104, 186, 197, 0.1)',
+                      bgcolor: 'rgba(1, 69, 132, 0.1)',
                       color: 'primary.main',
                       fontWeight: 500,
                     }}
@@ -161,8 +160,8 @@ const FeaturedWork = () => {
                     label="Computer Vision"
                     size="small"
                     sx={{
-                      bgcolor: 'rgba(104, 186, 197, 0.1)',
-                      color: '#68bac5',
+                      bgcolor: 'rgba(1, 69, 132, 0.1)',
+                      color: '#014584',
                       fontWeight: 500,
                     }}
                   />

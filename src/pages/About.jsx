@@ -24,13 +24,13 @@ const values = [
     icon: <LightbulbIcon sx={{ fontSize: 28 }} />,
     title: 'Innovation',
     description: 'We constantly explore new technologies and methodologies to deliver cutting-edge solutions.',
-    color: '#68bac5',
+    color: '#014584',
   },
   {
     icon: <HandshakeIcon sx={{ fontSize: 28 }} />,
     title: 'Partnership',
     description: 'We build lasting relationships with our clients, working as an extension of their team.',
-    color: '#68bac5',
+    color: '#014584',
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
@@ -90,8 +90,8 @@ const About = () => {
             position: 'absolute',
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(104, 186, 197, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(104, 186, 197, 0.03) 1px, transparent 1px)
+              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
           }}
@@ -122,7 +122,7 @@ const About = () => {
                   <Box
                     component="span"
                     sx={{
-                      background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                      background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                     }}
@@ -134,7 +134,7 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', fontSize: '1.1rem', lineHeight: 1.8 }}
                 >
-                  DheLogic is an IT consultancy founded on the belief that technology 
+                  TechSergy is an IT consultancy founded on the belief that technology 
                   should empower businesses, not complicate them. We partner with organizations 
                   to deliver innovative solutions that drive real results.
                 </Typography>
@@ -172,7 +172,7 @@ const About = () => {
                       width: 64,
                       height: 64,
                       borderRadius: 3,
-                      background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                      background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -202,7 +202,7 @@ const About = () => {
                     width: 60,
                     height: 60,
                     borderRadius: 2,
-                    bgcolor: 'rgba(104, 186, 197, 0.1)',
+                    bgcolor: 'rgba(1, 69, 132, 0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -322,7 +322,7 @@ const About = () => {
                         left: '60%',
                         right: '-40%',
                         height: 2,
-                        background: 'linear-gradient(90deg, #68bac5 0%, transparent 100%)',
+                        background: 'linear-gradient(90deg, #014584 0%, transparent 100%)',
                         opacity: 0.3,
                       }}
                     />
@@ -339,7 +339,7 @@ const About = () => {
                       justifyContent: 'center',
                       mx: 'auto',
                       mb: 3,
-                      boxShadow: '0 4px 20px rgba(104, 186, 197, 0.15)',
+                      boxShadow: '0 4px 20px rgba(1, 69, 132, 0.15)',
                       border: '2px solid',
                       borderColor: 'primary.main',
                       color: 'primary.main',
@@ -409,7 +409,7 @@ const About = () => {
                   <Box
                     component="span"
                     sx={{
-                      background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                      background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                     }}
@@ -421,7 +421,7 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  DheLogic was born from a simple idea: businesses deserve technology 
+                  TechSergy was born from a simple idea: businesses deserve technology 
                   partners who truly understand their challenges and are invested in their 
                   success.
                 </Typography>
@@ -505,7 +505,7 @@ const About = () => {
       <Box
         sx={{
           py: { xs: 8, md: 10 },
-          background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+          background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
         }}
       >
         <Container maxWidth="md">

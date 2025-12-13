@@ -29,7 +29,7 @@ const socialLinks = [
   { icon: <LinkedInIcon />, label: 'LinkedIn', href: '#' },
   { icon: <TwitterIcon />, label: 'Twitter', href: '#' },
   { icon: <GitHubIcon />, label: 'GitHub', href: '#' },
-  { icon: <EmailIcon />, label: 'Email', href: 'mailto:hello@dhelogic.com' },
+  { icon: <EmailIcon />, label: 'Email', href: 'mailto:hello@techsergy.com' },
 ];
 
 const Footer = () => {
@@ -55,17 +55,17 @@ const Footer = () => {
               sx={{
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
                 fontWeight: 700,
-                background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 mb: 2,
               }}
             >
-              DheLogic
+              TechSergy
             </Typography>
             <Typography
-              variant="body2"
-              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 3, maxWidth: 300 }}
+              variant="body2Light"
+              sx={{ opacity: 0.78, mb: 3, maxWidth: 300 }}
             >
               Your trusted partner for innovative IT solutions. We transform ideas
               into powerful digital experiences.
@@ -84,7 +84,7 @@ const Footer = () => {
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     '&:hover': {
                       color: 'white',
-                      bgcolor: 'rgba(104, 186, 197, 0.3)',
+                      bgcolor: 'rgba(1, 69, 132, 0.3)',
                       borderColor: 'primary.main',
                     },
                   }}
@@ -178,14 +178,14 @@ const Footer = () => {
               Get in Touch
             </Typography>
             <Typography
-              variant="body2"
-              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 1 }}
+              variant="body2Light"
+              sx={{ opacity: 0.78, mb: 1 }}
             >
-              hello@dhelogic.com
+              hello@techsergy.com
             </Typography>
             <Typography
-              variant="body2"
-              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 2 }}
+              variant="body2Light"
+              sx={{ opacity: 0.78, mb: 2 }}
             >
               We respond within 24 hours
             </Typography>
@@ -215,7 +215,7 @@ const Footer = () => {
                 }}
               />
               <Typography
-                variant="body2"
+                variant="body2Light"
                 sx={{ color: '#10B981', fontWeight: 500, fontSize: '0.8rem' }}
               >
                 Available for projects
@@ -237,10 +237,10 @@ const Footer = () => {
           }}
         >
           <Typography
-            variant="body2"
-            sx={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '0.85rem' }}
+            variant="body2Light"
+            sx={{ opacity: 0.56, fontSize: '0.85rem' }}
           >
-            © {currentYear} DheLogic. All rights reserved.
+            © {currentYear} TechSergy. All rights reserved.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
             <Typography

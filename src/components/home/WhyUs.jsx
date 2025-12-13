@@ -71,7 +71,7 @@ const WhyUs = () => {
                 <Box
                   component="span"
                   sx={{
-                    background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                    background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                   }}
@@ -83,7 +83,7 @@ const WhyUs = () => {
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                At DheLogic, we believe in building lasting partnerships. We combine 
+                At TechSergy, we believe in building lasting partnerships. We combine 
                 technical expertise with a deep understanding of your business needs to 
                 deliver solutions that truly make a difference.
               </Typography>
@@ -176,7 +176,7 @@ const WhyUs = () => {
                     width: 60,
                     height: 60,
                     borderRadius: 3,
-                    background: 'linear-gradient(135deg, #68bac5 0%, #7ecbd4 100%)',
+                    background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -270,7 +270,7 @@ const WhyUs = () => {
                   width: '90%',
                   height: '90%',
                   borderRadius: '50%',
-                  background: 'radial-gradient(circle, rgba(104, 186, 197, 0.05) 0%, transparent 70%)',
+                  background: 'radial-gradient(circle, rgba(1, 69, 132, 0.05) 0%, transparent 70%)',
                   zIndex: 0,
                 }}
               />

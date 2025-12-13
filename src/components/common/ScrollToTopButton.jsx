@@ -39,10 +39,10 @@ const ScrollToTopButton = () => {
           right: 24,
           bgcolor: 'primary.main',
           color: 'white',
-          boxShadow: '0 4px 14px rgba(104, 186, 197, 0.4)',
+          boxShadow: '0 4px 14px rgba(1, 69, 132, 0.4)',
           '&:hover': {
             bgcolor: 'primary.dark',
-            boxShadow: '0 6px 20px rgba(104, 186, 197, 0.5)',
+            boxShadow: '0 6px 20px rgba(1, 69, 132, 0.5)',
           },
         }}
       >
