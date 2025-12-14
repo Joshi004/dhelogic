@@ -208,7 +208,7 @@ const WhyUs = () => {
                     }}
                   />
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                    100% Client Satisfaction
+                    Client-First Approach
                   </Typography>
                 </Box>
               </Box>

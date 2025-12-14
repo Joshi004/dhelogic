@@ -238,9 +238,9 @@ const Hero = () => {
             }}
           >
             {[
-              { value: '100%', label: 'Client Satisfaction' },
               { value: '2+', label: 'Projects Delivered' },
               { value: '24h', label: 'Response Time' },
+              { value: '100%', label: 'Commitment' },
             ].map((stat, index) => (
               <Box key={index} sx={{ textAlign: 'center' }}>
                 <Typography

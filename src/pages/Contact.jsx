@@ -53,9 +53,7 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: <LinkedInIcon />, label: 'LinkedIn', href: '#' },
-  { icon: <TwitterIcon />, label: 'Twitter', href: '#' },
-  { icon: <GitHubIcon />, label: 'GitHub', href: '#' },
+  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/naresh-joshi-004/' },
 ];
 
 const Contact = () => {

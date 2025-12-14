@@ -11,28 +11,28 @@ import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const caseStudies = [
   {
-    id: 'tether',
-    client: 'Tether',
-    clientLogo: '₮',
-    clientLogoColor: '#26A17B',
-    title: 'Enterprise Blockchain Solutions',
-    subtitle: 'Scalable infrastructure for global operations',
-    description: 'Collaborated with Tether to develop and optimize blockchain infrastructure solutions, ensuring high availability and security for their global stablecoin operations.',
-    challenge: 'Tether required robust, scalable infrastructure capable of handling millions of transactions while maintaining the highest security standards in the cryptocurrency industry.',
-    solution: 'We designed and implemented a comprehensive infrastructure solution with advanced monitoring, automated scaling capabilities, and multi-layer security protocols.',
+    id: 'trading-system',
+    client: 'Algorithmic Trading Platform',
+    clientLogo: '📈',
+    clientLogoColor: '#10B981',
+    title: 'Algorithmic Trading System',
+    subtitle: 'High-performance trading platform with plug-and-play strategies',
+    description: 'Built a sophisticated algorithmic trading system from 0→1 capable of trading any underlying asset including cryptocurrencies and stock market instruments with modular strategy support.',
+    challenge: 'Need for a flexible trading platform that could handle multiple asset classes with interchangeable strategies while maintaining low latency and high reliability.',
+    solution: 'Developed a modular architecture with plug-and-play strategy support, real-time data processing, and robust risk management systems.',
     results: [
-      { metric: '99.99%', label: 'Uptime Achieved' },
-      { metric: '<100ms', label: 'Transaction Latency' },
-      { metric: '24/7', label: 'Monitoring Coverage' },
+      { metric: '<1ms', label: 'Execution Speed' },
+      { metric: 'Multi', label: 'Asset Classes' },
+      { metric: '24/7', label: 'Uptime' },
     ],
-    technologies: ['Blockchain', 'Cloud Infrastructure', 'Security', 'DevOps'],
-    color: '#26A17B',
-    icon: <AccountBalanceWalletIcon sx={{ fontSize: 48 }} />,
+    technologies: ['Python', 'Real-time Processing', 'Trading APIs', 'Risk Management', 'Financial Markets'],
+    color: '#10B981',
+    icon: <ShowChartIcon sx={{ fontSize: 48 }} />,
   },
   {
     id: 'video-ai',

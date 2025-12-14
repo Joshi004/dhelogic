@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 
 const footerLinks = {
@@ -26,9 +24,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: <LinkedInIcon />, label: 'LinkedIn', href: '#' },
-  { icon: <TwitterIcon />, label: 'Twitter', href: '#' },
-  { icon: <GitHubIcon />, label: 'GitHub', href: '#' },
+  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/naresh-joshi-004/' },
   { icon: <EmailIcon />, label: 'Email', href: 'mailto:hello@techsergy.com' },
 ];
 
@@ -238,36 +234,10 @@ const Footer = () => {
         >
           <Typography
             variant="body2Light"
-            sx={{ opacity: 0.56, fontSize: '0.85rem' }}
+            sx={{ opacity: 0.56, fontSize: '0.85rem', textAlign: { xs: 'center', sm: 'left' } }}
           >
             © {currentYear} TechSergy. All rights reserved.
           </Typography>
-          <Box sx={{ display: 'flex', gap: 3 }}>
-            <Typography
-              component={Link}
-              to="#"
-              sx={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '0.85rem',
-                '&:hover': { color: 'white' },
-              }}
-            >
-              Privacy Policy
-            </Typography>
-            <Typography
-              component={Link}
-              to="#"
-              sx={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '0.85rem',
-                '&:hover': { color: 'white' },
-              }}
-            >
-              Terms of Service
-            </Typography>
-          </Box>
         </Box>
       </Container>
     </Box>

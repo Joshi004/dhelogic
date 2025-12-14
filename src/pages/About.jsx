@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import SectionHeader from '../components/common/SectionHeader';
+import CoreTeam from '../components/home/CoreTeam';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import HandshakeIcon from '@mui/icons-material/Handshake';
@@ -459,10 +460,10 @@ const About = () => {
                 }}
               >
                 {[
-                  { value: '100%', label: 'Client Satisfaction' },
                   { value: '2+', label: 'Projects Completed' },
                   { value: '24h', label: 'Response Time' },
-                  { value: '∞', label: 'Growth Potential' },
+                  { value: '100%', label: 'Commitment' },
+                  { value: '24/7', label: 'Available' },
                 ].map((stat, index) => (
                   <Box
                     key={index}
@@ -500,6 +501,9 @@ const About = () => {
           </Grid>
         </Container>
       </Box>
+
+      {/* Core Team Section */}
+      <CoreTeam />
 
       {/* CTA Section */}
       <Box
