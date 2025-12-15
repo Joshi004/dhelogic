@@ -236,7 +236,7 @@ const Footer = () => {
             variant="body2Light"
             sx={{ opacity: 0.56, fontSize: '0.85rem', textAlign: { xs: 'center', sm: 'left' } }}
           >
-            © {currentYear} TechSergy. All rights reserved.
+            © {currentYear} TechSergy. Registered in UAE. All rights reserved.
           </Typography>
         </Box>
       </Container>

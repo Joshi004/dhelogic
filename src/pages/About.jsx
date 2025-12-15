@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import SectionHeader from '../components/common/SectionHeader';
-import CoreTeam from '../components/home/CoreTeam';
+import FounderMessage from '../components/home/FounderMessage';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import HandshakeIcon from '@mui/icons-material/Handshake';
@@ -502,8 +502,8 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Core Team Section */}
-      <CoreTeam />
+      {/* Founder Message Section */}
+      <FounderMessage />
 
       {/* CTA Section */}
       <Box
