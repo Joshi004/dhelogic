@@ -13,7 +13,7 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import WebIcon from '@mui/icons-material/Web';
 import CloudIcon from '@mui/icons-material/Cloud';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import SecurityIcon from '@mui/icons-material/Security';
+import GroupsIcon from '@mui/icons-material/Groups';
 import CodeIcon from '@mui/icons-material/Code';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -47,11 +47,11 @@ const services = [
     bgColor: 'rgba(16, 185, 129, 0.1)',
   },
   {
-    icon: <SecurityIcon sx={{ fontSize: 32 }} />,
-    title: 'Cybersecurity',
-    description: 'Protect your digital assets with comprehensive security assessments and solutions.',
-    color: '#F59E0B',
-    bgColor: 'rgba(245, 158, 11, 0.1)',
+    icon: <GroupsIcon sx={{ fontSize: 32 }} />,
+    title: 'Staff Augmentation',
+    description: 'Extend your team with senior engineers who integrate seamlessly and deliver like your own.',
+    color: '#8B5CF6',
+    bgColor: 'rgba(139, 92, 246, 0.1)',
   },
   {
     icon: <CodeIcon sx={{ fontSize: 32 }} />,

@@ -19,6 +19,7 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import SecurityIcon from '@mui/icons-material/Security';
 import CodeIcon from '@mui/icons-material/Code';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 const services = [
   {
@@ -128,6 +129,24 @@ const services = [
     technologies: ['Java', 'Python', 'Node.js', '.NET', 'PostgreSQL', 'MongoDB'],
     color: '#EC4899',
     bgColor: 'rgba(236, 72, 153, 0.08)',
+  },
+  {
+    id: 'staff-augmentation',
+    icon: <GroupsIcon sx={{ fontSize: 40 }} />,
+    title: 'Staff Augmentation',
+    subtitle: 'On-demand senior engineering talent',
+    description: 'Scale your team with experienced engineers who work alongside your existing staff. We integrate seamlessly into your workflows, tools, and culture—delivering like your own team members, on demand.',
+    features: [
+      'Senior Engineers On Demand',
+      'Seamless Team Integration',
+      'Flexible Engagement Models',
+      'Full-Stack & Specialized Talent',
+      'Direct Communication & Collaboration',
+      'Quick Ramp-Up Time',
+    ],
+    technologies: ['React', 'Node.js', 'Python', 'AWS', 'Agile', 'Your Stack'],
+    color: '#8B5CF6',
+    bgColor: 'rgba(139, 92, 246, 0.08)',
   },
 ];
 
