@@ -140,7 +140,7 @@ const Contact = () => {
               Get in Touch
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              Let's Start a{' '}
+              Let's{' '}
               <Box
                 component="span"
                 sx={{
@@ -149,15 +149,15 @@ const Contact = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Conversation
+                Talk
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              Have a project in mind? We'd love to hear from you. Send us a message 
-              and we'll respond as soon as possible.
+              Have a project in mind? Tell us about it and we'll get back to you within 
+              24 hours with our honest take.
             </Typography>
           </Box>
         </Container>
@@ -404,11 +404,11 @@ const Contact = () => {
                     <Typography sx={{ fontSize: '1.75rem' }}>⚡</Typography>
                   </Box>
                   <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                    Quick Response Guaranteed
+                    24-Hour Response Time
                   </Typography>
                   <Typography variant="body2Light" sx={{ opacity: 1 }}>
-                    We pride ourselves on fast, thoughtful responses. Expect to hear 
-                    from us within 24 hours.
+                    We answer emails fast. Expect a real response (not a sales template) 
+                    within 24 hours.
                   </Typography>
                 </Card>
 
@@ -490,7 +490,7 @@ const Contact = () => {
               },
               {
                 q: 'Do you work with startups?',
-                a: 'Absolutely! We love working with startups and can scale our engagement to match your budget and needs.',
+                a: 'Yes! We work with startups all the time and can adjust scope to fit your budget.',
               },
               {
                 q: 'What\'s your typical project timeline?',
@@ -498,7 +498,7 @@ const Contact = () => {
               },
               {
                 q: 'Do you offer ongoing support?',
-                a: 'Yes! We offer flexible support and maintenance packages to ensure your solutions continue to perform optimally.',
+                a: 'Yes! We offer monthly support packages for bug fixes, updates, and improvements.',
               },
             ].map((faq, index) => (
               <Grid size={{ xs: 12, sm: 6 }} key={index}>

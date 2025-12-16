@@ -153,8 +153,8 @@ const Hero = () => {
               },
             }}
           >
-            Transform Your Vision Into{' '}
-            <span className="gradient">Digital Reality</span>
+            Your Technical Co-Founder,{' '}
+            <span className="gradient">On Demand</span>
           </Typography>
 
           {/* Subtitle */}
@@ -173,8 +173,8 @@ const Hero = () => {
               lineHeight: 1.7,
             }}
           >
-            We are an IT consultancy delivering innovative solutions in AI, Cloud, 
-            Web Development, and more. Let's build something extraordinary together.
+            Need to build an AI platform? Build a highly scalable solution from scratch? 
+            We've done it before - at scale. Let's talk about your project.
           </Typography>
 
           {/* CTA Buttons */}

@@ -22,8 +22,8 @@ const FeaturedWork = () => {
       <Container maxWidth="lg">
         <SectionHeader
           overline="Featured Work"
-          title="Projects That Make an Impact"
-          subtitle="See how we've helped our clients achieve their goals through innovative technology solutions."
+          title="Recent Projects"
+          subtitle="Here's what we've built for clients - from AI platforms to real-time systems."
         />
 
         {/* Featured Case Study - Video Analysis AI */}
@@ -188,10 +188,9 @@ const FeaturedWork = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  Developed an advanced AI-powered video analysis system capable of 
-                  real-time object detection, tracking, and behavioral analysis. The 
-                  solution processes video streams efficiently, providing actionable 
-                  insights through an intuitive dashboard.
+                  Built a real-time video analysis system that detects what really matters 
+                  in long hours of videos and gets you the exact minutes which are relevant 
+                  based on the user profile.
                 </Typography>
 
                 {/* Metrics */}

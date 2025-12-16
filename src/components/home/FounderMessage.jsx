@@ -11,11 +11,11 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const workingPrinciples = [
-  'Lean, senior-led team : you get focused specialists, not layers of management',
-  'Founder oversight on every project : I personally review architecture and key decisions',
-  'Weekly demos and written updates : you always know where we are',
-  'Continuous delivery : we ship working software every sprint, not at the end',
-  'Long-term thinking : we build systems that scale and teams can maintain',
+  'Lean, senior-led team - you get focused specialists, not layers of management',
+  'Founder oversight on every project - I personally review architecture and key decisions',
+  'Weekly demos and written updates - you always know where we are',
+  'Continuous delivery - we ship working software every sprint, not at the end',
+  'Long-term thinking - we build systems that scale and teams can maintain',
 ];
 
 const FounderMessage = () => {
@@ -172,7 +172,7 @@ const FounderMessage = () => {
                 }}
               >
                 Hi, I'm Naresh Joshi, Founder & CEO of TechSergy. I'm an engineer at heart, 
-                and I started TechSergy because I love solving complex technical challenges—
+                and I started TechSergy because I love solving complex technical challenges -
                 especially the ones that require both deep systems thinking and rapid execution.
               </Typography>
 

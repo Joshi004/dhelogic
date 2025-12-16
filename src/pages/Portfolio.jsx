@@ -42,8 +42,8 @@ const caseStudies = [
     title: 'Intelligent Video Analytics Platform',
     subtitle: 'AI-powered real-time video processing',
     description: 'Developed an advanced AI-powered video analysis system capable of real-time object detection, tracking, and behavioral analysis for various use cases.',
-    challenge: 'The client needed a scalable solution that could process multiple video streams in real-time while maintaining high accuracy in object detection and classification.',
-    solution: 'We built a custom deep learning pipeline using state-of-the-art computer vision models, optimized for real-time performance with GPU acceleration.',
+    challenge: 'The client needed a scalable solution that could process multiple video streams in real-time. The problem is the sheer size of the videos and number of tokens to manage. We went through all the research papers available and created an approach that just worked and scaled to millions of hours of videos.',
+    solution: 'We built a custom deep learning pipeline using modern computer vision models, optimized for real-time performance with GPU acceleration.',
     results: [
       { metric: '95%', label: 'Detection Accuracy' },
       { metric: '50ms', label: 'Processing Time' },
@@ -99,7 +99,7 @@ const Portfolio = () => {
               Our Work
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              Projects That{' '}
+              Recent{' '}
               <Box
                 component="span"
                 sx={{
@@ -108,15 +108,14 @@ const Portfolio = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Deliver Results
+                Projects
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              Explore how we've helped our clients achieve their goals through 
-              innovative technology solutions and strategic partnerships.
+              Here's what we've built for clients - from AI platforms to trading systems.
             </Typography>
           </Box>
         </Container>
@@ -400,8 +399,7 @@ const Portfolio = () => {
               variant="body1"
               sx={{ color: 'text.secondary', mb: 4, maxWidth: 500, mx: 'auto' }}
             >
-              We're actively working on exciting new projects. Stay tuned for more 
-              case studies showcasing our latest work and innovations.
+              We're working on new projects right now. Check back soon for more case studies.
             </Typography>
             <Button
               component={Link}
@@ -436,14 +434,14 @@ const Portfolio = () => {
               variant="h2"
               sx={{ color: 'white', mb: 2, fontWeight: 700 }}
             >
-              Ready to Be Our Next Success Story?
+              Let's Build Your Product
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'rgba(255, 255, 255, 0.95)', mb: 4, maxWidth: 600, mx: 'auto' }}
             >
-              Let's discuss how we can help transform your business with innovative 
-              technology solutions tailored to your needs.
+              Have a technical problem to solve? Let's talk about your requirements and 
+              we'll tell you if we're a good fit.
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
               <Button

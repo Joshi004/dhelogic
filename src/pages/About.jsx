@@ -24,25 +24,25 @@ const values = [
   {
     icon: <LightbulbIcon sx={{ fontSize: 28 }} />,
     title: 'Innovation',
-    description: 'We constantly explore new technologies and methodologies to deliver cutting-edge solutions.',
+    description: 'We stay current with new tech, but we won\'t rebuild your app in the latest framework just because it\'s trendy.',
     color: '#014584',
   },
   {
     icon: <HandshakeIcon sx={{ fontSize: 28 }} />,
     title: 'Partnership',
-    description: 'We build lasting relationships with our clients, working as an extension of their team.',
+    description: 'Most of our clients come back for their next project. That\'s how we measure success.',
     color: '#014584',
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
     title: 'Excellence',
-    description: 'We are committed to delivering the highest quality in everything we do.',
+    description: 'We write tests, do code reviews, and don\'t ship broken features. Quality isn\'t optional for us.',
     color: '#10B981',
   },
   {
     icon: <VerifiedIcon sx={{ fontSize: 28 }} />,
     title: 'Integrity',
-    description: 'We operate with transparency, honesty, and ethical standards in all our engagements.',
+    description: 'We give honest estimates. If something will take 3 months, we say 3 months - not 6 weeks to win the bid.',
     color: '#F59E0B',
   },
 ];
@@ -52,25 +52,25 @@ const processSteps = [
     icon: <SearchIcon sx={{ fontSize: 32 }} />,
     step: '01',
     title: 'Discover',
-    description: 'We begin by understanding your business, challenges, and goals through in-depth consultation.',
+    description: 'Week 1: We learn your business, talk to stakeholders, and audit your current setup.',
   },
   {
     icon: <DesignServicesIcon sx={{ fontSize: 32 }} />,
     step: '02',
     title: 'Design',
-    description: 'Our team crafts tailored solutions and architectures that align with your specific requirements.',
+    description: 'Week 2: We propose a technical architecture and timeline. You review, we refine.',
   },
   {
     icon: <BuildIcon sx={{ fontSize: 32 }} />,
     step: '03',
     title: 'Develop',
-    description: 'We build your solution using agile methodologies, ensuring quality and regular feedback.',
+    description: 'Weeks 3-8: We ship working software every week. You see progress in real-time.',
   },
   {
     icon: <RocketLaunchIcon sx={{ fontSize: 32 }} />,
     step: '04',
     title: 'Deploy',
-    description: 'We launch your solution and provide ongoing support to ensure continued success.',
+    description: 'Week 9+: We deploy to production and stick around for support and improvements.',
   },
 ];
 
@@ -119,7 +119,7 @@ const About = () => {
                   About Us
                 </Typography>
                 <Typography variant="h1" sx={{ mb: 3 }}>
-                  Building the Future,{' '}
+                  Who{' '}
                   <Box
                     component="span"
                     sx={{
@@ -128,16 +128,17 @@ const About = () => {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    Together
+                    We Are
                   </Box>
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', fontSize: '1.1rem', lineHeight: 1.8 }}
                 >
-                  TechSergy is an IT consultancy founded on the belief that technology 
-                  should empower businesses, not complicate them. We partner with organizations 
-                  to deliver innovative solutions that drive real results.
+                  TechSergy is a small IT consultancy run by engineers who've built products 
+                  at Apple, Tether, and fast-growing startups. We help companies ship better 
+                  software, faster. We know how it works - how to scale from 0 to large-scale 
+                  systems. You're working with the specialists.
                 </Typography>
               </Box>
             </Grid>
@@ -422,18 +423,16 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  TechSergy was born from a simple idea: businesses deserve technology 
-                  partners who truly understand their challenges and are invested in their 
-                  success.
+                  TechSergy started because we got tired of seeing companies get burned 
+                  by outsourcing firms that overpromise and underdeliver.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  We've already begun making our mark with clients like Tether, delivering 
-                  innovative solutions like our Video Analysis AI platform. As we grow, 
-                  our commitment remains the same: to provide exceptional IT consultancy 
-                  services that transform businesses.
+                  We've worked with Tether and others to build production AI systems, 
+                  trading platforms, and web apps. Still a small team, still hands-on, 
+                  still shipping code.
                 </Typography>
                 <Button
                   component={Link}
@@ -525,14 +524,14 @@ const About = () => {
               variant="h2"
               sx={{ color: 'white', mb: 2, fontWeight: 700 }}
             >
-              Let's Build Something Amazing
+              Let's Talk
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'rgba(255, 255, 255, 0.95)', mb: 4, maxWidth: 600, mx: 'auto' }}
             >
-              Ready to transform your business with innovative technology solutions? 
-              We'd love to hear from you.
+              Have a project in mind? Send us the details and we'll get back to you 
+              within 24 hours with our take.
             </Typography>
             <Button
               component={Link}

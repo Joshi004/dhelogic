@@ -21,42 +21,42 @@ const services = [
   {
     icon: <SmartToyIcon sx={{ fontSize: 32 }} />,
     title: 'AI/ML Solutions',
-    description: 'Harness the power of artificial intelligence and machine learning to automate processes and gain valuable insights.',
+    description: 'Build custom ML models that actually solve your problems - from predictive analytics to computer vision systems, Agentic Systems, or Video Analysis Systems.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
   {
     icon: <WebIcon sx={{ fontSize: 32 }} />,
     title: 'Web & Mobile Development',
-    description: 'Create stunning, responsive web and mobile applications that deliver exceptional user experiences.',
+    description: 'Fast, modern web and mobile apps your customers will love. Built with React, Next.js, and battle-tested patterns.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
   {
     icon: <CloudIcon sx={{ fontSize: 32 }} />,
     title: 'Cloud & DevOps',
-    description: 'Modernize your infrastructure with scalable cloud solutions and streamlined DevOps practices.',
+    description: 'Move to the cloud without the headaches. We handle AWS, GCP, and Azure deployments with zero-downtime migrations.',
     color: '#0EA5E9',
     bgColor: 'rgba(14, 165, 233, 0.1)',
   },
   {
     icon: <BusinessCenterIcon sx={{ fontSize: 32 }} />,
     title: 'IT Strategy & Consulting',
-    description: 'Strategic technology guidance to align your IT investments with business objectives.',
+    description: 'Not sure what to build next? We\'ll help you make smart tech decisions based on your budget and goals.',
     color: '#10B981',
     bgColor: 'rgba(16, 185, 129, 0.1)',
   },
   {
     icon: <GroupsIcon sx={{ fontSize: 32 }} />,
     title: 'Staff Augmentation',
-    description: 'Extend your team with senior engineers who integrate seamlessly and deliver like your own.',
+    description: 'Hire senior engineers who jump into your codebase on day one. No ramp-up time, no junior devs. We only work with domain specialists.',
     color: '#8B5CF6',
     bgColor: 'rgba(139, 92, 246, 0.1)',
   },
   {
     icon: <CodeIcon sx={{ fontSize: 32 }} />,
     title: 'Custom Software',
-    description: 'Tailor-made software solutions designed to address your unique business challenges.',
+    description: 'Custom software built for your exact needs - from internal tools to customer-facing platforms.',
     color: '#EC4899',
     bgColor: 'rgba(236, 72, 153, 0.1)',
   },
@@ -92,8 +92,8 @@ const ServicesGrid = () => {
       <Container maxWidth="lg">
         <SectionHeader
           overline="What We Do"
-          title="Services That Drive Results"
-          subtitle="We offer comprehensive IT solutions tailored to your business needs, from cutting-edge AI implementations to secure cloud infrastructure."
+          title="How We Can Help"
+          subtitle="From AI/ML systems to cloud infrastructure, we build the technical foundation your business needs to grow."
         />
 
         <Grid

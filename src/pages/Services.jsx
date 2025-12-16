@@ -27,7 +27,7 @@ const services = [
     icon: <SmartToyIcon sx={{ fontSize: 40 }} />,
     title: 'AI/ML Solutions & Data Analytics',
     subtitle: 'Intelligent automation and insights',
-    description: 'Transform your data into actionable intelligence with our cutting-edge AI and machine learning solutions. We build custom models that automate processes, predict trends, and uncover hidden patterns in your data.',
+    description: 'We build custom ML models that solve real problems - from fraud detection to demand forecasting, Chatbots, Agentic Systems, Video and Image Analysis. We know how to make AI reliable even for something like Legal Tech or Finance. We\'ve done this before.',
     features: [
       'Custom Machine Learning Models',
       'Natural Language Processing',
@@ -45,7 +45,7 @@ const services = [
     icon: <WebIcon sx={{ fontSize: 40 }} />,
     title: 'Web & Mobile Development',
     subtitle: 'Beautiful, performant applications',
-    description: 'Create stunning digital experiences that engage users and drive conversions. Our team builds responsive web applications and native mobile apps using modern frameworks and best practices.',
+    description: 'Fast, modern web apps and mobile apps built with React, Next.js, and React Native. We optimize for speed and actually test on real devices.',
     features: [
       'React & Next.js Applications',
       'Mobile Apps (iOS & Android)',
@@ -63,7 +63,7 @@ const services = [
     icon: <CloudIcon sx={{ fontSize: 40 }} />,
     title: 'Cloud Infrastructure & DevOps',
     subtitle: 'Scalable and reliable systems',
-    description: 'Modernize your infrastructure with cloud-native solutions. We design, implement, and manage scalable cloud architectures that reduce costs and improve reliability.',
+    description: 'Move to AWS, GCP, or Azure without breaking things. We handle migrations, set up CI/CD pipelines, and configure auto-scaling.',
     features: [
       'Cloud Migration Strategy',
       'Infrastructure as Code',
@@ -81,7 +81,7 @@ const services = [
     icon: <BusinessCenterIcon sx={{ fontSize: 40 }} />,
     title: 'IT Strategy & Consulting',
     subtitle: 'Strategic technology guidance',
-    description: 'Align your technology investments with business objectives. Our consultants provide strategic guidance to help you make informed decisions and maximize ROI on your IT initiatives.',
+    description: 'Not sure what to build or buy? We\'ll help you figure out your tech roadmap and avoid expensive mistakes.',
     features: [
       'Digital Transformation',
       'Technology Roadmapping',
@@ -99,7 +99,7 @@ const services = [
     icon: <SecurityIcon sx={{ fontSize: 40 }} />,
     title: 'Cybersecurity Services',
     subtitle: 'Protect your digital assets',
-    description: 'Safeguard your organization against evolving threats. We provide comprehensive security assessments, implement robust protection measures, and ensure compliance with industry standards.',
+    description: 'Pen testing, security audits, and compliance help (SOC 2, GDPR, ISO 27001). We find the holes before hackers do.',
     features: [
       'Security Assessments',
       'Penetration Testing',
@@ -117,7 +117,7 @@ const services = [
     icon: <CodeIcon sx={{ fontSize: 40 }} />,
     title: 'Custom Software Development',
     subtitle: 'Tailored solutions for unique needs',
-    description: 'Build software that fits your exact requirements. From complex enterprise applications to specialized tools, we develop custom solutions that streamline operations and drive growth.',
+    description: 'Need something that off-the-shelf software can\'t do? We build custom tools, internal apps, and specialized systems from scratch.',
     features: [
       'Enterprise Applications',
       'API Development',
@@ -135,7 +135,7 @@ const services = [
     icon: <GroupsIcon sx={{ fontSize: 40 }} />,
     title: 'Staff Augmentation',
     subtitle: 'On-demand senior engineering talent',
-    description: 'Scale your team with experienced engineers who work alongside your existing staff. We integrate seamlessly into your workflows, tools, and culture—delivering like your own team members, on demand.',
+    description: 'Need extra engineers fast? We provide senior devs who join your team, use your tools, and ship code like they\'re full-time employees.',
     features: [
       'Senior Engineers On Demand',
       'Seamless Team Integration',
@@ -194,7 +194,7 @@ const Services = () => {
               Our Services
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              Comprehensive IT Solutions for{' '}
+              How We{' '}
               <Box
                 component="span"
                 sx={{
@@ -203,15 +203,14 @@ const Services = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Every Need
+                Help
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              From AI-powered automation to secure cloud infrastructure, we offer
-              end-to-end technology services to help your business thrive in the digital age.
+              From building AI systems to deploying cloud infrastructure, we handle the full tech stack.
             </Typography>
           </Box>
         </Container>
@@ -461,8 +460,8 @@ const Services = () => {
               variant="body1"
               sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.95)', maxWidth: 500, mx: 'auto' }}
             >
-              Let's discuss your requirements and find the perfect solution for your business.
-              Schedule a free consultation with our experts.
+              Not sure where to start? Book a call and we'll help you figure out what you 
+              actually need - no sales pitch.
             </Typography>
             <Button
               component={Link}

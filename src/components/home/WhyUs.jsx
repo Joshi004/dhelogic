@@ -13,22 +13,22 @@ const features = [
   {
     icon: <RocketLaunchIcon sx={{ fontSize: 28 }} />,
     title: 'Innovation First',
-    description: 'We leverage cutting-edge technologies to deliver solutions that keep you ahead of the competition.',
+    description: 'We use modern, proven tech stacks - not the latest JavaScript framework that\'ll be dead in 6 months.',
   },
   {
     icon: <GroupsIcon sx={{ fontSize: 28 }} />,
     title: 'Collaborative Approach',
-    description: 'We work as an extension of your team, ensuring seamless communication and aligned goals.',
+    description: 'We show up to your standups, use your tools, and communicate like we\'re on your payroll.',
   },
   {
     icon: <SupportAgentIcon sx={{ fontSize: 28 }} />,
     title: 'Dedicated Support',
-    description: 'Our team provides ongoing support and maintenance to ensure your solutions continue to perform.',
+    description: 'After launch, we stick around. Bug fixes, updates, and improvements - we don\'t disappear when the project ends.',
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
     title: 'Results Driven',
-    description: 'Every project is focused on delivering measurable outcomes that drive your business forward.',
+    description: 'We track what matters: load times, conversion rates, uptime. If we can\'t measure it, we don\'t promise it.',
   },
 ];
 
@@ -67,7 +67,7 @@ const WhyUs = () => {
                 variant="h2"
                 sx={{ mb: 3 }}
               >
-                Your Success Is Our{' '}
+                What Makes Us{' '}
                 <Box
                   component="span"
                   sx={{
@@ -76,16 +76,15 @@ const WhyUs = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  Priority
+                  Different
                 </Box>
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                At TechSergy, we believe in building lasting partnerships. We combine 
-                technical expertise with a deep understanding of your business needs to 
-                deliver solutions that truly make a difference.
+                We're not a huge agency with account managers and layers of bureaucracy. 
+                You work directly with the engineers writing your code.
               </Typography>
               
               {/* Features List */}

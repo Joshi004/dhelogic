@@ -92,7 +92,7 @@ const CTABanner = () => {
               fontWeight: 700,
             }}
           >
-            Ready to Transform Your Business?
+            Ready to Start?
           </Typography>
           <Typography
             variant="subtitle1"
@@ -104,8 +104,8 @@ const CTABanner = () => {
               fontSize: '1.15rem',
             }}
           >
-            Let's discuss how we can help you achieve your technology goals. 
-            Get in touch for a free consultation.
+            Tell us what you're building and we'll give you a straight answer on 
+            timeline and cost. First call is free, no sales pitch.
           </Typography>
           <Box
             sx={{
