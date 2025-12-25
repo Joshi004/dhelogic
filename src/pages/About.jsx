@@ -9,7 +9,6 @@ import CardContent from '@mui/material/CardContent';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import SectionHeader from '../components/common/SectionHeader';
-import FounderMessage from '../components/home/FounderMessage';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import HandshakeIcon from '@mui/icons-material/Handshake';
@@ -24,25 +23,25 @@ const values = [
   {
     icon: <LightbulbIcon sx={{ fontSize: 28 }} />,
     title: 'Innovation',
-    description: 'We stay current with new tech, but we won\'t rebuild your app in the latest framework just because it\'s trendy.',
+    description: 'We constantly explore new technologies and methodologies to deliver cutting-edge solutions.',
     color: '#014584',
   },
   {
     icon: <HandshakeIcon sx={{ fontSize: 28 }} />,
     title: 'Partnership',
-    description: 'Most of our clients come back for their next project. That\'s how we measure success.',
+    description: 'We build lasting relationships with our clients, working as an extension of their team.',
     color: '#014584',
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
     title: 'Excellence',
-    description: 'We write tests, do code reviews, and don\'t ship broken features. Quality isn\'t optional for us.',
+    description: 'We are committed to delivering the highest quality in everything we do.',
     color: '#10B981',
   },
   {
     icon: <VerifiedIcon sx={{ fontSize: 28 }} />,
     title: 'Integrity',
-    description: 'We give honest estimates. If something will take 3 months, we say 3 months - not 6 weeks to win the bid.',
+    description: 'We operate with transparency, honesty, and ethical standards in all our engagements.',
     color: '#F59E0B',
   },
 ];
@@ -52,25 +51,25 @@ const processSteps = [
     icon: <SearchIcon sx={{ fontSize: 32 }} />,
     step: '01',
     title: 'Discover',
-    description: 'Week 1: We learn your business, talk to stakeholders, and audit your current setup.',
+    description: 'We begin by understanding your business, challenges, and goals through in-depth consultation.',
   },
   {
     icon: <DesignServicesIcon sx={{ fontSize: 32 }} />,
     step: '02',
     title: 'Design',
-    description: 'Week 2: We propose a technical architecture and timeline. You review, we refine.',
+    description: 'Our team crafts tailored solutions and architectures that align with your specific requirements.',
   },
   {
     icon: <BuildIcon sx={{ fontSize: 32 }} />,
     step: '03',
     title: 'Develop',
-    description: 'Weeks 3-8: We ship working software every week. You see progress in real-time.',
+    description: 'We build your solution using agile methodologies, ensuring quality and regular feedback.',
   },
   {
     icon: <RocketLaunchIcon sx={{ fontSize: 32 }} />,
     step: '04',
     title: 'Deploy',
-    description: 'Week 9+: We deploy to production and stick around for support and improvements.',
+    description: 'We launch your solution and provide ongoing support to ensure continued success.',
   },
 ];
 
@@ -119,7 +118,7 @@ const About = () => {
                   About Us
                 </Typography>
                 <Typography variant="h1" sx={{ mb: 3 }}>
-                  Who{' '}
+                  Building the Future,{' '}
                   <Box
                     component="span"
                     sx={{
@@ -128,17 +127,16 @@ const About = () => {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    We Are
+                    Together
                   </Box>
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', fontSize: '1.1rem', lineHeight: 1.8 }}
                 >
-                  TechSergy is a small IT consultancy run by engineers who've built products 
-                  at Apple, Tether, and fast-growing startups. We help companies ship better 
-                  software, faster. We know how it works - how to scale from 0 to large-scale 
-                  systems. You're working with the specialists.
+                  TechSergy is an IT consultancy founded on the belief that technology 
+                  should empower businesses, not complicate them. We work closely with teams,
+                  rolling up our sleeves to deliver innovative solutions that drive real results.
                 </Typography>
               </Box>
             </Grid>
@@ -187,8 +185,8 @@ const About = () => {
                     Our Mission
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                    To empower businesses with innovative technology solutions that drive 
-                    growth, efficiency, and competitive advantage in the digital era.
+                    To empower ambitious teams building new things with technology solutions 
+                    that drive growth, efficiency, and competitive advantage in the digital era.
                   </Typography>
                 </Box>
 
@@ -423,16 +421,18 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  TechSergy started because we got tired of seeing companies get burned 
-                  by outsourcing firms that overpromise and underdeliver.
+                  TechSergy was born from a simple idea: teams building something from scratch 
+                  deserve technology partners who truly understand their challenges and are 
+                  invested in their success.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  We've worked with Tether and others to build production AI systems, 
-                  trading platforms, and web apps. Still a small team, still hands-on, 
-                  still shipping code.
+                  We've already begun making our mark with clients like Tether, delivering 
+                  innovative solutions like our Video Analysis AI platform. As we grow, 
+                  our commitment remains the same: to be the partner you need when building 
+                  something new.
                 </Typography>
                 <Button
                   component={Link}
@@ -459,10 +459,10 @@ const About = () => {
                 }}
               >
                 {[
+                  { value: '100%', label: 'Client Satisfaction' },
                   { value: '2+', label: 'Projects Completed' },
                   { value: '24h', label: 'Response Time' },
-                  { value: '100%', label: 'Commitment' },
-                  { value: '24/7', label: 'Available' },
+                  { value: '∞', label: 'Growth Potential' },
                 ].map((stat, index) => (
                   <Box
                     key={index}
@@ -501,9 +501,6 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Founder Message Section */}
-      <FounderMessage />
-
       {/* CTA Section */}
       <Box
         sx={{
@@ -524,14 +521,14 @@ const About = () => {
               variant="h2"
               sx={{ color: 'white', mb: 2, fontWeight: 700 }}
             >
-              Let's Talk
+              Let's Build Something Amazing
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'rgba(255, 255, 255, 0.95)', mb: 4, maxWidth: 600, mx: 'auto' }}
             >
-              Have a project in mind? Send us the details and we'll get back to you 
-              within 24 hours with our take.
+              Ready to transform your business with innovative technology solutions? 
+              We'd love to hear from you.
             </Typography>
             <Button
               component={Link}

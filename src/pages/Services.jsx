@@ -15,10 +15,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 // Icons
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import WebIcon from '@mui/icons-material/Web';
-import CloudIcon from '@mui/icons-material/Cloud';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import SecurityIcon from '@mui/icons-material/Security';
-import CodeIcon from '@mui/icons-material/Code';
 import GroupsIcon from '@mui/icons-material/Groups';
 
 const services = [
@@ -27,7 +24,7 @@ const services = [
     icon: <SmartToyIcon sx={{ fontSize: 40 }} />,
     title: 'AI/ML Solutions & Data Analytics',
     subtitle: 'Intelligent automation and insights',
-    description: 'We build custom ML models that solve real problems - from fraud detection to demand forecasting, Chatbots, Agentic Systems, Video and Image Analysis. We know how to make AI reliable even for something like Legal Tech or Finance. We\'ve done this before.',
+    description: 'Transform your data into actionable intelligence with our cutting-edge AI and machine learning solutions. We build custom models that automate processes, predict trends, and uncover hidden patterns in your data.',
     features: [
       'Custom Machine Learning Models',
       'Natural Language Processing',
@@ -45,7 +42,7 @@ const services = [
     icon: <WebIcon sx={{ fontSize: 40 }} />,
     title: 'Web & Mobile Development',
     subtitle: 'Beautiful, performant applications',
-    description: 'Fast, modern web apps and mobile apps built with React, Next.js, and React Native. We optimize for speed and actually test on real devices.',
+    description: 'Create stunning digital experiences that engage users and drive conversions. Our team builds responsive web applications and native mobile apps using modern frameworks and best practices.',
     features: [
       'React & Next.js Applications',
       'Mobile Apps (iOS & Android)',
@@ -59,29 +56,11 @@ const services = [
     bgColor: 'rgba(1, 69, 132, 0.08)',
   },
   {
-    id: 'cloud',
-    icon: <CloudIcon sx={{ fontSize: 40 }} />,
-    title: 'Cloud Infrastructure & DevOps',
-    subtitle: 'Scalable and reliable systems',
-    description: 'Move to AWS, GCP, or Azure without breaking things. We handle migrations, set up CI/CD pipelines, and configure auto-scaling.',
-    features: [
-      'Cloud Migration Strategy',
-      'Infrastructure as Code',
-      'CI/CD Pipeline Setup',
-      'Container Orchestration',
-      'Monitoring & Logging',
-      'Cost Optimization',
-    ],
-    technologies: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'Docker', 'Terraform'],
-    color: '#0EA5E9',
-    bgColor: 'rgba(14, 165, 233, 0.08)',
-  },
-  {
     id: 'consulting',
     icon: <BusinessCenterIcon sx={{ fontSize: 40 }} />,
     title: 'IT Strategy & Consulting',
     subtitle: 'Strategic technology guidance',
-    description: 'Not sure what to build or buy? We\'ll help you figure out your tech roadmap and avoid expensive mistakes.',
+    description: 'Align your technology investments with business objectives. Our consultants provide strategic guidance to help you make informed decisions and maximize ROI on your IT initiatives.',
     features: [
       'Digital Transformation',
       'Technology Roadmapping',
@@ -95,58 +74,22 @@ const services = [
     bgColor: 'rgba(16, 185, 129, 0.08)',
   },
   {
-    id: 'security',
-    icon: <SecurityIcon sx={{ fontSize: 40 }} />,
-    title: 'Cybersecurity Services',
-    subtitle: 'Protect your digital assets',
-    description: 'Pen testing, security audits, and compliance help (SOC 2, GDPR, ISO 27001). We find the holes before hackers do.',
-    features: [
-      'Security Assessments',
-      'Penetration Testing',
-      'Compliance Management',
-      'Identity & Access Management',
-      'Security Architecture',
-      'Incident Response',
-    ],
-    technologies: ['OWASP', 'ISO 27001', 'SOC 2', 'NIST', 'GDPR', 'Zero Trust'],
-    color: '#F59E0B',
-    bgColor: 'rgba(245, 158, 11, 0.08)',
-  },
-  {
-    id: 'custom',
-    icon: <CodeIcon sx={{ fontSize: 40 }} />,
-    title: 'Custom Software Development',
-    subtitle: 'Tailored solutions for unique needs',
-    description: 'Need something that off-the-shelf software can\'t do? We build custom tools, internal apps, and specialized systems from scratch.',
-    features: [
-      'Enterprise Applications',
-      'API Development',
-      'System Integration',
-      'Legacy Modernization',
-      'Database Design',
-      'Quality Assurance',
-    ],
-    technologies: ['Java', 'Python', 'Node.js', '.NET', 'PostgreSQL', 'MongoDB'],
-    color: '#EC4899',
-    bgColor: 'rgba(236, 72, 153, 0.08)',
-  },
-  {
     id: 'staff-augmentation',
     icon: <GroupsIcon sx={{ fontSize: 40 }} />,
     title: 'Staff Augmentation',
-    subtitle: 'On-demand senior engineering talent',
-    description: 'Need extra engineers fast? We provide senior devs who join your team, use your tools, and ship code like they\'re full-time employees.',
+    subtitle: 'Extend your team with top talent',
+    description: 'Scale your development capacity with skilled professionals who integrate seamlessly with your team. We provide experienced developers, designers, and technical consultants who work alongside you to accelerate your projects.',
     features: [
-      'Senior Engineers On Demand',
-      'Seamless Team Integration',
+      'Skilled Developers & Engineers',
+      'UI/UX Designers',
+      'Technical Consultants',
+      'Project Managers',
+      'QA & Testing Specialists',
       'Flexible Engagement Models',
-      'Full-Stack & Specialized Talent',
-      'Direct Communication & Collaboration',
-      'Quick Ramp-Up Time',
     ],
-    technologies: ['React', 'Node.js', 'Python', 'AWS', 'Agile', 'Your Stack'],
-    color: '#8B5CF6',
-    bgColor: 'rgba(139, 92, 246, 0.08)',
+    technologies: ['React', 'Node.js', 'Python', 'Java', 'DevOps', 'Agile'],
+    color: '#EC4899',
+    bgColor: 'rgba(236, 72, 153, 0.08)',
   },
 ];
 
@@ -194,7 +137,7 @@ const Services = () => {
               Our Services
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              How We{' '}
+              Focused Solutions for{' '}
               <Box
                 component="span"
                 sx={{
@@ -203,14 +146,15 @@ const Services = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Help
+                What Matters Most
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              From building AI systems to deploying cloud infrastructure, we handle the full tech stack.
+              From first idea to launch and beyond, we help you build, iterate, and scale
+              the solutions that bring your vision to life.
             </Typography>
           </Box>
         </Container>
@@ -460,8 +404,8 @@ const Services = () => {
               variant="body1"
               sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.95)', maxWidth: 500, mx: 'auto' }}
             >
-              Not sure where to start? Book a call and we'll help you figure out what you 
-              actually need - no sales pitch.
+              Let's discuss your requirements and find the perfect solution for your business.
+              Schedule a free consultation with our experts.
             </Typography>
             <Button
               component={Link}

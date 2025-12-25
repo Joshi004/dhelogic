@@ -132,7 +132,7 @@ const Hero = () => {
                 variant="body2"
                 sx={{ fontWeight: 500, color: 'text.secondary', fontSize: '0.85rem' }}
               >
-                Available for new projects
+                Ready to build something new
               </Typography>
             </Box>
           </Box>
@@ -153,8 +153,8 @@ const Hero = () => {
               },
             }}
           >
-            Your Technical Co-Founder,{' '}
-            <span className="gradient">On Demand</span>
+            Transform Your Vision Into{' '}
+            <span className="gradient">Digital Reality</span>
           </Typography>
 
           {/* Subtitle */}
@@ -173,8 +173,8 @@ const Hero = () => {
               lineHeight: 1.7,
             }}
           >
-            Need to build an AI platform? Build a highly scalable solution from scratch? 
-            We've done it before - at scale. Let's talk about your project.
+            We're a small team that loves building products alongside ambitious teams. 
+            From first idea to launch and beyond, let's create something extraordinary together.
           </Typography>
 
           {/* CTA Buttons */}
@@ -238,9 +238,9 @@ const Hero = () => {
             }}
           >
             {[
+              { value: '100%', label: 'Client Satisfaction' },
               { value: '2+', label: 'Projects Delivered' },
               { value: '24h', label: 'Response Time' },
-              { value: '100%', label: 'Commitment' },
             ].map((stat, index) => (
               <Box key={index} sx={{ textAlign: 'center' }}>
                 <Typography

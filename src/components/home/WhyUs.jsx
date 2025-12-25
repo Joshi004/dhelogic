@@ -13,22 +13,22 @@ const features = [
   {
     icon: <RocketLaunchIcon sx={{ fontSize: 28 }} />,
     title: 'Innovation First',
-    description: 'We use modern, proven tech stacks - not the latest JavaScript framework that\'ll be dead in 6 months.',
+    description: 'We move fast and iterate quickly with cutting-edge technologies that keep you ahead of the curve.',
   },
   {
     icon: <GroupsIcon sx={{ fontSize: 28 }} />,
     title: 'Collaborative Approach',
-    description: 'We show up to your standups, use your tools, and communicate like we\'re on your payroll.',
+    description: 'We work as an extension of your team, ensuring seamless communication and truly aligned goals.',
   },
   {
     icon: <SupportAgentIcon sx={{ fontSize: 28 }} />,
     title: 'Dedicated Support',
-    description: 'After launch, we stick around. Bug fixes, updates, and improvements - we don\'t disappear when the project ends.',
+    description: 'Flexible, ongoing support that grows with you. We\'re in this together for the long haul.',
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
     title: 'Results Driven',
-    description: 'We track what matters: load times, conversion rates, uptime. If we can\'t measure it, we don\'t promise it.',
+    description: 'Focused on shipping, launching, and hitting the milestones that matter most to your success.',
   },
 ];
 
@@ -67,7 +67,7 @@ const WhyUs = () => {
                 variant="h2"
                 sx={{ mb: 3 }}
               >
-                What Makes Us{' '}
+                Your Success Is Our{' '}
                 <Box
                   component="span"
                   sx={{
@@ -76,15 +76,16 @@ const WhyUs = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  Different
+                  Priority
                 </Box>
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                We're not a huge agency with account managers and layers of bureaucracy. 
-                You work directly with the engineers writing your code.
+                At DheLogic, we believe in building lasting partnerships. We understand 
+                what it takes to build something new and combine technical expertise with 
+                a genuine commitment to your success.
               </Typography>
               
               {/* Features List */}
@@ -207,7 +208,7 @@ const WhyUs = () => {
                     }}
                   />
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                    Client-First Approach
+                    100% Client Satisfaction
                   </Typography>
                 </Box>
               </Box>

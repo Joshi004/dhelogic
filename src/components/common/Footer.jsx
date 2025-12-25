@@ -18,8 +18,8 @@ const footerLinks = {
   services: [
     { label: 'AI/ML Solutions', path: '/services#ai-ml' },
     { label: 'Web Development', path: '/services#web-dev' },
-    { label: 'Cloud & DevOps', path: '/services#cloud' },
     { label: 'IT Consulting', path: '/services#consulting' },
+    { label: 'Staff Augmentation', path: '/services#staff-augmentation' },
   ],
 };
 
@@ -63,8 +63,8 @@ const Footer = () => {
               variant="body2Light"
               sx={{ opacity: 0.78, mb: 3, maxWidth: 300 }}
             >
-              Your trusted partner for innovative IT solutions. We transform ideas
-              into powerful digital experiences.
+              We build technology with you, not just for you. Let's create something 
+              great together.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               {socialLinks.map((social) => (

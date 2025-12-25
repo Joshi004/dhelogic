@@ -92,7 +92,7 @@ const CTABanner = () => {
               fontWeight: 700,
             }}
           >
-            Ready to Start?
+            Ready to Build Something Great?
           </Typography>
           <Typography
             variant="subtitle1"
@@ -104,8 +104,8 @@ const CTABanner = () => {
               fontSize: '1.15rem',
             }}
           >
-            Tell us what you're building and we'll give you a straight answer on 
-            timeline and cost. First call is free, no sales pitch.
+            Whether you're starting fresh or leveling up, we'd love to hear what you're 
+            working on. Let's chat about how we can help.
           </Typography>
           <Box
             sx={{

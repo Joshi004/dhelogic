@@ -11,28 +11,28 @@ import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const caseStudies = [
   {
-    id: 'trading-system',
-    client: 'Algorithmic Trading Platform',
-    clientLogo: '📈',
-    clientLogoColor: '#10B981',
-    title: 'Algorithmic Trading System',
-    subtitle: 'High-performance trading platform with plug-and-play strategies',
-    description: 'Built a sophisticated algorithmic trading system from 0→1 capable of trading any underlying asset including cryptocurrencies and stock market instruments with modular strategy support.',
-    challenge: 'Need for a flexible trading platform that could handle multiple asset classes with interchangeable strategies while maintaining low latency and high reliability.',
-    solution: 'Developed a modular architecture with plug-and-play strategy support, real-time data processing, and robust risk management systems.',
+    id: 'tether',
+    client: 'Tether',
+    clientLogo: '₮',
+    clientLogoColor: '#26A17B',
+    title: 'Enterprise Blockchain Solutions',
+    subtitle: 'Scalable infrastructure for global operations',
+    description: 'Collaborated with Tether to develop and optimize blockchain infrastructure solutions, ensuring high availability and security for their global stablecoin operations.',
+    challenge: 'Tether required robust, scalable infrastructure capable of handling millions of transactions while maintaining the highest security standards in the cryptocurrency industry.',
+    solution: 'We designed and implemented a comprehensive infrastructure solution with advanced monitoring, automated scaling capabilities, and multi-layer security protocols.',
     results: [
-      { metric: '<1ms', label: 'Execution Speed' },
-      { metric: 'Multi', label: 'Asset Classes' },
-      { metric: '24/7', label: 'Uptime' },
+      { metric: '99.99%', label: 'Uptime Achieved' },
+      { metric: '<100ms', label: 'Transaction Latency' },
+      { metric: '24/7', label: 'Monitoring Coverage' },
     ],
-    technologies: ['Python', 'Real-time Processing', 'Trading APIs', 'Risk Management', 'Financial Markets'],
-    color: '#10B981',
-    icon: <ShowChartIcon sx={{ fontSize: 48 }} />,
+    technologies: ['Blockchain', 'Cloud Infrastructure', 'Security', 'DevOps'],
+    color: '#26A17B',
+    icon: <AccountBalanceWalletIcon sx={{ fontSize: 48 }} />,
   },
   {
     id: 'video-ai',
@@ -42,8 +42,8 @@ const caseStudies = [
     title: 'Intelligent Video Analytics Platform',
     subtitle: 'AI-powered real-time video processing',
     description: 'Developed an advanced AI-powered video analysis system capable of real-time object detection, tracking, and behavioral analysis for various use cases.',
-    challenge: 'The client needed a scalable solution that could process multiple video streams in real-time. The problem is the sheer size of the videos and number of tokens to manage. We went through all the research papers available and created an approach that just worked and scaled to millions of hours of videos.',
-    solution: 'We built a custom deep learning pipeline using modern computer vision models, optimized for real-time performance with GPU acceleration.',
+    challenge: 'The client needed a scalable solution that could process multiple video streams in real-time while maintaining high accuracy in object detection and classification.',
+    solution: 'We built a custom deep learning pipeline using state-of-the-art computer vision models, optimized for real-time performance with GPU acceleration.',
     results: [
       { metric: '95%', label: 'Detection Accuracy' },
       { metric: '50ms', label: 'Processing Time' },
@@ -99,7 +99,7 @@ const Portfolio = () => {
               Our Work
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              Recent{' '}
+              Projects That{' '}
               <Box
                 component="span"
                 sx={{
@@ -108,14 +108,15 @@ const Portfolio = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Projects
+                Deliver Results
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              Here's what we've built for clients - from AI platforms to trading systems.
+              Explore how we've helped our clients achieve their goals through 
+              innovative technology solutions and strategic partnerships.
             </Typography>
           </Box>
         </Container>
@@ -399,7 +400,8 @@ const Portfolio = () => {
               variant="body1"
               sx={{ color: 'text.secondary', mb: 4, maxWidth: 500, mx: 'auto' }}
             >
-              We're working on new projects right now. Check back soon for more case studies.
+              We're actively working on exciting new projects. Stay tuned for more 
+              case studies showcasing our latest work and innovations.
             </Typography>
             <Button
               component={Link}
@@ -434,14 +436,14 @@ const Portfolio = () => {
               variant="h2"
               sx={{ color: 'white', mb: 2, fontWeight: 700 }}
             >
-              Let's Build Your Product
+              Ready to Be Our Next Success Story?
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'rgba(255, 255, 255, 0.95)', mb: 4, maxWidth: 600, mx: 'auto' }}
             >
-              Have a technical problem to solve? Let's talk about your requirements and 
-              we'll tell you if we're a good fit.
+              Let's discuss how we can help transform your business with innovative 
+              technology solutions tailored to your needs.
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
               <Button
