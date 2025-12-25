@@ -33,7 +33,7 @@ const TrustedBy = () => {
               display: 'block',
             }}
           >
-            Trusted by Industry Leaders
+            Recent Client
           </Typography>
 
           <Box
@@ -124,7 +124,7 @@ const TrustedBy = () => {
                   fontWeight: 500,
                 }}
               >
-                + More clients joining soon
+                Currently accepting new clients
               </Typography>
             </Box>
           </Box>

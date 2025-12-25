@@ -19,28 +19,28 @@ const services = [
   {
     icon: <SmartToyIcon sx={{ fontSize: 32 }} />,
     title: 'AI/ML Solutions',
-    description: 'Harness the power of artificial intelligence and machine learning to automate processes and gain valuable insights.',
+    description: 'Custom AI and machine learning solutions. We figure out if AI makes sense for your use case first, then build it right.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
   {
     icon: <WebIcon sx={{ fontSize: 32 }} />,
     title: 'Web & Mobile Development',
-    description: 'Create stunning, responsive web and mobile applications that deliver exceptional user experiences.',
+    description: 'Clean, fast websites and apps. We focus on getting things working first, then making them beautiful.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
   {
     icon: <BusinessCenterIcon sx={{ fontSize: 32 }} />,
     title: 'IT Strategy & Consulting',
-    description: 'Strategic technology guidance to align your IT investments with business objectives.',
+    description: 'We help you plan your tech stack, avoid expensive mistakes, and make smart decisions about what to build.',
     color: '#10B981',
     bgColor: 'rgba(16, 185, 129, 0.1)',
   },
   {
     icon: <GroupsIcon sx={{ fontSize: 32 }} />,
     title: 'Staff Augmentation',
-    description: 'Extend your team with skilled developers and consultants who integrate seamlessly with your workflow.',
+    description: 'Need extra developers? We embed with your team and work like we\'re part of it - same tools, same meetings, same Slack.',
     color: '#EC4899',
     bgColor: 'rgba(236, 72, 153, 0.1)',
   },
@@ -76,8 +76,8 @@ const ServicesGrid = () => {
       <Container maxWidth="lg">
         <SectionHeader
           overline="What We Do"
-          title="Services That Drive Results"
-          subtitle="We help you build and launch products that matter. From AI-powered features to beautiful applications, we move fast and iterate alongside you."
+          title="How We Help"
+          subtitle="We help you build and launch products that matter. From AI-powered solutions to responsive and scalable applications, we move fast and iterate alongside you."
         />
 
         <Grid

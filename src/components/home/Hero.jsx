@@ -98,45 +98,6 @@ const Hero = () => {
             py: { xs: 6, md: 8 },
           }}
         >
-          {/* Badge */}
-          <Box
-            component={motion.div}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Box
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 2,
-                py: 0.75,
-                bgcolor: 'white',
-                borderRadius: 3,
-                border: '1px solid',
-                borderColor: 'divider',
-                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
-                mb: 4,
-              }}
-            >
-              <Box
-                sx={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: '50%',
-                  bgcolor: '#10B981',
-                }}
-              />
-              <Typography
-                variant="body2"
-                sx={{ fontWeight: 500, color: 'text.secondary', fontSize: '0.85rem' }}
-              >
-                Ready to build something new
-              </Typography>
-            </Box>
-          </Box>
-
           {/* Main Headline */}
           <Typography
             component={motion.h1}
@@ -144,17 +105,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             variant="h1"
-            sx={{
+            sx={{ 
               mb: 3,
               '& .gradient': {
                 background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
+                display: 'block',
               },
             }}
           >
-            Transform Your Vision Into{' '}
-            <span className="gradient">Digital Reality</span>
+            Need Something Built?
+            <br />
+            <span className="gradient">Let's Talk.</span>
           </Typography>
 
           {/* Subtitle */}
@@ -173,8 +136,7 @@ const Hero = () => {
               lineHeight: 1.7,
             }}
           >
-            We're a small team that loves building products alongside ambitious teams. 
-            From first idea to launch and beyond, let's create something extraordinary together.
+            A lean team of developers who work closely with you. No account managers, no handoffs, just direct communication and solid work.
           </Typography>
 
           {/* CTA Buttons */}
@@ -237,30 +199,24 @@ const Hero = () => {
               flexWrap: 'wrap',
             }}
           >
-            {[
-              { value: '100%', label: 'Client Satisfaction' },
-              { value: '2+', label: 'Projects Delivered' },
-              { value: '24h', label: 'Response Time' },
-            ].map((stat, index) => (
-              <Box key={index} sx={{ textAlign: 'center' }}>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontWeight: 700,
-                    color: 'primary.main',
-                    fontSize: { xs: '1.75rem', md: '2rem' },
-                  }}
-                >
-                  {stat.value}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ color: 'text.secondary', fontWeight: 500 }}
-                >
-                  {stat.label}
-                </Typography>
-              </Box>
-            ))}
+            <Box sx={{ textAlign: 'center' }}>
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 700,
+                  color: 'primary.main',
+                  fontSize: { xs: '1.75rem', md: '2rem' },
+                }}
+              >
+                24h
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{ color: 'text.secondary', fontWeight: 500 }}
+              >
+                Response Time
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Container>

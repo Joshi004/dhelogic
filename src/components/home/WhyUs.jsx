@@ -18,17 +18,17 @@ const features = [
   {
     icon: <GroupsIcon sx={{ fontSize: 28 }} />,
     title: 'Collaborative Approach',
-    description: 'We work as an extension of your team, ensuring seamless communication and truly aligned goals.',
+    description: 'We join your Slack, attend your standups, and work like we\'re in-house. You\'ll always know what\'s happening.',
   },
   {
     icon: <SupportAgentIcon sx={{ fontSize: 28 }} />,
     title: 'Dedicated Support',
-    description: 'Flexible, ongoing support that grows with you. We\'re in this together for the long haul.',
+    description: 'Ongoing support that\'s actually responsive. Not a ticketing system, just reach out.',
   },
   {
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
     title: 'Results Driven',
-    description: 'Focused on shipping, launching, and hitting the milestones that matter most to your success.',
+    description: 'Focused on shipping. We set deadlines and actually hit them.',
   },
 ];
 
@@ -67,7 +67,7 @@ const WhyUs = () => {
                 variant="h2"
                 sx={{ mb: 3 }}
               >
-                Your Success Is Our{' '}
+                What's Different{' '}
                 <Box
                   component="span"
                   sx={{
@@ -76,16 +76,14 @@ const WhyUs = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  Priority
+                  About Us
                 </Box>
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                At DheLogic, we believe in building lasting partnerships. We understand 
-                what it takes to build something new and combine technical expertise with 
-                a genuine commitment to your success.
+                We're a small team, which means you work directly with the people building your product. No layers, no account managers, just clear communication and quality work.
               </Typography>
               
               {/* Features List */}
@@ -188,29 +186,9 @@ const WhyUs = () => {
                 <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
                   Partnership Approach
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3 }}>
-                  We work alongside you, not just for you. Your success is our measure of success.
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  We're not vendors, we're collaborators. When you win, we win.
                 </Typography>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    color: 'success.main',
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: '50%',
-                      bgcolor: 'success.main',
-                    }}
-                  />
-                  <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                    100% Client Satisfaction
-                  </Typography>
-                </Box>
               </Box>
 
               {/* Decorative Cards */}

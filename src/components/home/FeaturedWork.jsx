@@ -10,6 +10,8 @@ import SectionHeader from '../common/SectionHeader';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import SearchIcon from '@mui/icons-material/Search';
 
 const FeaturedWork = () => {
   return (
@@ -22,8 +24,8 @@ const FeaturedWork = () => {
       <Container maxWidth="lg">
         <SectionHeader
           overline="Featured Work"
-          title="Projects That Make an Impact"
-          subtitle="See how we've helped our clients achieve their goals through innovative technology solutions."
+          title="Recent Work"
+          subtitle="A look at what we've been building."
         />
 
         {/* Featured Case Study - Video Analysis AI */}
@@ -185,23 +187,89 @@ const FeaturedWork = () => {
                   Video Analysis AI Solution
                 </Typography>
 
-                <Typography
-                  variant="body1"
-                  sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
-                >
-                  Developed an advanced AI-powered video analysis system capable of 
-                  real-time object detection, tracking, and behavioral analysis. The 
-                  solution processes video streams efficiently, providing actionable 
-                  insights through an intuitive dashboard.
-                </Typography>
+                {/* Use Cases */}
+                <Grid container spacing={2} sx={{ mb: 4 }}>
+                  <Grid size={12}>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        gap: 2,
+                        p: 2.5,
+                        borderRadius: 2,
+                        bgcolor: 'rgba(1, 69, 132, 0.04)',
+                        border: '1px solid rgba(1, 69, 132, 0.1)',
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: 40,
+                          height: 40,
+                          borderRadius: 2,
+                          bgcolor: 'primary.main',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <AutoAwesomeIcon sx={{ fontSize: 20 }} />
+                      </Box>
+                      <Box>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                          Smart Moment Detection
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
+                          Finds the exact moments that matter to you from millions of hours of video. The system learns your preferences and surfaces what you actually want to see.
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid size={12}>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        gap: 2,
+                        p: 2.5,
+                        borderRadius: 2,
+                        bgcolor: 'rgba(16, 185, 129, 0.04)',
+                        border: '1px solid rgba(16, 185, 129, 0.1)',
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: 40,
+                          height: 40,
+                          borderRadius: 2,
+                          bgcolor: '#10B981',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <SearchIcon sx={{ fontSize: 20 }} />
+                      </Box>
+                      <Box>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                          Deep Content Search
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
+                          Search through actual video content, not just metadata. Find objects, emotions, dialogue, and embedded information across your entire library.
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
 
-                {/* Metrics */}
-                <Grid container spacing={3} sx={{ mb: 4 }}>
+                {/* Feature Highlights */}
+                <Grid container spacing={2} sx={{ mb: 4 }}>
                   {[
-                    { value: '95%', label: 'Accuracy Rate' },
-                    { value: '50ms', label: 'Processing Time' },
-                    { value: '24/7', label: 'Real-time Analysis' },
-                  ].map((metric, index) => (
+                    { value: 'Millions', label: 'Hours of Video', color: 'primary.main' },
+                    { value: '<500ms', label: 'Search Time', color: '#10B981' },
+                    { value: 'Full Content', label: 'Understanding', color: '#014584' },
+                  ].map((feature, index) => (
                     <Grid size={4} key={index}>
                       <Box
                         sx={{
@@ -209,19 +277,21 @@ const FeaturedWork = () => {
                           p: 2,
                           borderRadius: 2,
                           bgcolor: 'background.surface',
+                          border: '1px solid',
+                          borderColor: 'divider',
                         }}
                       >
                         <Typography
-                          variant="h5"
-                          sx={{ fontWeight: 700, color: 'primary.main', mb: 0.5 }}
+                          variant="h6"
+                          sx={{ fontWeight: 700, color: feature.color, mb: 0.5, fontSize: '1.1rem' }}
                         >
-                          {metric.value}
+                          {feature.value}
                         </Typography>
                         <Typography
                           variant="caption"
-                          sx={{ color: 'text.secondary', fontSize: '0.75rem' }}
+                          sx={{ color: 'text.secondary', fontSize: '0.7rem', lineHeight: 1.3 }}
                         >
-                          {metric.label}
+                          {feature.label}
                         </Typography>
                       </Box>
                     </Grid>
