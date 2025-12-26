@@ -59,20 +59,39 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    console.log('Form data:', data);
-    
-    setSnackbar({
-      open: true,
-      message: 'Thank you for your message! We\'ll get back to you within 24 hours.',
-      severity: 'success',
-    });
-    
-    reset();
-    setIsSubmitting(false);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (response.ok && result.ok) {
+        setSnackbar({
+          open: true,
+          message: "Thank you for your message! We'll get back to you within 24 hours.",
+          severity: 'success',
+        });
+        reset();
+      } else {
+        setSnackbar({
+          open: true,
+          message: result.error || 'Something went wrong. Please try again.',
+          severity: 'error',
+        });
+      }
+    } catch (err) {
+      setSnackbar({
+        open: true,
+        message: 'Network error. Please check your connection and try again.',
+        severity: 'error',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCloseSnackbar = () => {
