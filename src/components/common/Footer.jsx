@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
 
 const footerLinks = {
   company: [
@@ -25,7 +24,6 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/naresh-joshi-004/' },
-  { icon: <EmailIcon />, label: 'Email', href: 'mailto:hello@techsergy.com' },
 ];
 
 const Footer = () => {
@@ -161,7 +159,7 @@ const Footer = () => {
             </Box>
           </Grid>
 
-          {/* Contact Info */}
+          {/* Status */}
           <Grid size={{ xs: 12, sm: 4, md: 3 }}>
             <Typography
               variant="overline"
@@ -171,19 +169,7 @@ const Footer = () => {
                 mb: 2,
               }}
             >
-              Get in Touch
-            </Typography>
-            <Typography
-              variant="body2Light"
-              sx={{ opacity: 0.78, mb: 1 }}
-            >
-              hello@techsergy.com
-            </Typography>
-            <Typography
-              variant="body2Light"
-              sx={{ opacity: 0.78, mb: 2 }}
-            >
-              We respond within 24 hours
+              Status
             </Typography>
             <Box
               sx={{
@@ -236,7 +222,7 @@ const Footer = () => {
             variant="body2Light"
             sx={{ opacity: 0.56, fontSize: '0.85rem', textAlign: { xs: 'center', sm: 'left' } }}
           >
-            © {currentYear} TechSergy. Registered in UAE. All rights reserved.
+            © {currentYear} TechSergy. A brand operated by Exergy FZC, registered in UAE. All rights reserved.
           </Typography>
         </Box>
       </Container>
