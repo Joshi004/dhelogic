@@ -14,12 +14,8 @@ import { motion } from 'framer-motion';
 import { useForm, Controller } from 'react-hook-form';
 import PageTransition from '../components/common/PageTransition';
 import SendIcon from '@mui/icons-material/Send';
-import EmailIcon from '@mui/icons-material/Email';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 const services = [
   { value: 'ai-ml', label: 'AI/ML Solutions & Data Analytics' },
@@ -31,18 +27,6 @@ const services = [
 
 const contactInfo = [
   {
-    icon: <EmailIcon sx={{ fontSize: 24 }} />,
-    title: 'Email Us',
-    content: 'hello@dhelogic.com',
-    subtitle: 'We respond within 24 hours',
-  },
-  {
-    icon: <AccessTimeIcon sx={{ fontSize: 24 }} />,
-    title: 'Available',
-    content: 'Mon - Fri, 9AM - 6PM',
-    subtitle: 'Flexible for global clients',
-  },
-  {
     icon: <LocationOnIcon sx={{ fontSize: 24 }} />,
     title: 'Location',
     content: 'Remote-first Company',
@@ -51,9 +35,7 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: <LinkedInIcon />, label: 'LinkedIn', href: '#' },
-  { icon: <TwitterIcon />, label: 'Twitter', href: '#' },
-  { icon: <GitHubIcon />, label: 'GitHub', href: '#' },
+  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/naresh-joshi-004/' },
 ];
 
 const Contact = () => {
@@ -404,11 +386,10 @@ const Contact = () => {
                     <Typography sx={{ fontSize: '1.75rem' }}>⚡</Typography>
                   </Box>
                   <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                    Quick Response Guaranteed
+                    Fast Responses
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.95)' }}>
-                    We pride ourselves on fast, thoughtful responses. Expect to hear 
-                    from us within 24 hours.
+                    Send a message and expect a real response within a day - from an actual person.
                   </Typography>
                 </Card>
 
@@ -490,15 +471,31 @@ const Contact = () => {
               },
               {
                 q: 'Do you work with startups?',
-                a: 'Absolutely! We love working with startups and can scale our engagement to match your budget and needs.',
+                a: 'Yes - startups are actually our sweet spot. We understand limited budgets and tight timelines. We can start small and scale up as you grow.',
               },
               {
                 q: 'What\'s your typical project timeline?',
-                a: 'Timelines vary based on scope, but most projects range from 4-12 weeks. We\'ll provide a detailed estimate during our consultation.',
+                a: 'Most projects take 4-12 weeks. We\'ll give you a realistic timeline after understanding your scope - no generic estimates.',
               },
               {
                 q: 'Do you offer ongoing support?',
-                a: 'Yes! We offer flexible support and maintenance packages to ensure your solutions continue to perform optimally.',
+                a: 'Yes. We offer hourly support packages, monthly retainers, or on-call help. We don\'t disappear after launch.',
+              },
+              {
+                q: 'How do you handle communication?',
+                a: 'We join your Slack/Teams, provide weekly updates, and are available for calls as needed. You\'ll never be left wondering what\'s happening.',
+              },
+              {
+                q: 'What if I\'m not happy with the work?',
+                a: 'We build in review checkpoints throughout the project. If something\'s not right, we fix it before moving forward. We want you happy - it\'s that simple.',
+              },
+              {
+                q: 'Do you sign NDAs?',
+                a: 'Yes, we\'re happy to sign NDAs before any discussions about sensitive projects.',
+              },
+              {
+                q: 'Can I see more examples of your work?',
+                a: 'Check our Portfolio page, or ask us directly - we can share relevant examples based on what you\'re building.',
               },
             ].map((faq, index) => (
               <Grid size={{ xs: 12, sm: 6 }} key={index}>
