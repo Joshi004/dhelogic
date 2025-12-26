@@ -23,8 +23,8 @@ const services = [
     id: 'ai-ml',
     icon: <SmartToyIcon sx={{ fontSize: 40 }} />,
     title: 'AI/ML Solutions & Data Analytics',
-    subtitle: 'Intelligent automation and insights',
-    description: 'Transform your data into actionable intelligence with our cutting-edge AI and machine learning solutions. We build custom models that automate processes, predict trends, and uncover hidden patterns in your data.',
+    subtitle: 'Custom AI tools that actually solve problems',
+    description: 'We build AI tools for real use cases: chatbots that actually help users, prediction models that work in production, and automation that saves time. Not AI for AI\'s sake.',
     features: [
       'Custom Machine Learning Models',
       'Natural Language Processing',
@@ -41,17 +41,17 @@ const services = [
     id: 'web-dev',
     icon: <WebIcon sx={{ fontSize: 40 }} />,
     title: 'Web & Mobile Development',
-    subtitle: 'Beautiful, performant applications',
-    description: 'Create stunning digital experiences that engage users and drive conversions. Our team builds responsive web applications and native mobile apps using modern frameworks and best practices.',
+    subtitle: 'Full-stack development',
+    description: 'We build web and mobile applications. Frontend, backend, databases, APIs, deployment - the whole thing. Whatever your stack, we can work with it or help you choose the right one.',
     features: [
       'React & Next.js Applications',
       'Mobile Apps (iOS & Android)',
-      'Progressive Web Apps (PWA)',
-      'E-commerce Solutions',
-      'UI/UX Design',
+      'Backend APIs & Microservices',
+      'Database Design & Optimization',
+      'REST & GraphQL APIs',
       'Performance Optimization',
     ],
-    technologies: ['React', 'Next.js', 'React Native', 'Node.js', 'TypeScript', 'GraphQL'],
+    technologies: ['React', 'Next.js', 'React Native', 'Node.js', 'Python', 'Java', 'TypeScript', 'PostgreSQL', 'MongoDB', 'GraphQL'],
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.08)',
   },
@@ -59,15 +59,14 @@ const services = [
     id: 'consulting',
     icon: <BusinessCenterIcon sx={{ fontSize: 40 }} />,
     title: 'IT Strategy & Consulting',
-    subtitle: 'Strategic technology guidance',
-    description: 'Align your technology investments with business objectives. Our consultants provide strategic guidance to help you make informed decisions and maximize ROI on your IT initiatives.',
+    subtitle: 'Figure out what to build before building it',
+    description: 'Not sure what to build or what tech to use? We help you figure that out before spending money on the wrong thing. Architecture reviews, tech stack decisions, build-vs-buy analysis.',
     features: [
-      'Digital Transformation',
-      'Technology Roadmapping',
+      'Modernizing legacy systems',
+      'Tech stack planning',
       'Vendor Selection',
       'Architecture Review',
-      'Process Optimization',
-      'Team Augmentation',
+      'Development workflow improvements',
     ],
     technologies: ['TOGAF', 'Agile', 'Scrum', 'SAFe', 'ITIL', 'Design Thinking'],
     color: '#10B981',
@@ -77,15 +76,14 @@ const services = [
     id: 'staff-augmentation',
     icon: <GroupsIcon sx={{ fontSize: 40 }} />,
     title: 'Staff Augmentation',
-    subtitle: 'Extend your team with top talent',
-    description: 'Scale your development capacity with skilled professionals who integrate seamlessly with your team. We provide experienced developers, designers, and technical consultants who work alongside you to accelerate your projects.',
+    subtitle: 'Developers who work like they\'re in-house',
+    description: 'Need more developers but don\'t want to hire full-time? We embed with your team - join your Slack, attend your standups, use your tools. It\'s like having more teammates without the hiring overhead.',
     features: [
       'Skilled Developers & Engineers',
       'UI/UX Designers',
       'Technical Consultants',
-      'Project Managers',
       'QA & Testing Specialists',
-      'Flexible Engagement Models',
+      'Hourly, weekly, or project-based contracts',
     ],
     technologies: ['React', 'Node.js', 'Python', 'Java', 'DevOps', 'Agile'],
     color: '#EC4899',
@@ -153,8 +151,7 @@ const Services = () => {
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              From first idea to launch and beyond, we help you build, iterate, and scale
-              the solutions that bring your vision to life.
+              Development, consulting, and team extension. Here's what we offer and how it works.
             </Typography>
           </Box>
         </Container>
@@ -404,8 +401,7 @@ const Services = () => {
               variant="body1"
               sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.95)', maxWidth: 500, mx: 'auto' }}
             >
-              Let's discuss your requirements and find the perfect solution for your business.
-              Schedule a free consultation with our experts.
+              Schedule a call. No hard sell - just a conversation about what you need and whether we're the right fit.
             </Typography>
             <Button
               component={Link}
