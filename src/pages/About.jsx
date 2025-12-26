@@ -428,16 +428,16 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  TechSergy started because we got tired of seeing companies get burned 
-                  by outsourcing firms that overpromise and underdeliver.
+                  TechSergy exists to be the kind of engineering partner teams can rely on - 
+                  clear communication, strong architecture, and steady delivery.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  We've worked with Tether and others to build production AI systems, 
-                  trading platforms, and web apps. Still a small team, still hands-on, 
-                  still shipping code.
+                  We've worked with teams like Tether to build production AI systems, 
+                  trading platforms, and web apps. We stay small and hands-on so 
+                  projects move fast and stay maintainable.
                 </Typography>
                 <Button
                   component={Link}
@@ -464,10 +464,10 @@ const About = () => {
                 }}
               >
                 {[
-                  { value: '2+', label: 'Projects Completed' },
+                  { value: 'Zero', label: 'Overhead' },
                   { value: '24h', label: 'Response Time' },
-                  { value: '100%', label: 'Commitment' },
-                  { value: '24/7', label: 'Available' },
+                  { value: 'Weekly', label: 'Demos' },
+                  { value: 'Founder', label: 'Oversight' },
                 ].map((stat, index) => (
                   <Box
                     key={index}
@@ -529,7 +529,7 @@ const About = () => {
               textAlign: 'center',
             }}
           >
-            CEO & Founder
+            Founder & CEO
           </Typography>
           <Typography 
             variant="h2" 
