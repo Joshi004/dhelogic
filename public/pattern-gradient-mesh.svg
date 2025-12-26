@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="meshGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#014584;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#0260a8;stop-opacity:0.02" />
+    </linearGradient>
+    <linearGradient id="meshGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#014584;stop-opacity:0.03" />
+      <stop offset="100%" style="stop-color:#0260a8;stop-opacity:0.06" />
+    </linearGradient>
+    <style>
+      .mesh-line { fill: none; stroke: #014584; stroke-width: 0.5; opacity: 0.08; }
+    </style>
+  </defs>
+  
+  <!-- Gradient mesh blobs -->
+  <ellipse cx="200" cy="200" rx="250" ry="200" fill="url(#meshGrad1)" />
+  <ellipse cx="800" cy="500" rx="300" ry="250" fill="url(#meshGrad2)" />
+  <ellipse cx="500" cy="650" rx="200" ry="150" fill="url(#meshGrad1)" />
+  
+  <!-- Subtle connecting lines -->
+  <path class="mesh-line" d="M0,200 Q250,150 500,200 T1000,180" />
+  <path class="mesh-line" d="M0,400 Q300,350 600,400 T1000,380" />
+  <path class="mesh-line" d="M0,600 Q350,550 700,600 T1000,580" />
+  
+  <path class="mesh-line" d="M200,0 Q150,200 200,400 T180,800" />
+  <path class="mesh-line" d="M500,0 Q450,250 500,500 T480,800" />
+  <path class="mesh-line" d="M800,0 Q750,300 800,600 T780,800" />
+  
+  <!-- Diagonal mesh lines -->
+  <path class="mesh-line" d="M0,0 Q300,200 600,400 T1000,800" />
+  <path class="mesh-line" d="M0,400 Q200,500 400,600 T800,800" />
+  <path class="mesh-line" d="M400,0 Q600,200 800,400 T1000,600" />
+</svg>
+

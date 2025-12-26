@@ -20,6 +20,8 @@ import BuildIcon from '@mui/icons-material/Build';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GpsFixedIcon from '@mui/icons-material/GpsFixed';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 const values = [
   {
@@ -38,7 +40,7 @@ const values = [
     icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
     title: 'Excellence',
     description: 'We write tests, do code reviews, and don\'t ship broken features. Quality isn\'t optional for us.',
-    color: '#10B981',
+    color: '#014584',
   },
   {
     icon: <VerifiedIcon sx={{ fontSize: 28 }} />,
@@ -91,11 +93,10 @@ const About = () => {
           sx={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `
-              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
+            backgroundImage: 'url("/pattern-waves.svg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.5,
           }}
         />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
@@ -183,7 +184,7 @@ const About = () => {
                       mb: 3,
                     }}
                   >
-                    <Typography sx={{ color: 'white', fontSize: '1.75rem' }}>🎯</Typography>
+                    <GpsFixedIcon sx={{ color: 'white', fontSize: '2rem' }} />
                   </Box>
                   <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
                     Our Mission
@@ -206,13 +207,15 @@ const About = () => {
                     width: 60,
                     height: 60,
                     borderRadius: 2,
-                    bgcolor: 'rgba(1, 69, 132, 0.1)',
+                    bgcolor: 'rgba(245, 158, 11, 0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    border: '1px solid',
+                    borderColor: 'rgba(245, 158, 11, 0.2)',
                   }}
                 >
-                  <Typography sx={{ fontSize: '1.5rem' }}>💡</Typography>
+                  <LightbulbIcon sx={{ fontSize: '1.5rem', color: '#F59E0B' }} />
                 </Box>
                 <Box
                   component={motion.div}
@@ -225,13 +228,15 @@ const About = () => {
                     width: 50,
                     height: 50,
                     borderRadius: 2,
-                    bgcolor: 'rgba(2, 96, 168, 0.1)',
+                    bgcolor: 'rgba(1, 69, 132, 0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    border: '1px solid',
+                    borderColor: 'rgba(1, 69, 132, 0.15)',
                   }}
                 >
-                  <Typography sx={{ fontSize: '1.25rem' }}>✨</Typography>
+                  <AutoAwesomeIcon sx={{ fontSize: '1.25rem', color: '#014584' }} />
                 </Box>
               </Box>
             </Grid>
@@ -464,10 +469,10 @@ const About = () => {
                 }}
               >
                 {[
-                  { value: 'Zero', label: 'Overhead' },
-                  { value: '24h', label: 'Response Time' },
-                  { value: 'Weekly', label: 'Demos' },
-                  { value: 'Founder', label: 'Oversight' },
+                  { value: 'Zero', label: 'Overhead', accent: false },
+                  { value: '24h', label: 'Response Time', accent: true },
+                  { value: 'Weekly', label: 'Demos', accent: false },
+                  { value: 'Founder', label: 'Oversight', accent: true },
                 ].map((stat, index) => (
                   <Box
                     key={index}
@@ -482,7 +487,7 @@ const About = () => {
                       borderRadius: 4,
                       textAlign: 'center',
                       border: '1px solid',
-                      borderColor: '#E5E7EB',
+                      borderColor: stat.accent ? 'rgba(245, 158, 11, 0.3)' : '#E5E7EB',
                       boxShadow: 'none',
                     }}
                   >
@@ -490,7 +495,7 @@ const About = () => {
                       variant="h3"
                       sx={{
                         fontWeight: 700,
-                        color: 'primary.main',
+                        color: stat.accent ? '#F59E0B' : 'primary.main',
                         mb: 1,
                         fontSize: { xs: '2rem', md: '2.5rem' },
                       }}
@@ -703,8 +708,21 @@ const About = () => {
         sx={{
           py: { xs: 8, md: 10 },
           background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
+        {/* Gold accent line */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 4,
+            background: 'linear-gradient(90deg, transparent 0%, #F59E0B 50%, transparent 100%)',
+          }}
+        />
         <Container maxWidth="md">
           <Box
             component={motion.div}
@@ -734,13 +752,13 @@ const About = () => {
               size="large"
               endIcon={<ArrowForwardIcon />}
               sx={{
-                bgcolor: 'rgba(255, 255, 255, 0.2)',
+                bgcolor: '#F59E0B',
                 color: 'white',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
                 px: 4,
+                border: 'none',
                 '&:hover': {
-                  bgcolor: 'rgba(255, 255, 255, 0.3)',
+                  bgcolor: '#D97706',
+                  boxShadow: '0 8px 20px rgba(245, 158, 11, 0.4)',
                 },
               }}
             >

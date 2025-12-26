@@ -34,15 +34,15 @@ const services = [
     icon: <BusinessCenterIcon sx={{ fontSize: 32 }} />,
     title: 'IT Strategy & Consulting',
     description: 'We help you plan your tech stack, avoid expensive mistakes, and make smart decisions about what to build.',
-    color: '#10B981',
-    bgColor: 'rgba(16, 185, 129, 0.1)',
+    color: '#F59E0B',
+    bgColor: 'rgba(245, 158, 11, 0.1)',
   },
   {
     icon: <GroupsIcon sx={{ fontSize: 32 }} />,
     title: 'Staff Augmentation',
     description: 'Need extra developers? We embed with your team and work like we\'re part of it - same tools, same meetings, same Slack.',
-    color: '#EC4899',
-    bgColor: 'rgba(236, 72, 153, 0.1)',
+    color: '#014584',
+    bgColor: 'rgba(1, 69, 132, 0.1)',
   },
 ];
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#014584;stop-opacity:0.04" />
+      <stop offset="100%" style="stop-color:#0260a8;stop-opacity:0.025" />
+    </linearGradient>
+    
+    <linearGradient id="goldGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.025" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:0.015" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base gradient background -->
+  <rect width="1400" height="900" fill="#FAFBFC" />
+  
+  <!-- Soft gradient shapes -->
+  <circle cx="300" cy="200" r="350" fill="url(#blueGradient)" />
+  <circle cx="1100" cy="700" r="400" fill="url(#goldGradient)" />
+  
+  <!-- Clean grid lines -->
+  <g stroke="#014584" stroke-width="1" opacity="0.035">
+    <line x1="0" y1="300" x2="1400" y2="300" stroke-dasharray="10,15" />
+    <line x1="0" y1="600" x2="1400" y2="600" stroke-dasharray="10,15" />
+    <line x1="470" y1="0" x2="470" y2="900" stroke-dasharray="10,15" />
+    <line x1="930" y1="0" x2="930" y2="900" stroke-dasharray="10,15" />
+  </g>
+  
+  <!-- Minimal accent shapes -->
+  <g opacity="0.025">
+    <rect x="900" y="150" width="100" height="100" rx="8" fill="#F59E0B" />
+    <circle cx="200" cy="650" r="60" fill="#014584" />
+  </g>
+  
+  <!-- Subtle dots for texture -->
+  <g fill="#014584" opacity="0.03">
+    <circle cx="350" cy="150" r="2.5" />
+    <circle cx="700" cy="200" r="2" />
+    <circle cx="1050" cy="250" r="2.5" />
+    <circle cx="600" cy="500" r="2" />
+    <circle cx="950" cy="550" r="2.5" />
+  </g>
+  
+  <!-- Gold accent dots -->
+  <g fill="#F59E0B" opacity="0.03">
+    <circle cx="500" cy="350" r="2.5" />
+    <circle cx="850" cy="450" r="2" />
+  </g>
+</svg>

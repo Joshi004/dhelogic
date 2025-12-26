@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-// Color Palette - Clean & Modern (TechSergy Blue)
+// Color Palette - Clean & Modern (TechSergy Blue with Gold Accent)
 const colors = {
   primary: {
     main: '#014584',      // Deep Blue
@@ -12,6 +12,12 @@ const colors = {
     main: '#0F172A',      // Slate
     light: '#1E293B',
     dark: '#020617',
+    contrastText: '#FFFFFF',
+  },
+  accent: {
+    main: '#F59E0B',      // Gold/Amber
+    light: '#FBBF24',
+    dark: '#D97706',
     contrastText: '#FFFFFF',
   },
   success: {
@@ -31,6 +37,7 @@ const colors = {
   gradient: {
     primary: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
     subtle: 'linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%)',
+    accent: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
   },
 };
 
@@ -39,18 +46,19 @@ const theme = createTheme({
     mode: 'light',
     primary: colors.primary,
     secondary: colors.secondary,
+    accent: colors.accent,
     success: colors.success,
     background: colors.background,
     text: colors.text,
   },
   typography: {
-    fontFamily: '"Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontFamily: '"General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     h1: {
-      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
-      fontWeight: 800,
+      fontFamily: '"General Sans", sans-serif',
+      fontWeight: 700,
       fontSize: '3.5rem',
       lineHeight: 1.1,
-      letterSpacing: '-0.02em',
+      letterSpacing: '-0.03em',
       '@media (max-width:900px)': {
         fontSize: '2.5rem',
       },
@@ -59,11 +67,11 @@ const theme = createTheme({
       },
     },
     h2: {
-      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
-      fontWeight: 700,
+      fontFamily: '"General Sans", sans-serif',
+      fontWeight: 600,
       fontSize: '2.5rem',
       lineHeight: 1.2,
-      letterSpacing: '-0.01em',
+      letterSpacing: '-0.02em',
       '@media (max-width:900px)': {
         fontSize: '2rem',
       },
@@ -72,64 +80,65 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
-      fontWeight: 700,
+      fontFamily: '"General Sans", sans-serif',
+      fontWeight: 600,
       fontSize: '1.875rem',
       lineHeight: 1.3,
+      letterSpacing: '-0.01em',
       '@media (max-width:600px)': {
         fontSize: '1.5rem',
       },
     },
     h4: {
-      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontWeight: 600,
       fontSize: '1.5rem',
       lineHeight: 1.4,
     },
     h5: {
-      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontWeight: 600,
       fontSize: '1.25rem',
       lineHeight: 1.4,
     },
     h6: {
-      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontWeight: 600,
       fontSize: '1.125rem',
       lineHeight: 1.5,
     },
     body1: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontSize: '1rem',
       lineHeight: 1.7,
       color: colors.text.primary,
     },
     body2: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontSize: '0.875rem',
       lineHeight: 1.6,
       color: colors.text.secondary,
     },
     body2Light: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontSize: '0.875rem',
       lineHeight: 1.6,
       color: 'rgba(255, 255, 255, 0.9)',
     },
     subtitle1: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontSize: '1.125rem',
       lineHeight: 1.6,
       color: colors.text.secondary,
     },
     button: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontWeight: 600,
       textTransform: 'none',
       letterSpacing: '0.01em',
     },
     overline: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"General Sans", sans-serif',
       fontWeight: 600,
       fontSize: '0.75rem',
       letterSpacing: '0.1em',

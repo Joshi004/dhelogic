@@ -90,15 +90,12 @@ const Contact = () => {
           overflow: 'hidden',
         }}
       >
+        {/* Clean minimal background - no pattern for contact page */}
         <Box
           sx={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `
-              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
+            background: 'linear-gradient(180deg, rgba(1, 69, 132, 0.02) 0%, transparent 100%)',
           }}
         />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>

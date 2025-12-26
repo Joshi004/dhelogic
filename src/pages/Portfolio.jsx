@@ -148,11 +148,10 @@ const Portfolio = () => {
           sx={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `
-              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
+            backgroundImage: 'url("/pattern-gradient-mesh.svg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.6,
           }}
         />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
@@ -806,13 +805,12 @@ const Portfolio = () => {
                 size="large"
                 endIcon={<ArrowForwardIcon />}
                 sx={{
-                  bgcolor: 'rgba(255, 255, 255, 0.2)',
+                  bgcolor: '#F59E0B',
                   color: 'white',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
                   px: 4,
                   '&:hover': {
-                    bgcolor: 'rgba(255, 255, 255, 0.3)',
+                    bgcolor: '#D97706',
+                    boxShadow: '0 8px 20px rgba(245, 158, 11, 0.4)',
                   },
                 }}
               >

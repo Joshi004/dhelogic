@@ -28,12 +28,23 @@ const Hero = () => {
           pointerEvents: 'none',
         }}
       >
-        {/* Gradient Orbs */}
+        {/* Professional Clean Pattern - Base Layer */}
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url("/pattern-hero-clean.svg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+
+        {/* Subtle Animated Accent Orb */}
         <Box
           component={motion.div}
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.15, 1],
+            opacity: [0.4, 0.6, 0.4],
           }}
           transition={{
             duration: 8,
@@ -42,49 +53,13 @@ const Hero = () => {
           }}
           sx={{
             position: 'absolute',
-            top: '10%',
-            right: '10%',
-            width: { xs: 300, md: 500 },
-            height: { xs: 300, md: 500 },
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(1, 69, 132, 0.15) 0%, transparent 70%)',
-            filter: 'blur(40px)',
-          }}
-        />
-        <Box
-          component={motion.div}
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 1,
-          }}
-          sx={{
-            position: 'absolute',
-            bottom: '10%',
-            left: '5%',
+            top: '15%',
+            right: '8%',
             width: { xs: 250, md: 400 },
             height: { xs: 250, md: 400 },
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(2, 96, 168, 0.12) 0%, transparent 70%)',
-            filter: 'blur(40px)',
-          }}
-        />
-
-        {/* Grid Pattern */}
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `
-              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
+            background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%)',
+            filter: 'blur(50px)',
           }}
         />
       </Box>
@@ -204,7 +179,7 @@ const Hero = () => {
                 variant="h3"
                 sx={{
                   fontWeight: 700,
-                  color: 'primary.main',
+                  color: '#F59E0B',
                   fontSize: { xs: '1.75rem', md: '2rem' },
                 }}
               >

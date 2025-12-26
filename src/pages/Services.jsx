@@ -69,8 +69,8 @@ const services = [
       'Development workflow improvements',
     ],
     technologies: ['TOGAF', 'Agile', 'Scrum', 'SAFe', 'ITIL', 'Design Thinking'],
-    color: '#10B981',
-    bgColor: 'rgba(16, 185, 129, 0.08)',
+    color: '#F59E0B',
+    bgColor: 'rgba(245, 158, 11, 0.08)',
   },
   {
     id: 'staff-augmentation',
@@ -86,8 +86,8 @@ const services = [
       'Hourly, weekly, or project-based contracts',
     ],
     technologies: ['React', 'Node.js', 'Python', 'Java', 'DevOps', 'Agile'],
-    color: '#EC4899',
-    bgColor: 'rgba(236, 72, 153, 0.08)',
+    color: '#014584',
+    bgColor: 'rgba(1, 69, 132, 0.08)',
   },
 ];
 
@@ -107,11 +107,9 @@ const Services = () => {
           sx={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `
-              linear-gradient(rgba(1, 69, 132, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(1, 69, 132, 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
+            backgroundImage: 'url("/pattern-dots.svg")',
+            backgroundRepeat: 'repeat',
+            opacity: 0.8,
           }}
         />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>

@@ -8,6 +8,8 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
 const features = [
   {
@@ -174,14 +176,14 @@ const WhyUs = () => {
                     width: 60,
                     height: 60,
                     borderRadius: 3,
-                    background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
+                    background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     mb: 3,
                   }}
                 >
-                  <Typography sx={{ color: 'white', fontSize: '1.75rem' }}>🤝</Typography>
+                  <HandshakeIcon sx={{ color: 'white', fontSize: '1.75rem' }} />
                 </Box>
                 <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
                   Partnership Approach
@@ -202,17 +204,17 @@ const WhyUs = () => {
                   left: '5%',
                   width: 120,
                   height: 80,
-                  bgcolor: 'background.surface',
+                  bgcolor: 'rgba(245, 158, 11, 0.08)',
                   borderRadius: 3,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   border: '1px solid',
-                  borderColor: 'divider',
+                  borderColor: 'rgba(245, 158, 11, 0.2)',
                   zIndex: 1,
                 }}
               >
-                <Typography sx={{ fontSize: '2rem' }}>💡</Typography>
+                <LightbulbIcon sx={{ fontSize: '2rem', color: '#F59E0B' }} />
               </Box>
 
               <Box
@@ -225,17 +227,17 @@ const WhyUs = () => {
                   right: '5%',
                   width: 100,
                   height: 100,
-                  bgcolor: 'background.surface',
+                  bgcolor: 'rgba(1, 69, 132, 0.08)',
                   borderRadius: 3,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   border: '1px solid',
-                  borderColor: 'divider',
+                  borderColor: 'rgba(1, 69, 132, 0.15)',
                   zIndex: 1,
                 }}
               >
-                <Typography sx={{ fontSize: '2.5rem' }}>🚀</Typography>
+                <RocketLaunchIcon sx={{ fontSize: '2.5rem', color: '#014584' }} />
               </Box>
 
               {/* Background Circle */}

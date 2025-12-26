@@ -49,7 +49,7 @@ const Footer = () => {
             <Typography
               variant="h5"
               sx={{
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
+                fontFamily: '"General Sans", sans-serif',
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
                 WebkitBackgroundClip: 'text',
@@ -192,9 +192,9 @@ const Footer = () => {
                 gap: 1,
                 px: 2,
                 py: 1,
-                bgcolor: 'rgba(16, 185, 129, 0.1)',
+                bgcolor: 'rgba(245, 158, 11, 0.1)',
                 borderRadius: 2,
-                border: '1px solid rgba(16, 185, 129, 0.2)',
+                border: '1px solid rgba(245, 158, 11, 0.2)',
               }}
             >
               <Box
@@ -202,7 +202,7 @@ const Footer = () => {
                   width: 8,
                   height: 8,
                   borderRadius: '50%',
-                  bgcolor: '#10B981',
+                  bgcolor: '#F59E0B',
                   animation: 'pulse 2s infinite',
                   '@keyframes pulse': {
                     '0%, 100%': { opacity: 1 },
@@ -212,7 +212,7 @@ const Footer = () => {
               />
               <Typography
                 variant="body2Light"
-                sx={{ color: '#10B981', fontWeight: 500, fontSize: '0.8rem' }}
+                sx={{ color: '#F59E0B', fontWeight: 500, fontSize: '0.8rem' }}
               >
                 Available for projects
               </Typography>
