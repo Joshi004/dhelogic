@@ -21,12 +21,23 @@ import { checkRateLimit, recordRequest } from '../utils/rateLimit.js';
 
 const DEFAULT_TO_EMAIL = 'thinkjoshi@gmail.com';
 
-function jsonResponse(status, body) {
+// Allowed CORS origins for security
+const ALLOWED_ORIGINS = [
+  'https://techsergy.com',
+  'https://www.techsergy.com',
+];
+
+function jsonResponse(status, body, requestOrigin = '') {
+  // Check if origin is in whitelist
+  const allowedOrigin = ALLOWED_ORIGINS.includes(requestOrigin) 
+    ? requestOrigin 
+    : ALLOWED_ORIGINS[0]; // Default to first allowed origin
+
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       'content-type': 'application/json; charset=utf-8',
-      'access-control-allow-origin': '*',
+      'access-control-allow-origin': allowedOrigin,
       'access-control-allow-methods': 'POST, OPTIONS',
       'access-control-allow-headers': 'content-type',
     },
@@ -47,11 +58,17 @@ function clampString(v, maxLen) {
 }
 
 // Handle preflight OPTIONS request
-export async function onRequestOptions() {
+export async function onRequestOptions(context) {
+  const origin = context.request.headers.get('Origin') || '';
+  
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) 
+    ? origin 
+    : ALLOWED_ORIGINS[0];
+
   return new Response(null, {
     status: 204,
     headers: {
-      'access-control-allow-origin': '*',
+      'access-control-allow-origin': allowedOrigin,
       'access-control-allow-methods': 'POST, OPTIONS',
       'access-control-allow-headers': 'content-type',
     },
@@ -60,9 +77,12 @@ export async function onRequestOptions() {
 
 // Handle POST request
 export async function onRequestPost(context) {
-  try {
-    const { request, env } = context;
+  const { request, env } = context;
 
+  // Extract origin for CORS validation (outside try block for catch access)
+  const origin = request.headers.get('Origin') || '';
+
+  try {
     // Extract client IP for rate limiting
     const clientIP = request.headers.get('CF-Connecting-IP') || 'unknown';
 
@@ -73,7 +93,7 @@ export async function onRequestPost(context) {
         return jsonResponse(429, {
           ok: false,
           error: rateLimitCheck.reason || 'Too many requests. Please try again later.',
-        });
+        }, origin);
       }
     }
 
@@ -81,7 +101,7 @@ export async function onRequestPost(context) {
     try {
       body = await request.json();
     } catch {
-      return jsonResponse(400, { ok: false, error: 'Invalid JSON body.' });
+      return jsonResponse(400, { ok: false, error: 'Invalid JSON body.' }, origin);
     }
 
     // Honeypot: bots fill hidden fields. If filled, pretend success.
@@ -98,7 +118,7 @@ export async function onRequestPost(context) {
         return jsonResponse(400, {
           ok: false,
           error: 'Bot verification required. Please refresh the page and try again.',
-        });
+        }, origin);
       }
 
       try {
@@ -118,14 +138,14 @@ export async function onRequestPost(context) {
           return jsonResponse(400, {
             ok: false,
             error: 'Bot verification failed. Please try again.',
-          });
+          }, origin);
         }
       } catch (err) {
         // If Turnstile verification fails due to network error, reject to be safe
         return jsonResponse(500, {
           ok: false,
           error: 'Unable to verify request. Please try again.',
-        });
+        }, origin);
       }
     }
 
@@ -142,7 +162,7 @@ export async function onRequestPost(context) {
     if (!isNonEmptyString(message) || message.length < 20) errors.message = 'Message must be at least 20 characters.';
 
     if (Object.keys(errors).length > 0) {
-      return jsonResponse(400, { ok: false, error: 'Validation failed.', fields: errors });
+      return jsonResponse(400, { ok: false, error: 'Validation failed.', fields: errors }, origin);
     }
 
     const resendApiKey = env?.RESEND_API_KEY;
@@ -150,7 +170,7 @@ export async function onRequestPost(context) {
       return jsonResponse(500, {
         ok: false,
         error: 'Server email provider is not configured (missing RESEND_API_KEY).',
-      });
+      }, origin);
     }
 
     const toEmail = isNonEmptyString(env?.CONTACT_TO_EMAIL) ? env.CONTACT_TO_EMAIL : DEFAULT_TO_EMAIL;
@@ -193,7 +213,7 @@ export async function onRequestPost(context) {
         error: 'Email provider request failed.',
         providerStatus: resp.status,
         providerBody: errText.slice(0, 2000),
-      });
+      }, origin);
     }
 
     // Record successful request for rate limiting
@@ -201,9 +221,9 @@ export async function onRequestPost(context) {
       await recordRequest(env.RATE_LIMIT, clientIP);
     }
 
-    return jsonResponse(200, { ok: true });
+    return jsonResponse(200, { ok: true }, origin);
   } catch (err) {
-    return jsonResponse(500, { ok: false, error: 'Unexpected server error.' });
+    return jsonResponse(500, { ok: false, error: 'Unexpected server error.' }, origin);
   }
 }
 
