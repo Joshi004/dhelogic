@@ -18,6 +18,7 @@
  */
 
 import { checkRateLimit, recordRequest } from '../utils/rateLimit.js';
+import { sanitizeInput, detectSuspiciousPatterns } from '../utils/sanitize.js';
 
 const DEFAULT_TO_EMAIL = 'thinkjoshi@gmail.com';
 
@@ -149,11 +150,35 @@ export async function onRequestPost(context) {
       }
     }
 
-    const name = clampString(body?.name ?? '', 120).trim();
-    const email = clampString(body?.email ?? '', 254).trim();
-    const company = clampString(body?.company ?? '', 200).trim();
-    const service = clampString(body?.service ?? '', 50).trim();
-    const message = clampString(body?.message ?? '', 5000).trim();
+    // Sanitize all inputs to prevent XSS and injection attacks
+    const name = sanitizeInput(clampString(body?.name ?? '', 120));
+    const email = sanitizeInput(clampString(body?.email ?? '', 254));
+    const company = sanitizeInput(clampString(body?.company ?? '', 200));
+    const service = sanitizeInput(clampString(body?.service ?? '', 50));
+    const message = sanitizeInput(clampString(body?.message ?? '', 5000));
+
+    // Detect and log suspicious content
+    const rawInputs = [
+      body?.name ?? '',
+      body?.email ?? '',
+      body?.company ?? '',
+      body?.message ?? '',
+    ];
+    
+    const hasSuspiciousContent = rawInputs.some(input => detectSuspiciousPatterns(input));
+    
+    if (hasSuspiciousContent) {
+      console.warn('[Security] Suspicious content detected', {
+        ip: clientIP,
+        timestamp: new Date().toISOString(),
+        fields: {
+          name: detectSuspiciousPatterns(body?.name ?? ''),
+          email: detectSuspiciousPatterns(body?.email ?? ''),
+          company: detectSuspiciousPatterns(body?.company ?? ''),
+          message: detectSuspiciousPatterns(body?.message ?? ''),
+        },
+      });
+    }
 
     const errors = {};
     if (!isNonEmptyString(name)) errors.name = 'Name is required.';
