@@ -35,7 +35,7 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/naresh-joshi-004/' },
+  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/company/techsergy' },
 ];
 
 const Contact = () => {
