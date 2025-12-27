@@ -59,42 +59,17 @@ const Contact = () => {
     },
   });
 
-  // #region agent log
-  useEffect(() => {
-    fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:useEffect-mount',message:'Component mounted',data:{turnstileScriptLoaded:!!window.turnstile,refCurrent:!!turnstileRef.current},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B,C'})}).catch(()=>{});
-  }, []);
-  // #endregion
-
-  // #region agent log
-  useEffect(() => {
-    fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:useEffect-token',message:'Token state changed',data:{turnstileToken,tokenLength:turnstileToken?.length||0},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
-  }, [turnstileToken]);
-  // #endregion
-
   // Setup global Turnstile callbacks
   useEffect(() => {
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:useEffect-callbacks',message:'Setting up Turnstile callbacks',data:{hasWindow:typeof window!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A,B'})}).catch(()=>{});
-    // #endregion
-
     window.onTurnstileSuccess = (token) => {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:onTurnstileSuccess',message:'Turnstile success callback invoked',data:{tokenReceived:!!token,tokenLength:token?.length||0},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       setTurnstileToken(token);
     };
 
     window.onTurnstileExpired = () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:onTurnstileExpired',message:'Turnstile expired callback invoked',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       setTurnstileToken('');
     };
 
     window.onTurnstileError = () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:onTurnstileError',message:'Turnstile error callback invoked',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A,D'})}).catch(()=>{});
-      // #endregion
       setTurnstileToken('');
     };
 
@@ -107,9 +82,6 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/53f010f1-315a-4c93-b21f-651ace5cc2a4',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Contact.jsx:onSubmit-start',message:'Form submit started',data:{hasToken:!!turnstileToken,tokenLength:turnstileToken?.length||0},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A,D'})}).catch(()=>{});
-    // #endregion
 
     try {
       const response = await fetch('/api/contact', {
