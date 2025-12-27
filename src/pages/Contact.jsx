@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -41,6 +41,8 @@ const socialLinks = [
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileRef = useRef(null);
 
   const {
     control,
@@ -64,7 +66,10 @@ const Contact = () => {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          'cf-turnstile-response': turnstileToken,
+        }),
       });
 
       const result = await response.json().catch(() => ({}));
@@ -76,6 +81,11 @@ const Contact = () => {
           severity: 'success',
         });
         reset();
+        setTurnstileToken('');
+        // Reset Turnstile widget
+        if (window.turnstile && turnstileRef.current) {
+          window.turnstile.reset(turnstileRef.current);
+        }
       } else {
         setSnackbar({
           open: true,
@@ -294,12 +304,30 @@ const Contact = () => {
                       />
                     </Grid>
                     <Grid size={12}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          my: 2,
+                        }}
+                      >
+                        <div
+                          ref={turnstileRef}
+                          className="cf-turnstile"
+                          data-sitekey="0x4AAAAAACJQJ83A7LaSE-oT"
+                          data-callback={(token) => setTurnstileToken(token)}
+                          data-expired-callback={() => setTurnstileToken('')}
+                          data-error-callback={() => setTurnstileToken('')}
+                        />
+                      </Box>
+                    </Grid>
+                    <Grid size={12}>
                       <Button
                         type="submit"
                         variant="contained"
                         size="large"
                         fullWidth
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || !turnstileToken}
                         endIcon={<SendIcon />}
                         sx={{ color: 'white', py: 1.5 }}
                       >

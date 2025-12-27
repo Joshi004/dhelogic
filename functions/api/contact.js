@@ -2,13 +2,15 @@
  * Cloudflare Pages Function: POST /api/contact
  *
  * Sends contact form submissions to an email inbox using Resend.
+ * Includes Cloudflare Turnstile bot protection.
  *
  * Required env vars (set in Cloudflare Pages -> Settings -> Environment variables):
  * - RESEND_API_KEY
+ * - TURNSTILE_SECRET_KEY (for bot verification)
  *
  * Optional env vars:
  * - CONTACT_TO_EMAIL (defaults to thinkjoshi@gmail.com)
- * - CONTACT_FROM_EMAIL (defaults to onboarding@resend.dev; for production use a verified sender)
+ * - CONTACT_FROM_EMAIL (defaults to noreply@contact.techsergy.com)
  */
 
 const DEFAULT_TO_EMAIL = 'thinkjoshi@gmail.com';
@@ -65,6 +67,46 @@ export async function onRequestPost(context) {
     // Honeypot: bots fill hidden fields. If filled, pretend success.
     if (isNonEmptyString(body?.website)) {
       return jsonResponse(200, { ok: true });
+    }
+
+    // Verify Turnstile token
+    const turnstileToken = body?.['cf-turnstile-response'];
+    const turnstileSecret = env?.TURNSTILE_SECRET_KEY;
+
+    if (turnstileSecret) {
+      if (!isNonEmptyString(turnstileToken)) {
+        return jsonResponse(400, {
+          ok: false,
+          error: 'Bot verification required. Please refresh the page and try again.',
+        });
+      }
+
+      try {
+        const turnstileResp = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            secret: turnstileSecret,
+            response: turnstileToken,
+            remoteip: request.headers.get('CF-Connecting-IP') || '',
+          }),
+        });
+
+        const turnstileResult = await turnstileResp.json();
+
+        if (!turnstileResult.success) {
+          return jsonResponse(400, {
+            ok: false,
+            error: 'Bot verification failed. Please try again.',
+          });
+        }
+      } catch (err) {
+        // If Turnstile verification fails due to network error, reject to be safe
+        return jsonResponse(500, {
+          ok: false,
+          error: 'Unable to verify request. Please try again.',
+        });
+      }
     }
 
     const name = clampString(body?.name ?? '', 120).trim();
