@@ -4,3 +4,7 @@ compatibility_date = "2025-12-10"
 [assets]
 directory = "./dist"
 
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "ccbd6ce3a0e649bebca61d0b3fadd9be"
+

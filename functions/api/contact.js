@@ -2,7 +2,7 @@
  * Cloudflare Pages Function: POST /api/contact
  *
  * Sends contact form submissions to an email inbox using Resend.
- * Includes Cloudflare Turnstile bot protection.
+ * Includes Cloudflare Turnstile bot protection and rate limiting.
  *
  * Required env vars (set in Cloudflare Pages -> Settings -> Environment variables):
  * - RESEND_API_KEY
@@ -11,7 +11,13 @@
  * Optional env vars:
  * - CONTACT_TO_EMAIL (defaults to thinkjoshi@gmail.com)
  * - CONTACT_FROM_EMAIL (defaults to noreply@contact.techsergy.com)
+ *
+ * Rate limits:
+ * - 3 requests per minute per IP
+ * - 10 requests per hour per IP
  */
+
+import { checkRateLimit, recordRequest } from '../utils/rateLimit.js';
 
 const DEFAULT_TO_EMAIL = 'thinkjoshi@gmail.com';
 
@@ -56,6 +62,20 @@ export async function onRequestOptions() {
 export async function onRequestPost(context) {
   try {
     const { request, env } = context;
+
+    // Extract client IP for rate limiting
+    const clientIP = request.headers.get('CF-Connecting-IP') || 'unknown';
+
+    // Check rate limit
+    if (env.RATE_LIMIT) {
+      const rateLimitCheck = await checkRateLimit(env.RATE_LIMIT, clientIP);
+      if (!rateLimitCheck.allowed) {
+        return jsonResponse(429, {
+          ok: false,
+          error: rateLimitCheck.reason || 'Too many requests. Please try again later.',
+        });
+      }
+    }
 
     let body;
     try {
@@ -174,6 +194,11 @@ export async function onRequestPost(context) {
         providerStatus: resp.status,
         providerBody: errText.slice(0, 2000),
       });
+    }
+
+    // Record successful request for rate limiting
+    if (env.RATE_LIMIT) {
+      await recordRequest(env.RATE_LIMIT, clientIP);
     }
 
     return jsonResponse(200, { ok: true });
