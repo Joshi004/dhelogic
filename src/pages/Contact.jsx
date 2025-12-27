@@ -62,51 +62,36 @@ const Contact = () => {
 
   // Explicitly render Turnstile widget when script is loaded
   useEffect(() => {
-    console.log('[Turnstile] Component mounted, checking script availability...', {
-      hasTurnstile: !!window.turnstile,
-      hasRef: !!turnstileRef.current,
-    });
-
     const renderWidget = () => {
       if (!window.turnstile || !turnstileRef.current || widgetIdRef.current !== null) {
         return;
       }
 
-      console.log('[Turnstile] Rendering widget explicitly...');
-
       try {
         widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
           sitekey: '0x4AAAAAACJQJ83A7LaSE-oT',
           callback: (token) => {
-            console.log('[Turnstile] Success callback - token received', token.substring(0, 20) + '...');
             setTurnstileToken(token);
           },
           'expired-callback': () => {
-            console.log('[Turnstile] Token expired');
             setTurnstileToken('');
           },
           'error-callback': () => {
-            console.log('[Turnstile] Error occurred');
             setTurnstileToken('');
           },
         });
-        console.log('[Turnstile] Widget rendered successfully, ID:', widgetIdRef.current);
       } catch (error) {
-        console.error('[Turnstile] Error rendering widget:', error);
+        console.error('Turnstile error:', error);
       }
     };
 
     // Try to render immediately if script is already loaded
     if (window.turnstile) {
-      console.log('[Turnstile] Script already loaded, rendering now...');
       renderWidget();
     } else {
       // Wait for script to load
-      console.log('[Turnstile] Script not loaded yet, polling...');
       const checkInterval = setInterval(() => {
-        console.log('[Turnstile] Checking for script...');
         if (window.turnstile) {
-          console.log('[Turnstile] Script loaded! Rendering widget...');
           clearInterval(checkInterval);
           renderWidget();
         }
@@ -115,14 +100,12 @@ const Contact = () => {
       // Stop checking after 10 seconds
       const timeout = setTimeout(() => {
         clearInterval(checkInterval);
-        console.warn('[Turnstile] Script did not load within 10 seconds');
       }, 10000);
 
       return () => {
         clearInterval(checkInterval);
         clearTimeout(timeout);
         if (widgetIdRef.current !== null && window.turnstile) {
-          console.log('[Turnstile] Cleaning up widget');
           window.turnstile.remove(widgetIdRef.current);
           widgetIdRef.current = null;
         }
@@ -131,7 +114,6 @@ const Contact = () => {
 
     return () => {
       if (widgetIdRef.current !== null && window.turnstile) {
-        console.log('[Turnstile] Cleaning up widget');
         window.turnstile.remove(widgetIdRef.current);
         widgetIdRef.current = null;
       }
@@ -163,7 +145,6 @@ const Contact = () => {
         setTurnstileToken('');
         // Reset Turnstile widget
         if (window.turnstile && widgetIdRef.current !== null) {
-          console.log('[Turnstile] Resetting widget after successful submission');
           window.turnstile.reset(widgetIdRef.current);
         }
       } else {
