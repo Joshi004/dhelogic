@@ -43,6 +43,7 @@ const Contact = () => {
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
   const [turnstileToken, setTurnstileToken] = useState('');
   const turnstileRef = useRef(null);
+  const widgetIdRef = useRef(null);
 
   const {
     control,
@@ -59,24 +60,81 @@ const Contact = () => {
     },
   });
 
-  // Setup global Turnstile callbacks
+  // Explicitly render Turnstile widget when script is loaded
   useEffect(() => {
-    window.onTurnstileSuccess = (token) => {
-      setTurnstileToken(token);
+    console.log('[Turnstile] Component mounted, checking script availability...', {
+      hasTurnstile: !!window.turnstile,
+      hasRef: !!turnstileRef.current,
+    });
+
+    const renderWidget = () => {
+      if (!window.turnstile || !turnstileRef.current || widgetIdRef.current !== null) {
+        return;
+      }
+
+      console.log('[Turnstile] Rendering widget explicitly...');
+
+      try {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: '0x4AAAAAACJQJ83A7LaSE-oT',
+          callback: (token) => {
+            console.log('[Turnstile] Success callback - token received', token.substring(0, 20) + '...');
+            setTurnstileToken(token);
+          },
+          'expired-callback': () => {
+            console.log('[Turnstile] Token expired');
+            setTurnstileToken('');
+          },
+          'error-callback': () => {
+            console.log('[Turnstile] Error occurred');
+            setTurnstileToken('');
+          },
+        });
+        console.log('[Turnstile] Widget rendered successfully, ID:', widgetIdRef.current);
+      } catch (error) {
+        console.error('[Turnstile] Error rendering widget:', error);
+      }
     };
 
-    window.onTurnstileExpired = () => {
-      setTurnstileToken('');
-    };
+    // Try to render immediately if script is already loaded
+    if (window.turnstile) {
+      console.log('[Turnstile] Script already loaded, rendering now...');
+      renderWidget();
+    } else {
+      // Wait for script to load
+      console.log('[Turnstile] Script not loaded yet, polling...');
+      const checkInterval = setInterval(() => {
+        console.log('[Turnstile] Checking for script...');
+        if (window.turnstile) {
+          console.log('[Turnstile] Script loaded! Rendering widget...');
+          clearInterval(checkInterval);
+          renderWidget();
+        }
+      }, 100);
 
-    window.onTurnstileError = () => {
-      setTurnstileToken('');
-    };
+      // Stop checking after 10 seconds
+      const timeout = setTimeout(() => {
+        clearInterval(checkInterval);
+        console.warn('[Turnstile] Script did not load within 10 seconds');
+      }, 10000);
+
+      return () => {
+        clearInterval(checkInterval);
+        clearTimeout(timeout);
+        if (widgetIdRef.current !== null && window.turnstile) {
+          console.log('[Turnstile] Cleaning up widget');
+          window.turnstile.remove(widgetIdRef.current);
+          widgetIdRef.current = null;
+        }
+      };
+    }
 
     return () => {
-      delete window.onTurnstileSuccess;
-      delete window.onTurnstileExpired;
-      delete window.onTurnstileError;
+      if (widgetIdRef.current !== null && window.turnstile) {
+        console.log('[Turnstile] Cleaning up widget');
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
     };
   }, []);
 
@@ -104,8 +162,9 @@ const Contact = () => {
         reset();
         setTurnstileToken('');
         // Reset Turnstile widget
-        if (window.turnstile && turnstileRef.current) {
-          window.turnstile.reset(turnstileRef.current);
+        if (window.turnstile && widgetIdRef.current !== null) {
+          console.log('[Turnstile] Resetting widget after successful submission');
+          window.turnstile.reset(widgetIdRef.current);
         }
       } else {
         setSnackbar({
@@ -332,14 +391,7 @@ const Contact = () => {
                           my: 2,
                         }}
                       >
-                        <div
-                          ref={turnstileRef}
-                          className="cf-turnstile"
-                          data-sitekey="0x4AAAAAACJQJ83A7LaSE-oT"
-                          data-callback="onTurnstileSuccess"
-                          data-expired-callback="onTurnstileExpired"
-                          data-error-callback="onTurnstileError"
-                        />
+                        <div ref={turnstileRef} />
                       </Box>
                     </Grid>
                     <Grid size={12}>
