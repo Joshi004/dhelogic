@@ -57,6 +57,7 @@ const Contact = () => {
       company: '',
       service: '',
       message: '',
+      website: '', // Honeypot field
     },
   });
 
@@ -129,6 +130,7 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          website: data.website, // Honeypot field
           'cf-turnstile-response': turnstileToken,
         }),
       });
@@ -360,6 +362,23 @@ const Contact = () => {
                             error={!!errors.message}
                             helperText={errors.message?.message}
                             placeholder="Tell us about your project, goals, and timeline..."
+                          />
+                        )}
+                      />
+                    </Grid>
+                    {/* Honeypot field - hidden from users, catches bots */}
+                    <Grid size={12} sx={{ position: 'absolute', left: '-9999px' }}>
+                      <Controller
+                        name="website"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            label="Website"
+                            fullWidth
+                            tabIndex={-1}
+                            autoComplete="off"
+                            aria-hidden="true"
                           />
                         )}
                       />
