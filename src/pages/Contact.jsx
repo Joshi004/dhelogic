@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -173,6 +174,11 @@ const Contact = () => {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Contact Us | TechSergy - Start a Project</title>
+        <meta name="description" content="Ready to build something? Get in touch with TechSergy. We respond within 24 hours. No hard sell, just a conversation about your project." />
+        <link rel="canonical" href="https://techsergy.com/contact" />
+      </Helmet>
       {/* Hero Section */}
       <Box
         sx={{

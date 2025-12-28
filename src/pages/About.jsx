@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -80,6 +81,11 @@ const processSteps = [
 const About = () => {
   return (
     <PageTransition>
+      <Helmet>
+        <title>About Us | TechSergy - Engineers from Apple & Tether</title>
+        <meta name="description" content="TechSergy is a small IT consultancy run by engineers from Apple, Tether, and fast-growing startups. We help companies ship better software, faster." />
+        <link rel="canonical" href="https://techsergy.com/about" />
+      </Helmet>
       {/* Hero Section */}
       <Box
         sx={{

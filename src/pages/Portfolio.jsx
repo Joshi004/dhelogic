@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -135,6 +136,11 @@ const Portfolio = () => {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Our Work & Case Studies | TechSergy</title>
+        <meta name="description" content="See what we've built - from AI video analysis platforms processing 5M+ hours to custom web applications. Real projects, real results." />
+        <link rel="canonical" href="https://techsergy.com/portfolio" />
+      </Helmet>
       {/* Hero Section */}
       <Box
         sx={{

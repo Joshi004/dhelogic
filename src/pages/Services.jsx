@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -94,6 +95,11 @@ const services = [
 const Services = () => {
   return (
     <PageTransition>
+      <Helmet>
+        <title>AI/ML, Web Development & IT Services | TechSergy</title>
+        <meta name="description" content="Custom AI/ML solutions, web & mobile development, IT consulting, and staff augmentation. Expert developers who work directly with your team." />
+        <link rel="canonical" href="https://techsergy.com/services" />
+      </Helmet>
       {/* Hero Section */}
       <Box
         sx={{
