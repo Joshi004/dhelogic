@@ -1,0 +1,139 @@
+{
+  "id": "ats",
+  "title": "Algorithmic Trading System (ATS)",
+  "subtitle": "Automated trading platform",
+  "description": "A comprehensive trading automation platform built with microservices architecture, enabling algorithmic trading across multiple financial markets. Features pluggable broker integration, real-time market scanning, and automated strategy execution with robust state management and crash recovery.",
+  "color": "#10B981",
+  "gradient": "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+  "iconKey": "TrendingUp",
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": true
+  },
+  "status": {
+    "isOngoing": true,
+    "label": "In Development"
+  },
+  "priorExperience": {
+    "enabled": false,
+    "note": ""
+  },
+  "technologies": ["Django", "React", "Redis", "MySQL", "Docker", "WebSocket", "Microservices", "Material UI"],
+  "results": [
+    { "metric": "6", "label": "Microservices" },
+    { "metric": "70%", "label": "Test Coverage" },
+    { "metric": "Multi-Broker", "label": "Support" }
+  ],
+  "portfolio": {
+    "projectSummary": "We built an algorithmic trading system that automates trading strategies across multiple financial markets. The platform features a modular, pluggable architecture allowing seamless integration with various broker APIs—from stock exchanges to cryptocurrency platforms—enabling traders to execute sophisticated strategies 24/7.",
+    "challenges": [
+      {
+        "title": "Real-Time Market Scanning at Scale",
+        "description": "Processing thousands of financial instruments in real-time while maintaining low latency. The system needed to scan multiple markets simultaneously, analyze multi-timeframe data, and detect trading opportunities without overwhelming computational resources.",
+        "iconKey": "Speed"
+      },
+      {
+        "title": "Multi-Broker Integration",
+        "description": "Each broker has different APIs, authentication flows, and data formats. We needed a flexible architecture that could connect to any trading platform without rewriting core logic—supporting stocks, crypto, derivatives, and custom markets.",
+        "iconKey": "IntegrationInstructions"
+      },
+      {
+        "title": "State Persistence & Crash Recovery",
+        "description": "Trading systems must be resilient. If the system crashes mid-trade or during market scanning, it needs to recover gracefully without losing position information, pending orders, or scanner progress. Financial operations cannot afford data loss.",
+        "iconKey": "CloudSync"
+      }
+    ],
+    "approach": [
+      {
+        "title": "Microservices Architecture",
+        "description": "Built six independent services communicating via Redis Streams: Gateway Service (auth), Trade Management Unit (sessions/P&L), Scanning Service (market analysis), Initiation Service (entry logic), Integration Service (broker APIs), and Session Monitor (health checks). This isolation enables independent scaling and fault tolerance."
+      },
+      {
+        "title": "Pluggable Algorithm Framework",
+        "description": "Implemented a strategy pattern for trading algorithms. Users select from available scanning, initiation, and termination strategies without code changes. Each algorithm is self-contained, making it easy to add new strategies or customize existing ones for specific markets."
+      },
+      {
+        "title": "Event-Driven Communication",
+        "description": "Used Redis Streams for asynchronous event processing between services. Scanning results trigger initiation events, which trigger execution events. This decoupling allows services to scale independently and provides natural retry mechanisms for failed operations."
+      },
+      {
+        "title": "State Management with Redis",
+        "description": "Implemented checkpoint-based progress tracking stored in Redis. Scanner state, active sessions, and pending operations are persisted continuously. On restart, the system resumes from the last checkpoint, preventing duplicate processing or missed opportunities."
+      },
+      {
+        "title": "Secure Credential Management",
+        "description": "All broker credentials are encrypted at rest using AES Fernet encryption. Credentials are only decrypted during API calls and never exposed in logs. OAuth flows are supported for brokers requiring token-based authentication."
+      }
+    ],
+    "technicalSolution": [
+      {
+        "title": "Container Orchestration",
+        "description": "Deployed as a multi-container Docker application with proper dependency management. Services include MySQL database, Redis message broker, main Django API, scanning daemon, and health monitor. Each service has health checks and automatic restart policies."
+      },
+      {
+        "title": "Real-Time Communication Layer",
+        "description": "Built WebSocket gateway using Django Channels for live updates to frontend. Clients subscribe to specific channels (trade updates, scanner events, session status). The system tracks active subscriptions to optimize resource usage—stopping unnecessary processing when no clients are listening."
+      },
+      {
+        "title": "Comprehensive Testing",
+        "description": "Achieved 70% test coverage using Pytest with factory-based test data generation. Unit tests cover core trading logic, integration tests verify service communication, and mocking ensures tests run without external broker connections."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Multi-Market Trading",
+        "description": "Connect to any broker or exchange through the pluggable integration layer. Trade traditional stocks, cryptocurrency, derivatives, or custom instruments from a unified interface.",
+        "iconKey": "ShowChart"
+      },
+      {
+        "title": "Automated Strategy Execution",
+        "description": "Run algorithmic trading strategies 24/7 with configurable scanning, entry, and exit logic. The system monitors markets continuously and executes trades based on predefined criteria.",
+        "iconKey": "Speed"
+      },
+      {
+        "title": "Real-Time Monitoring",
+        "description": "Live dashboard showing active sessions, recent trades, P&L tracking, and scanner activity. WebSocket-based updates ensure you always see current system state.",
+        "iconKey": "Analytics"
+      },
+      {
+        "title": "Paper Trading Mode",
+        "description": "Test strategies with simulated capital before risking real money. Paper trading runs through the same execution pipeline as live trading, ensuring strategy validation.",
+        "iconKey": "Security"
+      }
+    ],
+    "detailedResults": [
+      { "metric": "6", "label": "Microservices", "context": "Independent scalable services" },
+      { "metric": "70%", "label": "Test Coverage", "context": "Comprehensive automated testing" },
+      { "metric": "Multi-Broker", "label": "Integration", "context": "Pluggable broker architecture" },
+      { "metric": "Real-time", "label": "Processing", "context": "Live market scanning and execution" },
+      { "metric": "Crash Resilient", "label": "Recovery", "context": "State persistence and auto-resume" }
+    ],
+    "techStack": ["Python", "Django", "Django REST Framework", "React", "Material UI", "Redis", "MySQL", "Docker", "WebSocket", "JWT", "Pytest"]
+  },
+  "homepage": {
+    "useCases": [
+      {
+        "iconKey": "ShowChart",
+        "bgcolor": "rgba(16, 185, 129, 0.04)",
+        "borderColor": "rgba(16, 185, 129, 0.1)",
+        "iconBg": "#10B981",
+        "title": "Multi-Market Trading",
+        "description": "Connects to any broker or exchange with a pluggable architecture. Trade stocks, crypto, derivatives, and more from a single unified platform."
+      },
+      {
+        "iconKey": "Speed",
+        "bgcolor": "rgba(1, 69, 132, 0.04)",
+        "borderColor": "rgba(1, 69, 132, 0.1)",
+        "iconBg": "#014584",
+        "title": "Automated Strategy Execution",
+        "description": "Execute algorithmic trading strategies 24/7 with real-time monitoring, state persistence, and automatic crash recovery for uninterrupted operation."
+      }
+    ],
+    "metrics": [
+      { "value": "6", "label": "Microservices", "color": "#10B981" },
+      { "value": "70%", "label": "Test Coverage", "color": "#059669" },
+      { "value": "Multi-Broker", "label": "Support", "color": "#014584" }
+    ]
+  }
+}
+

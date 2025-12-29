@@ -1,0 +1,139 @@
+{
+  "id": "video-ai",
+  "title": "Video Analysis AI Platform",
+  "subtitle": "Intelligent search and moment detection at scale",
+  "description": "An AI system that analyzes video streams, detects objects, tracks movement, and identifies patterns. Built to handle millions of hours of video content with sub-second search times.",
+  "color": "#014584",
+  "gradient": "linear-gradient(135deg, #014584 0%, #0260a8 100%)",
+  "iconKey": "PlayCircleOutline",
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": true
+  },
+  "status": {
+    "isOngoing": true,
+    "label": "In Development"
+  },
+  "priorExperience": {
+    "enabled": false,
+    "note": ""
+  },
+  "technologies": ["AI/ML", "Computer Vision", "Python", "TensorFlow", "Real-time Processing", "Vector Search"],
+  "results": [
+    { "metric": "5M+", "label": "Hours of Video Processed" },
+    { "metric": "<500ms", "label": "Search Response Time" },
+    { "metric": "95%", "label": "Detection Accuracy" }
+  ],
+  "portfolio": {
+    "projectSummary": "We built a video analysis platform that does two things: finds specific moments from massive video libraries and enables intelligent search across actual video content—not just metadata.",
+    "challenges": [
+      {
+        "title": "Context Length Limits",
+        "description": "Videos can run 6-12 hours or longer. No current AI model can fit that much content into its context window. We needed a way to process massive videos without losing important information.",
+        "iconKey": "Analytics"
+      },
+      {
+        "title": "Temporal Alignment",
+        "description": "A video has multiple data streams: visuals, audio, speech, on-screen text, and metadata. These streams don't naturally align in time. Syncing them correctly is critical for accurate analysis.",
+        "iconKey": "AutoAwesome"
+      },
+      {
+        "title": "Scale",
+        "description": "The solution needed to work for millions of hours of video content. That's a different engineering problem than a demo that works on 10 videos.",
+        "iconKey": "Security"
+      }
+    ],
+    "approach": [
+      {
+        "title": "Multi-Stream Processing",
+        "description": "We created separate processing pipelines for each content stream: visual analysis for object detection and scene understanding, audio analysis for sounds and music, speech transcription for dialogue, and on-screen text extraction (OCR) for embedded information."
+      },
+      {
+        "title": "Vector Indexing Strategy",
+        "description": "We evaluated multiple approaches for creating searchable indexes. The solution uses rich vector embeddings generated from each stream, then merged into a unified index. This allows semantic search—finding content by meaning, not just keywords."
+      },
+      {
+        "title": "Smart Clustering",
+        "description": "We implemented clustering algorithms to group similar segments of video content. This serves two purposes: it identifies recurring patterns and reduces the computational load by processing representative samples rather than every frame."
+      },
+      {
+        "title": "Model Selection & Fine-Tuning",
+        "description": "We explored multiple models for each use case—video analysis, audio analysis, object detection. We then fine-tuned these models for the specific domain, improving accuracy significantly over off-the-shelf solutions."
+      },
+      {
+        "title": "Algorithmic Efficiency",
+        "description": "To work around model context limits, we developed mechanical approaches that reduce the load on AI models. We use less token-intensive streams (like transcription) to guide the heavier analysis, and semantic clustering of vectors to identify what actually needs detailed processing."
+      }
+    ],
+    "technicalSolution": [
+      {
+        "title": "Architecture Overview",
+        "description": "The system processes video through multiple parallel pipelines, generates embeddings for each content type, and stores them in a vector database optimized for similarity search. A query router determines the best search strategy based on the user's question."
+      },
+      {
+        "title": "Handling Long-Form Content",
+        "description": "For videos exceeding 6 hours, we segment the content into digestible chunks, process each segment independently, then use our clustering algorithms to maintain coherence across the full video. Research papers and our own experimentation guided this approach."
+      },
+      {
+        "title": "Extensibility",
+        "description": "The platform extends to content with minimal metadata—live streams, gaming videos, concerts—where moments are driven by viewer comments at specific timestamps rather than traditional scene detection."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Smart Moment Detection",
+        "description": "Finds the exact moments that matter from millions of hours of video. The system learns preferences and surfaces relevant content automatically.",
+        "iconKey": "AutoAwesome"
+      },
+      {
+        "title": "Deep Content Search",
+        "description": "Search through actual video content, not just titles and descriptions. Find objects, emotions, dialogue, and embedded text across entire libraries.",
+        "iconKey": "Search"
+      },
+      {
+        "title": "Content Moderation",
+        "description": "Automated detection of specific content types, behaviors, or policy violations at scale.",
+        "iconKey": "Security"
+      },
+      {
+        "title": "Archive Analysis",
+        "description": "Make decades of video content searchable and accessible without manual tagging.",
+        "iconKey": "Analytics"
+      }
+    ],
+    "detailedResults": [
+      { "metric": "5M+", "label": "Hours", "context": "Total video library the system handles" },
+      { "metric": "<500ms", "label": "Search Speed", "context": "Response time for complex semantic queries" },
+      { "metric": "95%", "label": "Detection Accuracy", "context": "Object and scene recognition precision" },
+      { "metric": "100+", "label": "Concurrent Streams", "context": "Video streams analyzed simultaneously" },
+      { "metric": "50ms", "label": "Processing Time", "context": "Per-frame analysis latency" }
+    ],
+    "techStack": ["Python", "TensorFlow", "PyTorch", "OpenCV", "Vector Databases", "GPU Clusters", "Kubernetes", "Real-time Streaming"]
+  },
+  "homepage": {
+    "useCases": [
+      {
+        "iconKey": "AutoAwesome",
+        "bgcolor": "rgba(1, 69, 132, 0.04)",
+        "borderColor": "rgba(1, 69, 132, 0.1)",
+        "iconBg": "primary.main",
+        "title": "Smart Moment Detection",
+        "description": "Finds the exact moments that matter to you from millions of hours of video. The system learns your preferences and surfaces what you actually want to see."
+      },
+      {
+        "iconKey": "Search",
+        "bgcolor": "rgba(16, 185, 129, 0.04)",
+        "borderColor": "rgba(16, 185, 129, 0.1)",
+        "iconBg": "#10B981",
+        "title": "Deep Content Search",
+        "description": "Search through actual video content, not just metadata. Find objects, emotions, dialogue, and embedded information across your entire library."
+      }
+    ],
+    "metrics": [
+      { "value": "Millions", "label": "Hours of Video", "color": "primary.main" },
+      { "value": "<500ms", "label": "Search Time", "color": "#10B981" },
+      { "value": "Full Content", "label": "Understanding", "color": "#014584" }
+    ]
+  }
+}
+

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -10,103 +10,29 @@ import IconButton from '@mui/material/IconButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionHeader from '../common/SectionHeader';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import SearchIcon from '@mui/icons-material/Search';
-import SpeedIcon from '@mui/icons-material/Speed';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-
-// Case Study Data
-const caseStudies = [
-  {
-    id: 'video-ai',
-    title: 'Video Analysis AI Solution',
-    subtitle: 'Intelligent Video Processing',
-    gradient: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
-    color: '#014584',
-    icon: <PlayCircleOutlineIcon sx={{ fontSize: 48, color: 'white' }} />,
-    technologies: [
-      { label: 'AI/ML', bgcolor: 'rgba(1, 69, 132, 0.1)', color: 'primary.main' },
-      { label: 'Computer Vision', bgcolor: 'rgba(1, 69, 132, 0.1)', color: '#014584' },
-      { label: 'Real-time Processing', bgcolor: 'rgba(16, 185, 129, 0.1)', color: '#10B981' },
-    ],
-    useCases: [
-      {
-        icon: <AutoAwesomeIcon sx={{ fontSize: 20 }} />,
-        bgcolor: 'rgba(1, 69, 132, 0.04)',
-        borderColor: 'rgba(1, 69, 132, 0.1)',
-        iconBg: 'primary.main',
-        title: 'Smart Moment Detection',
-        description: 'Finds the exact moments that matter to you from millions of hours of video. The system learns your preferences and surfaces what you actually want to see.',
-      },
-      {
-        icon: <SearchIcon sx={{ fontSize: 20 }} />,
-        bgcolor: 'rgba(16, 185, 129, 0.04)',
-        borderColor: 'rgba(16, 185, 129, 0.1)',
-        iconBg: '#10B981',
-        title: 'Deep Content Search',
-        description: 'Search through actual video content, not just metadata. Find objects, emotions, dialogue, and embedded information across your entire library.',
-      },
-    ],
-    metrics: [
-      { value: 'Millions', label: 'Hours of Video', color: 'primary.main' },
-      { value: '<500ms', label: 'Search Time', color: '#10B981' },
-      { value: 'Full Content', label: 'Understanding', color: '#014584' },
-    ],
-  },
-  {
-    id: 'ats',
-    title: 'Algorithmic Trading System',
-    subtitle: 'Automated Trading Platform',
-    gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-    color: '#10B981',
-    icon: <TrendingUpIcon sx={{ fontSize: 48, color: 'white' }} />,
-    technologies: [
-      { label: 'Django', bgcolor: 'rgba(16, 185, 129, 0.1)', color: '#10B981' },
-      { label: 'React', bgcolor: 'rgba(16, 185, 129, 0.1)', color: '#059669' },
-      { label: 'Microservices', bgcolor: 'rgba(1, 69, 132, 0.1)', color: '#014584' },
-    ],
-    useCases: [
-      {
-        icon: <ShowChartIcon sx={{ fontSize: 20 }} />,
-        bgcolor: 'rgba(16, 185, 129, 0.04)',
-        borderColor: 'rgba(16, 185, 129, 0.1)',
-        iconBg: '#10B981',
-        title: 'Multi-Market Trading',
-        description: 'Connects to any broker or exchange with a pluggable architecture. Trade stocks, crypto, derivatives, and more from a single unified platform.',
-      },
-      {
-        icon: <SpeedIcon sx={{ fontSize: 20 }} />,
-        bgcolor: 'rgba(1, 69, 132, 0.04)',
-        borderColor: 'rgba(1, 69, 132, 0.1)',
-        iconBg: '#014584',
-        title: 'Automated Strategy Execution',
-        description: 'Execute algorithmic trading strategies 24/7 with real-time monitoring, state persistence, and automatic crash recovery for uninterrupted operation.',
-      },
-    ],
-    metrics: [
-      { value: '6', label: 'Microservices', color: '#10B981' },
-      { value: '70%', label: 'Test Coverage', color: '#059669' },
-      { value: 'Multi-Broker', label: 'Support', color: '#014584' },
-    ],
-  },
-];
+import { getHomepageProjects } from '../../data/projects';
+import { getIcon } from '../../data/projects/iconMap.jsx';
 
 const FeaturedWork = () => {
+  const homepageProjects = getHomepageProjects();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % caseStudies.length);
+    setCurrentIndex((prev) => (prev + 1) % homepageProjects.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+    setCurrentIndex((prev) => (prev - 1 + homepageProjects.length) % homepageProjects.length);
   };
 
-  const currentStudy = caseStudies[currentIndex];
+  const currentStudy = homepageProjects[currentIndex];
+
+  // If no projects are available for the homepage, return null
+  if (homepageProjects.length === 0) {
+    return null;
+  }
 
   return (
     <Box
@@ -195,7 +121,7 @@ const FeaturedWork = () => {
                           border: '1px solid rgba(255, 255, 255, 0.3)',
                         }}
                       >
-                        {currentStudy.icon}
+                        {getIcon(currentStudy.iconKey, { sx: { fontSize: 48, color: 'white' } })}
                       </Box>
                       <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                         {currentStudy.title}
@@ -242,14 +168,14 @@ const FeaturedWork = () => {
                   <Box sx={{ p: { xs: 4, md: 6 } }}>
                     {/* Technology Chips */}
                     <Box sx={{ display: 'flex', gap: 1, mb: 3, flexWrap: 'wrap' }}>
-                      {currentStudy.technologies.map((tech, i) => (
+                      {currentStudy.technologies.slice(0, 3).map((tech, i) => (
                         <Chip
                           key={i}
-                          label={tech.label}
+                          label={tech}
                           size="small"
                           sx={{
-                            bgcolor: tech.bgcolor,
-                            color: tech.color,
+                            bgcolor: `${currentStudy.color}15`,
+                            color: currentStudy.color,
                             fontWeight: 500,
                           }}
                         />
@@ -266,7 +192,7 @@ const FeaturedWork = () => {
 
                     {/* Use Cases */}
                     <Grid container spacing={2} sx={{ mb: 4 }}>
-                      {currentStudy.useCases.map((useCase, i) => (
+                      {currentStudy.homepage.useCases.map((useCase, i) => (
                         <Grid size={12} key={i}>
                           <Box
                             sx={{
@@ -292,7 +218,7 @@ const FeaturedWork = () => {
                                 flexShrink: 0,
                               }}
                             >
-                              {useCase.icon}
+                              {getIcon(useCase.iconKey, { sx: { fontSize: 20 } })}
                             </Box>
                             <Box>
                               <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
@@ -309,7 +235,7 @@ const FeaturedWork = () => {
 
                     {/* Feature Highlights */}
                     <Grid container spacing={2} sx={{ mb: 4 }}>
-                      {currentStudy.metrics.map((feature, index) => (
+                      {currentStudy.homepage.metrics.map((feature, index) => (
                         <Grid size={4} key={index}>
                           <Box
                             sx={{
@@ -394,7 +320,7 @@ const FeaturedWork = () => {
               mt: 3,
             }}
           >
-            {caseStudies.map((_, index) => (
+            {homepageProjects.map((_, index) => (
               <Box
                 key={index}
                 onClick={() => setCurrentIndex(index)}
