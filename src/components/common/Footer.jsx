@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 
 const footerLinks = {
   company: [
@@ -19,6 +20,11 @@ const footerLinks = {
     { label: 'Web Development', path: '/services#web-dev' },
     { label: 'IT Consulting', path: '/services#consulting' },
     { label: 'Staff Augmentation', path: '/services#staff-augmentation' },
+  ],
+  contact: [
+    { label: 'sales@techsergy.com', href: 'mailto:sales@techsergy.com', description: 'New Business' },
+    { label: 'support@techsergy.com', href: 'mailto:support@techsergy.com', description: 'Customer Support' },
+    { label: 'info@techsergy.com', href: 'mailto:info@techsergy.com', description: 'General Info' },
   ],
 };
 
@@ -43,28 +49,21 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid container spacing={{ xs: 4, md: 6 }}>
           {/* Brand Section */}
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: '"General Sans", sans-serif',
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                mb: 2,
-              }}
-            >
-              TechSergy
-            </Typography>
-            <Typography
-              variant="body2Light"
-              sx={{ opacity: 0.78, mb: 3, maxWidth: 300 }}
-            >
-              We build technology with you, not just for you. Let's create something 
-              great together.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 1 }}>
+          <Grid size={{ xs: 12, md: 3 }} sx={{ display: 'flex', flexDirection: 'column' }}>
+            {/* Brand name + LinkedIn on same line */}
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: '"General Sans", sans-serif',
+                  fontWeight: 700,
+                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                TechSergy
+              </Typography>
               {socialLinks.map((social) => (
                 <IconButton
                   key={social.label}
@@ -73,6 +72,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
+                  size="small"
                   sx={{
                     color: 'rgba(255, 255, 255, 0.7)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -87,10 +87,54 @@ const Footer = () => {
                 </IconButton>
               ))}
             </Box>
+            <Typography
+              variant="body2Light"
+              sx={{ opacity: 0.78, mb: 2, maxWidth: 300 }}
+            >
+              We build technology with you, not just for you. Let's create something 
+              great together.
+            </Typography>
+            
+            {/* Status badge */}
+            <Box
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1,
+                px: 2,
+                py: 1,
+                mt: 1.25,
+                mb: 1.25,
+                bgcolor: 'rgba(245, 158, 11, 0.1)',
+                borderRadius: 2,
+                border: '1px solid rgba(245, 158, 11, 0.2)',
+                width: 'fit-content',
+              }}
+            >
+              <Box
+                sx={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: '50%',
+                  bgcolor: '#F59E0B',
+                  animation: 'pulse 2s infinite',
+                  '@keyframes pulse': {
+                    '0%, 100%': { opacity: 1 },
+                    '50%': { opacity: 0.5 },
+                  },
+                }}
+              />
+              <Typography
+                variant="body2Light"
+                sx={{ color: '#F59E0B', fontWeight: 500, fontSize: '0.8rem' }}
+              >
+                Available for projects
+              </Typography>
+            </Box>
           </Grid>
 
           {/* Company Links */}
-          <Grid size={{ xs: 6, sm: 4, md: 2 }}>
+          <Grid size={{ xs: 6, sm: 4, md: 3 }} sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography
               variant="overline"
               sx={{
@@ -125,7 +169,7 @@ const Footer = () => {
           </Grid>
 
           {/* Services Links */}
-          <Grid size={{ xs: 6, sm: 4, md: 3 }}>
+          <Grid size={{ xs: 6, sm: 4, md: 3 }} sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography
               variant="overline"
               sx={{
@@ -159,8 +203,8 @@ const Footer = () => {
             </Box>
           </Grid>
 
-          {/* Status */}
-          <Grid size={{ xs: 12, sm: 4, md: 3 }}>
+          {/* Contact */}
+          <Grid size={{ xs: 12, sm: 4, md: 3 }} sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography
               variant="overline"
               sx={{
@@ -169,39 +213,64 @@ const Footer = () => {
                 mb: 2,
               }}
             >
-              Status
+              Contact
             </Typography>
-            <Box
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 2,
-                py: 1,
-                bgcolor: 'rgba(245, 158, 11, 0.1)',
-                borderRadius: 2,
-                border: '1px solid rgba(245, 158, 11, 0.2)',
-              }}
-            >
-              <Box
-                sx={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: '50%',
-                  bgcolor: '#F59E0B',
-                  animation: 'pulse 2s infinite',
-                  '@keyframes pulse': {
-                    '0%, 100%': { opacity: 1 },
-                    '50%': { opacity: 0.5 },
-                  },
-                }}
-              />
-              <Typography
-                variant="body2Light"
-                sx={{ color: '#F59E0B', fontWeight: 500, fontSize: '0.8rem' }}
-              >
-                Available for projects
-              </Typography>
+            <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0, mb: 3 }}>
+              {footerLinks.contact.map((link) => (
+                <Box component="li" key={link.label} sx={{ mb: 2 }}>
+                  <Box
+                    component="a"
+                    href={link.href}
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 1.5,
+                      '&:hover': {
+                        color: 'white',
+                        '& .email-icon': {
+                          opacity: 1,
+                        },
+                      },
+                    }}
+                  >
+                    <EmailIcon 
+                      className="email-icon"
+                      sx={{ 
+                        fontSize: '1.1rem', 
+                        opacity: 0.6,
+                        mt: 0.25,
+                        transition: 'opacity 0.2s',
+                        flexShrink: 0,
+                      }} 
+                    />
+                    <Box sx={{ minWidth: 0 }}>
+                      <Typography
+                        sx={{
+                          fontSize: '0.875rem',
+                          fontWeight: 500,
+                          color: 'inherit',
+                          mb: 0.25,
+                          wordBreak: 'break-word',
+                        }}
+                      >
+                        {link.label}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontSize: '0.75rem',
+                          color: 'rgba(255, 255, 255, 0.5)',
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {link.description}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              ))}
             </Box>
           </Grid>
         </Grid>

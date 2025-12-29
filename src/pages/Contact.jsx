@@ -15,8 +15,6 @@ import { motion } from 'framer-motion';
 import { useForm, Controller } from 'react-hook-form';
 import PageTransition from '../components/common/PageTransition';
 import SendIcon from '@mui/icons-material/Send';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const services = [
   { value: 'ai-ml', label: 'AI/ML Solutions & Data Analytics' },
@@ -24,19 +22,6 @@ const services = [
   { value: 'consulting', label: 'IT Strategy & Consulting' },
   { value: 'staff-augmentation', label: 'Staff Augmentation' },
   { value: 'other', label: 'Other / Not Sure' },
-];
-
-const contactInfo = [
-  {
-    icon: <LocationOnIcon sx={{ fontSize: 24 }} />,
-    title: 'Location',
-    content: 'Remote-first Company',
-    subtitle: 'Serving clients worldwide',
-  },
-];
-
-const socialLinks = [
-  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/company/techsergy' },
 ];
 
 const Contact = () => {
@@ -242,20 +227,17 @@ const Contact = () => {
 
       {/* Contact Section */}
       <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'white' }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={{ xs: 4, md: 8 }}>
-            {/* Contact Form */}
-            <Grid size={{ xs: 12, md: 7 }}>
-              <Card
-                component={motion.div}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                sx={{
-                  p: { xs: 3, md: 5 },
-                  boxShadow: '0 4px 20px rgba(15, 23, 42, 0.08)',
-                }}
-              >
+        <Container maxWidth="md">
+          <Card
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            sx={{
+              p: { xs: 3, md: 5 },
+              boxShadow: '0 4px 20px rgba(15, 23, 42, 0.08)',
+            }}
+          >
                 <Typography variant="h4" sx={{ mb: 1, fontWeight: 700 }}>
                   Send Us a Message
                 </Typography>
@@ -416,154 +398,6 @@ const Contact = () => {
                   </Grid>
                 </Box>
               </Card>
-            </Grid>
-
-            {/* Contact Info */}
-            <Grid size={{ xs: 12, md: 5 }}>
-              <Box
-                component={motion.div}
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                {/* Contact Cards */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, mb: 4 }}>
-                  {contactInfo.map((info, index) => (
-                    <Card
-                      key={index}
-                      component={motion.div}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                      sx={{
-                        p: 3,
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 2.5,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: 52,
-                          height: 52,
-                          borderRadius: 2.5,
-                          bgcolor: 'rgba(1, 69, 132, 0.1)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'primary.main',
-                          flexShrink: 0,
-                        }}
-                      >
-                        {info.icon}
-                      </Box>
-                      <Box>
-                        <Typography
-                          variant="overline"
-                          sx={{
-                            color: 'text.secondary',
-                            letterSpacing: '0.1em',
-                            fontSize: '0.7rem',
-                          }}
-                        >
-                          {info.title}
-                        </Typography>
-                        <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
-                          {info.content}
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                          {info.subtitle}
-                        </Typography>
-                      </Box>
-                    </Card>
-                  ))}
-                </Box>
-
-                {/* Response Promise */}
-                <Card
-                  component={motion.div}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.5 }}
-                  sx={{
-                    p: 4,
-                    background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
-                    color: 'white',
-                    textAlign: 'center',
-                    mb: 4,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      bgcolor: 'rgba(255, 255, 255, 0.2)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      mx: 'auto',
-                      mb: 2,
-                    }}
-                  >
-                    <Typography sx={{ fontSize: '1.75rem' }}>⚡</Typography>
-                  </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                    Fast Responses
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.95)' }}>
-                    Send a message and expect a real response within a day - from an actual person.
-                  </Typography>
-                </Card>
-
-                {/* Social Links */}
-                <Box>
-                  <Typography
-                    variant="overline"
-                    sx={{
-                      color: 'text.secondary',
-                      letterSpacing: '0.1em',
-                      mb: 2,
-                      display: 'block',
-                    }}
-                  >
-                    Connect With Us
-                  </Typography>
-                  <Box sx={{ display: 'flex', gap: 1.5 }}>
-                    {socialLinks.map((social, index) => (
-                      <Box
-                        key={index}
-                        component="a"
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                          width: 48,
-                          height: 48,
-                          borderRadius: 2,
-                          bgcolor: 'background.surface',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'text.secondary',
-                          border: '1px solid',
-                          borderColor: 'divider',
-                          transition: 'all 0.2s',
-                          '&:hover': {
-                            color: 'primary.main',
-                            borderColor: 'primary.main',
-                            bgcolor: 'rgba(1, 69, 132, 0.04)',
-                          },
-                        }}
-                      >
-                        {social.icon}
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-              </Box>
-            </Grid>
-          </Grid>
         </Container>
       </Box>
 
