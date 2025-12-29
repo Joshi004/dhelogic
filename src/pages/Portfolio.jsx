@@ -25,6 +25,14 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SpeedIcon from '@mui/icons-material/Speed';
 import CloudSyncIcon from '@mui/icons-material/CloudSync';
 import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
+import LanguageIcon from '@mui/icons-material/Language';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import LoopIcon from '@mui/icons-material/Loop';
+import GavelIcon from '@mui/icons-material/Gavel';
+import BusinessIcon from '@mui/icons-material/Business';
+import LockIcon from '@mui/icons-material/Lock';
+import StarIcon from '@mui/icons-material/Star';
 
 // Video Analysis AI Case Study Data
 const videoAICaseStudy = {
@@ -246,10 +254,131 @@ const atsCaseStudy = {
   techStack: ['Python', 'Django', 'Django REST Framework', 'React', 'Material UI', 'Redis', 'MySQL', 'Docker', 'WebSocket', 'JWT', 'Pytest'],
 };
 
+// Digital Privacy Protection Platform Case Study Data
+const privacyPlatformCaseStudy = {
+  id: 'privacy-platform',
+  color: '#8B5CF6',
+  icon: <PrivacyTipIcon sx={{ fontSize: 48 }} />,
+  
+  // Summary (Always Visible)
+  title: 'Digital Privacy Protection Platform',
+  subtitle: 'AI-powered digital footprint detection and removal',
+  description: 'An intelligent platform that discovers your personal information across hundreds of data broker websites and automates opt-out requests to remove your digital footprint. Built for privacy-conscious individuals, public figures, and professionals who need to protect their online presence.',
+  technologies: ['AI/ML', 'NER (Named Entity Recognition)', 'Python', 'Node.js', 'Event-Driven Architecture', 'Privacy Tech'],
+  results: [
+    { metric: '500+', label: 'Data Brokers Monitored' },
+    { metric: 'Millions', label: 'Daily Crawls' },
+    { metric: 'Flexible', label: 'Scan Frequency' },
+  ],
+  
+  // Expanded Content
+  projectSummary: 'We built a comprehensive digital privacy platform that tackles a growing problem: your personal information is scattered across hundreds of data broker websites, being bought and sold without your knowledge. This platform automates the discovery and removal of personal data from these brokers, giving individuals control over their digital footprint. The system serves privacy-conscious users including public figures, media personalities, legal professionals (judges, attorneys), and anyone concerned about their personal data being exposed online. It continuously monitors data brokers based on flexible scan schedules—from daily monitoring for high-risk individuals to weekly, monthly, or quarterly scans—and automatically submits opt-out requests, tracking the removal process and providing detailed reports.',
+  
+  challenges: [
+    {
+      title: 'Scale of Data Broker Ecosystem',
+      description: 'There are 500+ data brokers operating legally in the US, Europe, and other markets. Each broker has different website structures, opt-out processes, and data formats. Manually tracking and removing data from all these sources is practically impossible for individuals.',
+      icon: <LanguageIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      title: 'Anti-Crawling Measures',
+      description: 'Data brokers don\'t want their data scraped or automated opt-out requests sent—it\'s against their business model. They employ CAPTCHAs (Cloudflare, reCAPTCHA, hCaptcha), rate limiting, IP blocking, and frequently change their website structure to break crawlers.',
+      icon: <SecurityIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      title: 'Data Matching Accuracy',
+      description: 'With a common name like "James Smith," a single search might return hundreds of results. The system needs to accurately identify which profiles actually belong to our user vs. other people with similar names, using address, phone number, relatives, and other contextual data.',
+      icon: <PersonSearchIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      title: 'Opt-Out Complexity',
+      description: 'Sending opt-out requests at scale creates problems: domain reputation damage, email blocking, and tracking which requests succeeded. Data also resurfaces—brokers frequently re-acquire data, requiring continuous monitoring and re-submission at varying intervals based on user needs.',
+      icon: <LoopIcon sx={{ fontSize: 32 }} />,
+    },
+  ],
+  
+  approach: [
+    {
+      title: 'AI-Powered Structure-Agnostic Crawling',
+      description: 'We developed a crawling system that doesn\'t rely on fixed selectors or page structures. Using models like BART and custom NER (Named Entity Recognition) models, the system understands page content semantically. When a data broker changes their website, our crawlers adapt automatically instead of breaking.',
+    },
+    {
+      title: 'Multi-Model Pipeline Architecture',
+      description: 'Rather than using a single large commercial LLM (which would expose sensitive user data), we built a pipeline of specialized smaller models: Content Extraction to strip ads and noise, NER Model to extract names and organizations, Regex Patterns for structured data extraction, and a Ranking Model to score and match results to the correct user profile.',
+    },
+    {
+      title: 'Intelligent Permutation Search',
+      description: 'We generate multiple search permutations from user data (name + city, name + phone, last name + address, name + school, etc.) to maximize discovery across brokers that index data differently.',
+    },
+    {
+      title: 'ML-Based Profile Ranking',
+      description: 'With potentially 100+ results for a common name, our ranking algorithm scores each profile based on multiple matching factors (address match, age match, relative names, etc.) to identify which profiles truly belong to our user with high confidence.',
+    },
+    {
+      title: 'Event-Driven Processing at Scale',
+      description: 'Using Kafka for message queuing, the system handles millions of daily crawls asynchronously. Each step (scan, extract, rank, submit opt-out) is a separate event, allowing horizontal scaling and fault tolerance.',
+    },
+  ],
+  
+  technicalSolution: [
+    {
+      title: 'Architecture Overview',
+      description: 'The platform consists of multiple components working together: Core Application (Django) for user management, Crawler Services (Node.js) for distributed crawling, ML Pipeline (FastAPI + Python) hosting NER and ranking models, Message Queue (Kafka) coordinating millions of crawl jobs, State Management (Redis) for distributed locking, Frontend (Angular) for user dashboard, and Browser Extension (React) for internal manual processing.',
+    },
+    {
+      title: 'Handling Anti-Bot Measures',
+      description: 'We implemented a combination of in-house CAPTCHA solving for simple cases and third-party services for complex ones (Cloudflare, etc.), integration with proxy rotation services, multiple sending domains to preserve email reputation, and intelligent throttling to avoid detection while maintaining throughput.',
+    },
+    {
+      title: 'Continuous Monitoring',
+      description: 'The system runs on a flexible subscription model where users can choose their scan frequency based on their plan—ranging from daily scans for high-priority cases to weekly, monthly, or quarterly scans. When data resurfaces (as it often does), new opt-out requests are automatically submitted and tracked.',
+    },
+    {
+      title: 'Reporting & Documentation',
+      description: 'For each removal, the system captures before screenshots (evidence that the data existed), after screenshots (proof of removal), and generates comprehensive monthly reports summarizing all discoveries and removals.',
+    },
+  ],
+  
+  useCases: [
+    {
+      title: 'Public Figure Protection',
+      description: 'Celebrities, influencers, media personalities, and public figures can protect themselves from stalking, harassment, and doxxing by removing their personal address, phone number, and family information from public databases.',
+      icon: <StarIcon sx={{ fontSize: 24 }} />,
+    },
+    {
+      title: 'Legal Professional Safety',
+      description: 'Judges, prosecutors, attorneys, and law enforcement personnel face unique risks from individuals with grievances. Removing their personal information from data brokers helps protect them and their families.',
+      icon: <GavelIcon sx={{ fontSize: 24 }} />,
+    },
+    {
+      title: 'Executive Privacy',
+      description: 'Business executives and high-net-worth individuals protect themselves from social engineering attacks, identity theft, and targeted scams by minimizing their exposed personal data.',
+      icon: <BusinessIcon sx={{ fontSize: 24 }} />,
+    },
+    {
+      title: 'Personal Privacy',
+      description: 'Privacy-conscious individuals who simply don\'t want their personal information sold and traded online can reclaim control over their digital footprint.',
+      icon: <LockIcon sx={{ fontSize: 24 }} />,
+    },
+  ],
+  
+  detailedResults: [
+    { metric: '500+', label: 'Data Brokers', context: 'Monitored across US and Europe' },
+    { metric: 'Millions', label: 'Daily Crawls', context: 'Permutation searches across all brokers' },
+    { metric: 'Flexible', label: 'Scan Frequency', context: 'Daily, weekly, monthly, or quarterly based on plan' },
+    { metric: '95%+', label: 'Match Accuracy', context: 'ML ranking model precision for profile matching' },
+    { metric: '<24hr', label: 'Initial Scan', context: 'First comprehensive scan completion time' },
+    { metric: 'Automated', label: 'Opt-Outs', context: 'No manual intervention for standard removals' },
+  ],
+  
+  techStack: ['Python', 'Django', 'FastAPI', 'Node.js', 'Kafka', 'Redis', 'BART', 'NER Models', 'LangChain', 'Puppeteer', 'Angular', 'React', 'TypeScript', 'Docker', 'Kubernetes'],
+};
+
 const Portfolio = () => {
   const [expandedStudies, setExpandedStudies] = useState({
     'video-ai': false,
     'ats': false,
+    'privacy-platform': false,
   });
 
   const toggleExpanded = (studyId) => {
@@ -287,7 +416,9 @@ const Portfolio = () => {
             height: { xs: 300, md: 400 },
             background: caseStudy.id === 'video-ai' 
               ? 'linear-gradient(135deg, #014584 0%, #0260a8 100%)'
-              : 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+              : caseStudy.id === 'ats'
+              ? 'linear-gradient(135deg, #10B981 0%, #059669 100%)'
+              : 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -377,7 +508,7 @@ const Portfolio = () => {
                 label={tech}
                 size="small"
                 sx={{
-                  bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                  bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : caseStudy.id === 'ats' ? '16, 185, 129' : '139, 92, 246'}, 0.1)`,
                   color: caseStudy.color,
                   fontWeight: 500,
                 }}
@@ -454,7 +585,7 @@ const Portfolio = () => {
                 color: caseStudy.color,
                 '&:hover': {
                   borderColor: caseStudy.color,
-                  bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.04)`,
+                  bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : caseStudy.id === 'ats' ? '16, 185, 129' : '139, 92, 246'}, 0.04)`,
                 },
               }}
             >
@@ -524,7 +655,7 @@ const Portfolio = () => {
                             width: 48,
                             height: 48,
                             borderRadius: 2,
-                            bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                            bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : caseStudy.id === 'ats' ? '16, 185, 129' : '139, 92, 246'}, 0.1)`,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -653,7 +784,7 @@ const Portfolio = () => {
                             width: 40,
                             height: 40,
                             borderRadius: 2,
-                            bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                            bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : caseStudy.id === 'ats' ? '16, 185, 129' : '139, 92, 246'}, 0.1)`,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -753,7 +884,7 @@ const Portfolio = () => {
                       label={tech}
                       size="medium"
                       sx={{
-                        bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                        bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : caseStudy.id === 'ats' ? '16, 185, 129' : '139, 92, 246'}, 0.1)`,
                         color: caseStudy.color,
                         fontWeight: 500,
                       }}
@@ -847,6 +978,7 @@ const Portfolio = () => {
         <Container maxWidth="lg">
           {renderCaseStudy(videoAICaseStudy)}
           {renderCaseStudy(atsCaseStudy)}
+          {renderCaseStudy(privacyPlatformCaseStudy)}
         </Container>
       </Box>
 
