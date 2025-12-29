@@ -20,7 +20,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const services = [
   { value: 'ai-ml', label: 'AI/ML Solutions & Data Analytics' },
-  { value: 'web-dev', label: 'Web & Mobile Development' },
+  { value: 'web-dev', label: 'Application Development' },
   { value: 'consulting', label: 'IT Strategy & Consulting' },
   { value: 'staff-augmentation', label: 'Staff Augmentation' },
   { value: 'other', label: 'Other / Not Sure' },

@@ -41,18 +41,17 @@ const services = [
   {
     id: 'web-dev',
     icon: <WebIcon sx={{ fontSize: 40 }} />,
-    title: 'Web & Mobile Development',
+    title: 'Application Development',
     subtitle: 'Full-stack development',
-    description: 'We build web and mobile applications. Frontend, backend, databases, APIs, deployment - the whole thing. Whatever your stack, we can work with it or help you choose the right one.',
+    description: 'We build web applications. Frontend, backend, databases, APIs, deployment - the whole thing. Whatever your stack, we can work with it or help you choose the right one.',
     features: [
       'React & Next.js Applications',
-      'Mobile Apps (iOS & Android)',
       'Backend APIs & Microservices',
       'Database Design & Optimization',
       'REST & GraphQL APIs',
       'Performance Optimization',
     ],
-    technologies: ['React', 'Next.js', 'React Native', 'Node.js', 'Python', 'Java', 'TypeScript', 'PostgreSQL', 'MongoDB', 'GraphQL'],
+    technologies: ['React', 'Next.js', 'Node.js', 'Python', 'Java', 'TypeScript', 'PostgreSQL', 'MongoDB', 'GraphQL'],
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.08)',
   },
@@ -97,7 +96,7 @@ const Services = () => {
     <PageTransition>
       <Helmet>
         <title>AI/ML, Web Development & IT Services | TechSergy</title>
-        <meta name="description" content="Custom AI/ML solutions, web & mobile development, IT consulting, and staff augmentation. Expert developers who work directly with your team." />
+        <meta name="description" content="Custom AI/ML solutions, application development, IT consulting, and staff augmentation. Expert developers who work directly with your team." />
         <link rel="canonical" href="https://techsergy.com/services" />
       </Helmet>
       {/* Hero Section */}

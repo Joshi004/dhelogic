@@ -25,8 +25,8 @@ const services = [
   },
   {
     icon: <WebIcon sx={{ fontSize: 32 }} />,
-    title: 'Web & Mobile Development',
-    description: 'Clean, fast websites and apps. We focus on getting things working first, then making them beautiful.',
+    title: 'Application Development',
+    description: 'Clean, fast web applications. We focus on getting things working first, then making them beautiful.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
