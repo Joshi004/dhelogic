@@ -1,0 +1,128 @@
+{
+  "id": "contract-digitization",
+  "title": "Enterprise Contract Digitization Platform",
+  "subtitle": "AI-powered contract intelligence at scale",
+  "description": "An intelligent platform that transforms millions of legacy contracts into searchable, digitized repositories using ML-powered extraction. Built for enterprise companies to unlock contract intelligence, prevent revenue leakage, and enable non-legal personnel to access critical contract data at their fingertips.",
+  "color": "#1E40AF",
+  "gradient": "linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%)",
+  "iconKey": "Gavel",
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": false
+  },
+  "status": {
+    "isOngoing": false,
+    "label": ""
+  },
+  "priorExperience": {
+    "enabled": true,
+    "note": "Developed through leadership experience at a prior organization"
+  },
+  "technologies": ["Python", "Django", "Ruby on Rails", "React", "LegolBERT", "YOLO", "RAG", "Qdrant", "Milvus", "Kafka", "Redis", "AWS"],
+  "results": [
+    { "metric": "80-90%", "label": "Speed Improvement" },
+    { "metric": "Millions", "label": "Contracts Processed" },
+    { "metric": "30-40%", "label": "Cost Reduction" }
+  ],
+  "portfolio": {
+    "projectSummary": "We built an enterprise contract digitization platform that solves a critical problem: companies with 10-20+ years of history accumulate millions of contracts that become inaccessible sources of truth. This creates significant revenue leakage—companies lose money on renewals, pricing, and compliance because salespeople can't interpret legal contracts and legal teams can't read millions of documents. Our platform ingests contracts at scale, uses ML-powered extraction with RAG systems and specialized models (LegolBERT, YOLO), and provides a searchable repository that puts contract intelligence at anyone's fingertips. Through a two-phase transformation—first optimizing architecture and UX (30-40% improvement), then implementing ML pipelines (80-90% improvement)—we enabled exponential rather than linear business scaling.",
+    "challenges": [
+      {
+        "title": "Scale and Volume",
+        "description": "Enterprise companies accumulate millions of contracts spanning 100-200 pages each. No human team can process this volume—it would require prohibitively large legal teams. The sheer magnitude makes contracts effectively inaccessible despite being the source of truth for customer relationships, pricing, and obligations.",
+        "iconKey": "Analytics"
+      },
+      {
+        "title": "Legacy System Bottlenecks",
+        "description": "The original monolithic architecture couldn't scale. The UI forced context switching—legal teams had to open PDFs in separate tabs while filling forms. Loading 100-200 page PDFs took too long, creating frustrating delays. These architectural and UX issues severely limited digitization throughput.",
+        "iconKey": "AccountTree"
+      },
+      {
+        "title": "Legal-Technical Knowledge Gap",
+        "description": "Salespeople need contract data for renewals and pricing but aren't trained to interpret complex legal language. Legal teams become bottlenecks for every contract query. This knowledge gap directly causes revenue leakage when non-legal personnel can't access critical contract terms.",
+        "iconKey": "Gavel"
+      },
+      {
+        "title": "ML Context Window Limits",
+        "description": "Contracts span hundreds of pages, but AI models have limited context windows. You can't feed 200-page documents to models repeatedly. We needed intelligent strategies to extract key information without overwhelming computational resources or losing important context.",
+        "iconKey": "Psychology"
+      }
+    ],
+    "approach": [
+      {
+        "title": "Microservices Decomposition",
+        "description": "Transformed the monolithic architecture into independent services: Upload Service (contract ingestion), Preprocessing Service (OCR + image generation), Digitization Service (core extraction logic), and Rendering Service (UI display). Used event-driven communication via Kafka for asynchronous processing. This enabled independent scaling—we could add more digitization workers without affecting upload or rendering performance."
+      },
+      {
+        "title": "Smart PDF Processing Pipeline",
+        "description": "Created dual-format processing: generated OCR text for extraction and converted PDFs to individual page images for UI rendering. This solved the load time problem—we lazy-load the first 5 pages immediately, then load additional pages on scroll. Since most critical data appears in the first few pages, users experienced fast load times even with 200-page contracts."
+      },
+      {
+        "title": "UX-Driven Digitization",
+        "description": "Redesigned the interface with a 20-80 split layout: PDF viewer on the left, form on the right. Eliminated context switching entirely. Implemented citation-based auto-extraction—legal teams mark regions on the PDF, and using coordinate mapping + OCR data, the system automatically extracts and populates form fields. This reduced manual typing and improved accuracy."
+      },
+      {
+        "title": "RAG-Based Key Term Extraction",
+        "description": "Built ML pipelines using Retrieval-Augmented Generation to work around context limits. Vectorized all PDFs and stored embeddings in Qdrant (dynamic data) and Milvus (static indexes). For each key term (buyer entity, effective date, seller entity, etc.), we retrieve only relevant sections semantically, then pass them to specialized models like LegolBERT. Created a graphical network showing which extractions run in parallel vs. sequence."
+      },
+      {
+        "title": "Continuous Learning Loop",
+        "description": "Built a validation portal where legal teams review ML-extracted data. Incorrect extractions flow into a retraining pool, continuously improving model accuracy. Used models like LegolBERT for legal entity extraction and YOLO for signature detection (partial/full/unsigned). This human-in-the-loop approach ensured models learned domain-specific patterns and improved over time."
+      }
+    ],
+    "technicalSolution": [
+      {
+        "title": "Two-Phase Performance Journey",
+        "description": "Phase 1 focused on architecture and UX optimization: microservices, micro-frontends (Single-SPA + Module Federation), lazy loading, network compression, and service mesh. This delivered 30-40% faster digitization speed and cost reduction. Phase 2 added ML pipelines with RAG systems, achieving 80-90% total improvement—enabling exponential rather than linear business scaling."
+      },
+      {
+        "title": "Micro-Frontend Architecture",
+        "description": "Implemented Single-SPA with Module Federation to enable parallel team development. Different teams owned different UI modules: upload interface, digitization forms, validation portal, and client-facing repository. Module bundles deployed to CloudFront independently, allowing rapid feature delivery without coordination overhead."
+      },
+      {
+        "title": "Event-Driven Processing",
+        "description": "Used Kafka for inter-service communication and Redis for caching/queuing. When contracts upload, events trigger preprocessing, which triggers digitization, which triggers ML extraction pipelines. Each service scales independently based on queue depth. This architecture handled millions of contracts without bottlenecks."
+      },
+      {
+        "title": "Contract Hierarchy and Relationships",
+        "description": "With vectorized contracts and semantic search, we automatically detected parent-child relationships, amendments, and addendums. The system connects related contracts, providing full context for any agreement. This was nearly impossible with manual processing but became straightforward with ML-powered analysis."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Enterprise Contract Intelligence",
+        "description": "Fortune 500 companies with decades of contracts can now search their entire repository instantly. Find specific terms, obligations, and pricing across millions of documents. Recover revenue from overlooked contract clauses and renewal terms.",
+        "iconKey": "Business"
+      },
+      {
+        "title": "Automated Renewal Management",
+        "description": "Surface upcoming renewals with full contract context. Sales teams access pricing history, special terms, and customer obligations without legal team intervention. Prevent revenue leakage from missed renewals or incorrect pricing.",
+        "iconKey": "Loop"
+      },
+      {
+        "title": "Compliance and Audit Support",
+        "description": "Provide auditors with searchable contract repositories and citation-backed data. Quickly demonstrate compliance with contractual obligations. Generate reports showing all contracts meeting specific criteria.",
+        "iconKey": "Gavel"
+      },
+      {
+        "title": "Sales Enablement",
+        "description": "Enable non-legal personnel to access contract insights instantly. Salespeople query customer-specific terms, pricing, and obligations without reading legal language. Democratize contract intelligence across the organization.",
+        "iconKey": "TrendingUp"
+      }
+    ],
+    "detailedResults": [
+      { "metric": "80-90%", "label": "Speed Improvement", "context": "Total digitization speed increase (ML phase)" },
+      { "metric": "Millions", "label": "Contracts", "context": "Processed at enterprise scale" },
+      { "metric": "30-40%", "label": "Phase 1 Gains", "context": "Architecture and UX optimization" },
+      { "metric": "Exponential", "label": "Scaling", "context": "vs. linear scaling with manual teams" },
+      { "metric": "RAG-Powered", "label": "Extraction", "context": "Semantic retrieval from vector indexes" },
+      { "metric": "Human-in-Loop", "label": "Training", "context": "Continuous model improvement" }
+    ],
+    "techStack": ["Python", "Django", "Ruby on Rails", "Java", "React", "Node.js", "Single-SPA", "Module Federation", "LegolBERT", "YOLO", "RAG Systems", "Qdrant", "Milvus", "MySQL", "AWS", "S3", "CloudFront", "Kafka", "Redis", "Service Mesh", "Docker", "OCR"]
+  },
+  "homepage": {
+    "useCases": [],
+    "metrics": []
+  }
+}
+

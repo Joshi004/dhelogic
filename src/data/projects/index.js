@@ -1,6 +1,7 @@
 import videoAiData from './video-ai.json';
 import atsData from './ats.json';
 import privacyPlatformData from './privacy-platform.json';
+import contractDigitizationData from './contract-digitization.json';
 
 /**
  * All projects data from JSON files
@@ -9,6 +10,7 @@ const allProjects = [
   videoAiData,
   atsData,
   privacyPlatformData,
+  contractDigitizationData,
 ];
 
 /**

@@ -17,6 +17,10 @@ import BusinessIcon from '@mui/icons-material/Business';
 import LockIcon from '@mui/icons-material/Lock';
 import StarIcon from '@mui/icons-material/Star';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import DescriptionIcon from '@mui/icons-material/Description';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
 
 export const iconMap = {
   PlayCircleOutline: PlayCircleOutlineIcon,
@@ -38,6 +42,10 @@ export const iconMap = {
   Lock: LockIcon,
   Star: StarIcon,
   WorkOutline: WorkOutlineIcon,
+  Description: DescriptionIcon,
+  AccountTree: AccountTreeIcon,
+  Psychology: PsychologyIcon,
+  SyncAlt: SyncAltIcon,
 };
 
 /**
