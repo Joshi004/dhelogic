@@ -13,6 +13,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
@@ -20,6 +21,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import SecurityIcon from '@mui/icons-material/Security';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import SpeedIcon from '@mui/icons-material/Speed';
+import CloudSyncIcon from '@mui/icons-material/CloudSync';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 
 // Video Analysis AI Case Study Data
 const videoAICaseStudy = {
@@ -131,8 +136,637 @@ const videoAICaseStudy = {
   techStack: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'Vector Databases', 'GPU Clusters', 'Kubernetes', 'Real-time Streaming'],
 };
 
+// ATS Case Study Data
+const atsCaseStudy = {
+  id: 'ats',
+  color: '#10B981',
+  icon: <TrendingUpIcon sx={{ fontSize: 48 }} />,
+  
+  // Summary (Always Visible)
+  title: 'Algorithmic Trading System (ATS)',
+  subtitle: 'Automated trading platform',
+  description: 'A comprehensive trading automation platform built with microservices architecture, enabling algorithmic trading across multiple financial markets. Features pluggable broker integration, real-time market scanning, and automated strategy execution with robust state management and crash recovery.',
+  technologies: ['Django', 'React', 'Redis', 'MySQL', 'Docker', 'WebSocket', 'Microservices', 'Material UI'],
+  results: [
+    { metric: '6', label: 'Microservices' },
+    { metric: '70%', label: 'Test Coverage' },
+    { metric: 'Multi-Broker', label: 'Support' },
+  ],
+  
+  // Expanded Content
+  projectSummary: 'We built an algorithmic trading system that automates trading strategies across multiple financial markets. The platform features a modular, pluggable architecture allowing seamless integration with various broker APIs—from stock exchanges to cryptocurrency platforms—enabling traders to execute sophisticated strategies 24/7.',
+  
+  challenges: [
+    {
+      title: 'Real-Time Market Scanning at Scale',
+      description: 'Processing thousands of financial instruments in real-time while maintaining low latency. The system needed to scan multiple markets simultaneously, analyze multi-timeframe data, and detect trading opportunities without overwhelming computational resources.',
+      icon: <SpeedIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      title: 'Multi-Broker Integration',
+      description: 'Each broker has different APIs, authentication flows, and data formats. We needed a flexible architecture that could connect to any trading platform without rewriting core logic—supporting stocks, crypto, derivatives, and custom markets.',
+      icon: <IntegrationInstructionsIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      title: 'State Persistence & Crash Recovery',
+      description: 'Trading systems must be resilient. If the system crashes mid-trade or during market scanning, it needs to recover gracefully without losing position information, pending orders, or scanner progress. Financial operations cannot afford data loss.',
+      icon: <CloudSyncIcon sx={{ fontSize: 32 }} />,
+    },
+  ],
+  
+  approach: [
+    {
+      title: 'Microservices Architecture',
+      description: 'Built six independent services communicating via Redis Streams: Gateway Service (auth), Trade Management Unit (sessions/P&L), Scanning Service (market analysis), Initiation Service (entry logic), Integration Service (broker APIs), and Session Monitor (health checks). This isolation enables independent scaling and fault tolerance.',
+    },
+    {
+      title: 'Pluggable Algorithm Framework',
+      description: 'Implemented a strategy pattern for trading algorithms. Users select from available scanning, initiation, and termination strategies without code changes. Each algorithm is self-contained, making it easy to add new strategies or customize existing ones for specific markets.',
+    },
+    {
+      title: 'Event-Driven Communication',
+      description: 'Used Redis Streams for asynchronous event processing between services. Scanning results trigger initiation events, which trigger execution events. This decoupling allows services to scale independently and provides natural retry mechanisms for failed operations.',
+    },
+    {
+      title: 'State Management with Redis',
+      description: 'Implemented checkpoint-based progress tracking stored in Redis. Scanner state, active sessions, and pending operations are persisted continuously. On restart, the system resumes from the last checkpoint, preventing duplicate processing or missed opportunities.',
+    },
+    {
+      title: 'Secure Credential Management',
+      description: 'All broker credentials are encrypted at rest using AES Fernet encryption. Credentials are only decrypted during API calls and never exposed in logs. OAuth flows are supported for brokers requiring token-based authentication.',
+    },
+  ],
+  
+  technicalSolution: [
+    {
+      title: 'Container Orchestration',
+      description: 'Deployed as a multi-container Docker application with proper dependency management. Services include MySQL database, Redis message broker, main Django API, scanning daemon, and health monitor. Each service has health checks and automatic restart policies.',
+    },
+    {
+      title: 'Real-Time Communication Layer',
+      description: 'Built WebSocket gateway using Django Channels for live updates to frontend. Clients subscribe to specific channels (trade updates, scanner events, session status). The system tracks active subscriptions to optimize resource usage—stopping unnecessary processing when no clients are listening.',
+    },
+    {
+      title: 'Comprehensive Testing',
+      description: 'Achieved 70% test coverage using Pytest with factory-based test data generation. Unit tests cover core trading logic, integration tests verify service communication, and mocking ensures tests run without external broker connections.',
+    },
+  ],
+  
+  useCases: [
+    {
+      title: 'Multi-Market Trading',
+      description: 'Connect to any broker or exchange through the pluggable integration layer. Trade traditional stocks, cryptocurrency, derivatives, or custom instruments from a unified interface.',
+      icon: <ShowChartIcon sx={{ fontSize: 24 }} />,
+    },
+    {
+      title: 'Automated Strategy Execution',
+      description: 'Run algorithmic trading strategies 24/7 with configurable scanning, entry, and exit logic. The system monitors markets continuously and executes trades based on predefined criteria.',
+      icon: <SpeedIcon sx={{ fontSize: 24 }} />,
+    },
+    {
+      title: 'Real-Time Monitoring',
+      description: 'Live dashboard showing active sessions, recent trades, P&L tracking, and scanner activity. WebSocket-based updates ensure you always see current system state.',
+      icon: <AnalyticsIcon sx={{ fontSize: 24 }} />,
+    },
+    {
+      title: 'Paper Trading Mode',
+      description: 'Test strategies with simulated capital before risking real money. Paper trading runs through the same execution pipeline as live trading, ensuring strategy validation.',
+      icon: <SecurityIcon sx={{ fontSize: 24 }} />,
+    },
+  ],
+  
+  detailedResults: [
+    { metric: '6', label: 'Microservices', context: 'Independent scalable services' },
+    { metric: '70%', label: 'Test Coverage', context: 'Comprehensive automated testing' },
+    { metric: 'Multi-Broker', label: 'Integration', context: 'Pluggable broker architecture' },
+    { metric: 'Real-time', label: 'Processing', context: 'Live market scanning and execution' },
+    { metric: 'Crash Resilient', label: 'Recovery', context: 'State persistence and auto-resume' },
+  ],
+  
+  techStack: ['Python', 'Django', 'Django REST Framework', 'React', 'Material UI', 'Redis', 'MySQL', 'Docker', 'WebSocket', 'JWT', 'Pytest'],
+};
+
 const Portfolio = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [expandedStudies, setExpandedStudies] = useState({
+    'video-ai': false,
+    'ats': false,
+  });
+
+  const toggleExpanded = (studyId) => {
+    setExpandedStudies((prev) => ({
+      ...prev,
+      [studyId]: !prev[studyId],
+    }));
+  };
+
+  const renderCaseStudy = (caseStudy) => {
+    const isExpanded = expandedStudies[caseStudy.id];
+    
+    return (
+      <Card
+        key={caseStudy.id}
+        component={motion.div}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+        sx={{
+          borderRadius: 4,
+          overflow: 'hidden',
+          boxShadow: '0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.04)',
+          mb: 6,
+          '&:hover': {
+            transform: 'none',
+          },
+        }}
+      >
+        {/* Visual Header */}
+        <Box
+          sx={{
+            position: 'relative',
+            height: { xs: 300, md: 400 },
+            background: caseStudy.id === 'video-ai' 
+              ? 'linear-gradient(135deg, #014584 0%, #0260a8 100%)'
+              : 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Background Pattern */}
+          <Box
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              opacity: 0.1,
+              backgroundImage: `
+                linear-gradient(white 1px, transparent 1px),
+                linear-gradient(90deg, white 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px',
+            }}
+          />
+
+          {/* Floating Icon */}
+          <Box
+            component={motion.div}
+            animate={{ y: [-5, 5, -5] }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+            sx={{
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            <Box
+              sx={{
+                width: 120,
+                height: 120,
+                borderRadius: 3,
+                bgcolor: 'rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(10px)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                color: 'white',
+              }}
+            >
+              {caseStudy.icon}
+            </Box>
+          </Box>
+
+          {/* Decorative Elements */}
+          <Box
+            component={motion.div}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            sx={{
+              position: 'absolute',
+              top: '20%',
+              left: '15%',
+              width: 60,
+              height: 60,
+              borderRadius: 2,
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+            }}
+          />
+          <Box
+            component={motion.div}
+            animate={{ rotate: -360 }}
+            transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+            sx={{
+              position: 'absolute',
+              bottom: '25%',
+              right: '20%',
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+            }}
+          />
+        </Box>
+
+        {/* Summary Content */}
+        <Box sx={{ p: { xs: 4, md: 6 } }}>
+          {/* Technology Chips */}
+          <Box sx={{ display: 'flex', gap: 1, mb: 3, flexWrap: 'wrap' }}>
+            {caseStudy.technologies.map((tech, i) => (
+              <Chip
+                key={i}
+                label={tech}
+                size="small"
+                sx={{
+                  bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                  color: caseStudy.color,
+                  fontWeight: 500,
+                }}
+              />
+            ))}
+          </Box>
+
+          {/* Title & Subtitle */}
+          <Typography variant="h3" sx={{ mb: 1, fontWeight: 700 }}>
+            {caseStudy.title}
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{ color: caseStudy.color, fontWeight: 500, mb: 3 }}
+          >
+            {caseStudy.subtitle}
+          </Typography>
+
+          {/* Description */}
+          <Typography
+            variant="body1"
+            sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
+          >
+            {caseStudy.description}
+          </Typography>
+
+          {/* Key Results */}
+          <Box sx={{ mb: 4 }}>
+            <Typography
+              variant="overline"
+              sx={{ color: 'text.secondary', letterSpacing: '0.1em', display: 'block', mb: 2 }}
+            >
+              Key Results
+            </Typography>
+            <Grid container spacing={2}>
+              {caseStudy.results.map((result, i) => (
+                <Grid size={4} key={i}>
+                  <Box
+                    sx={{
+                      textAlign: 'center',
+                      p: 2,
+                      borderRadius: 2,
+                      bgcolor: 'background.surface',
+                      border: '1px solid',
+                      borderColor: 'divider',
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      sx={{ fontWeight: 700, color: caseStudy.color, mb: 0.5 }}
+                    >
+                      {result.metric}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      sx={{ color: 'text.secondary', fontSize: '0.7rem' }}
+                    >
+                      {result.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+
+          {/* Expand/Collapse Button */}
+          <Box sx={{ textAlign: 'center', mb: 2 }}>
+            <Button
+              variant="outlined"
+              onClick={() => toggleExpanded(caseStudy.id)}
+              endIcon={isExpanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+              sx={{
+                borderColor: caseStudy.color,
+                color: caseStudy.color,
+                '&:hover': {
+                  borderColor: caseStudy.color,
+                  bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.04)`,
+                },
+              }}
+            >
+              {isExpanded ? 'Show Less' : 'View Full Details'}
+            </Button>
+          </Box>
+
+          {/* Expandable Content */}
+          <Collapse in={isExpanded} timeout={400}>
+            <Box
+              component={motion.div}
+              initial={false}
+              animate={{ opacity: isExpanded ? 1 : 0 }}
+              transition={{ duration: 0.3, delay: isExpanded ? 0.1 : 0 }}
+              sx={{ pt: 4 }}
+            >
+              {/* THE PROJECT */}
+              <Box sx={{ mb: 6 }}>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 2,
+                  }}
+                >
+                  The Project
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: 'text.primary', lineHeight: 1.8 }}
+                >
+                  {caseStudy.projectSummary}
+                </Typography>
+              </Box>
+
+              {/* WHAT PROBLEM WE SOLVED */}
+              <Box sx={{ mb: 6 }}>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 3,
+                  }}
+                >
+                  What Problem We Solved
+                </Typography>
+                <Grid container spacing={3}>
+                  {caseStudy.challenges.map((challenge, i) => (
+                    <Grid size={12} key={i}>
+                      <Box
+                        sx={{
+                          p: 3,
+                          borderRadius: 2,
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          bgcolor: 'background.surface',
+                          display: 'flex',
+                          gap: 2,
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 48,
+                            height: 48,
+                            borderRadius: 2,
+                            bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: caseStudy.color,
+                            flexShrink: 0,
+                          }}
+                        >
+                          {challenge.icon}
+                        </Box>
+                        <Box>
+                          <Typography
+                            variant="subtitle2"
+                            sx={{ fontWeight: 600, mb: 1 }}
+                          >
+                            Challenge {i + 1}: {challenge.title}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{ color: 'text.secondary', lineHeight: 1.7 }}
+                          >
+                            {challenge.description}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+
+              {/* OUR APPROACH */}
+              <Box sx={{ mb: 6 }}>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 3,
+                  }}
+                >
+                  Our Approach
+                </Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                  {caseStudy.approach.map((item, i) => (
+                    <Box key={i}>
+                      <Typography
+                        variant="subtitle2"
+                        sx={{ fontWeight: 600, mb: 1, color: caseStudy.color }}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: 'text.secondary', lineHeight: 1.7 }}
+                      >
+                        {item.description}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+
+              {/* THE TECHNICAL SOLUTION */}
+              <Box sx={{ mb: 6 }}>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 3,
+                  }}
+                >
+                  The Technical Solution
+                </Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                  {caseStudy.technicalSolution.map((item, i) => (
+                    <Box key={i}>
+                      <Typography
+                        variant="subtitle2"
+                        sx={{ fontWeight: 600, mb: 1, color: caseStudy.color }}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: 'text.secondary', lineHeight: 1.7 }}
+                      >
+                        {item.description}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+
+              {/* USE CASES */}
+              <Box sx={{ mb: 6 }}>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 3,
+                  }}
+                >
+                  Use Cases
+                </Typography>
+                <Grid container spacing={3}>
+                  {caseStudy.useCases.map((useCase, i) => (
+                    <Grid size={{ xs: 12, md: 6 }} key={i}>
+                      <Box
+                        sx={{
+                          p: 3,
+                          borderRadius: 2,
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          bgcolor: 'background.surface',
+                          height: '100%',
+                          display: 'flex',
+                          gap: 2,
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 40,
+                            height: 40,
+                            borderRadius: 2,
+                            bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: caseStudy.color,
+                            flexShrink: 0,
+                          }}
+                        >
+                          {useCase.icon}
+                        </Box>
+                        <Box>
+                          <Typography
+                            variant="subtitle2"
+                            sx={{ fontWeight: 600, mb: 1 }}
+                          >
+                            {useCase.title}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{ color: 'text.secondary', lineHeight: 1.7 }}
+                          >
+                            {useCase.description}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+
+              {/* DETAILED RESULTS */}
+              <Box sx={{ mb: 6 }}>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 3,
+                  }}
+                >
+                  Results
+                </Typography>
+                <Grid container spacing={2}>
+                  {caseStudy.detailedResults.map((result, i) => (
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+                      <Box
+                        sx={{
+                          p: 3,
+                          borderRadius: 2,
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          bgcolor: 'background.surface',
+                          textAlign: 'center',
+                        }}
+                      >
+                        <Typography
+                          variant="h4"
+                          sx={{ fontWeight: 700, color: caseStudy.color, mb: 0.5 }}
+                        >
+                          {result.metric}
+                        </Typography>
+                        <Typography
+                          variant="subtitle2"
+                          sx={{ fontWeight: 600, mb: 1 }}
+                        >
+                          {result.label}
+                        </Typography>
+                        <Typography
+                          variant="caption"
+                          sx={{ color: 'text.secondary', fontSize: '0.75rem' }}
+                        >
+                          {result.context}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+
+              {/* TECH STACK */}
+              <Box>
+                <Typography
+                  variant="overline"
+                  sx={{
+                    color: 'text.secondary',
+                    letterSpacing: '0.1em',
+                    display: 'block',
+                    mb: 2,
+                  }}
+                >
+                  Tech Stack
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                  {caseStudy.techStack.map((tech, i) => (
+                    <Chip
+                      key={i}
+                      label={tech}
+                      size="medium"
+                      sx={{
+                        bgcolor: `rgba(${caseStudy.id === 'video-ai' ? '1, 69, 132' : '16, 185, 129'}, 0.1)`,
+                        color: caseStudy.color,
+                        fontWeight: 500,
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
+            </Box>
+          </Collapse>
+        </Box>
+      </Card>
+    );
+  };
 
   return (
     <PageTransition>
@@ -203,7 +837,7 @@ const Portfolio = () => {
         </Container>
       </Box>
 
-      {/* Case Study Section */}
+      {/* Case Studies Section */}
       <Box
         sx={{
           py: { xs: 8, md: 12 },
@@ -211,504 +845,8 @@ const Portfolio = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Card
-            component={motion.div}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-            sx={{
-              borderRadius: 4,
-              overflow: 'hidden',
-              boxShadow: '0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.04)',
-              '&:hover': {
-                transform: 'none',
-              },
-            }}
-          >
-            {/* Visual Header */}
-            <Box
-              sx={{
-                position: 'relative',
-                height: { xs: 300, md: 400 },
-                background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-              }}
-            >
-              {/* Background Pattern */}
-              <Box
-                sx={{
-                  position: 'absolute',
-                  inset: 0,
-                  opacity: 0.1,
-                  backgroundImage: `
-                    linear-gradient(white 1px, transparent 1px),
-                    linear-gradient(90deg, white 1px, transparent 1px)
-                  `,
-                  backgroundSize: '40px 40px',
-                }}
-              />
-
-              {/* Floating Icon */}
-              <Box
-                component={motion.div}
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                sx={{
-                  position: 'relative',
-                  zIndex: 1,
-                }}
-              >
-                <Box
-                  sx={{
-                    width: 120,
-                    height: 120,
-                    borderRadius: 3,
-                    bgcolor: 'rgba(255, 255, 255, 0.2)',
-                    backdropFilter: 'blur(10px)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    color: 'white',
-                  }}
-                >
-                  {videoAICaseStudy.icon}
-                </Box>
-              </Box>
-
-              {/* Decorative Elements */}
-              <Box
-                component={motion.div}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                sx={{
-                  position: 'absolute',
-                  top: '20%',
-                  left: '15%',
-                  width: 60,
-                  height: 60,
-                  borderRadius: 2,
-                  border: '2px solid rgba(255, 255, 255, 0.2)',
-                }}
-              />
-              <Box
-                component={motion.div}
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                sx={{
-                  position: 'absolute',
-                  bottom: '25%',
-                  right: '20%',
-                  width: 40,
-                  height: 40,
-                  borderRadius: '50%',
-                  border: '2px solid rgba(255, 255, 255, 0.2)',
-                }}
-              />
-            </Box>
-
-            {/* Summary Content */}
-            <Box sx={{ p: { xs: 4, md: 6 } }}>
-              {/* Technology Chips */}
-              <Box sx={{ display: 'flex', gap: 1, mb: 3, flexWrap: 'wrap' }}>
-                {videoAICaseStudy.technologies.map((tech, i) => (
-                  <Chip
-                    key={i}
-                    label={tech}
-                    size="small"
-                    sx={{
-                      bgcolor: 'rgba(1, 69, 132, 0.1)',
-                      color: 'primary.main',
-                      fontWeight: 500,
-                    }}
-                  />
-                ))}
-              </Box>
-
-              {/* Title & Subtitle */}
-              <Typography variant="h3" sx={{ mb: 1, fontWeight: 700 }}>
-                {videoAICaseStudy.title}
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                sx={{ color: videoAICaseStudy.color, fontWeight: 500, mb: 3 }}
-              >
-                {videoAICaseStudy.subtitle}
-              </Typography>
-
-              {/* Description */}
-              <Typography
-                variant="body1"
-                sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
-              >
-                {videoAICaseStudy.description}
-              </Typography>
-
-              {/* Key Results */}
-              <Box sx={{ mb: 4 }}>
-                <Typography
-                  variant="overline"
-                  sx={{ color: 'text.secondary', letterSpacing: '0.1em', display: 'block', mb: 2 }}
-                >
-                  Key Results
-                </Typography>
-                <Grid container spacing={2}>
-                  {videoAICaseStudy.results.map((result, i) => (
-                    <Grid size={4} key={i}>
-                      <Box
-                        sx={{
-                          textAlign: 'center',
-                          p: 2,
-                          borderRadius: 2,
-                          bgcolor: 'background.surface',
-                          border: '1px solid',
-                          borderColor: 'divider',
-                        }}
-                      >
-                        <Typography
-                          variant="h5"
-                          sx={{ fontWeight: 700, color: videoAICaseStudy.color, mb: 0.5 }}
-                        >
-                          {result.metric}
-                        </Typography>
-                        <Typography
-                          variant="caption"
-                          sx={{ color: 'text.secondary', fontSize: '0.7rem' }}
-                        >
-                          {result.label}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-
-              {/* Expand/Collapse Button */}
-              <Box sx={{ textAlign: 'center', mb: 2 }}>
-                <Button
-                  variant="outlined"
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  endIcon={isExpanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                  sx={{
-                    borderColor: 'primary.main',
-                    color: 'primary.main',
-                    '&:hover': {
-                      borderColor: 'primary.dark',
-                      bgcolor: 'rgba(1, 69, 132, 0.04)',
-                    },
-                  }}
-                >
-                  {isExpanded ? 'Show Less' : 'View Full Details'}
-                </Button>
-              </Box>
-
-              {/* Expandable Content */}
-              <Collapse in={isExpanded} timeout={400}>
-                <Box
-                  component={motion.div}
-                  initial={false}
-                  animate={{ opacity: isExpanded ? 1 : 0 }}
-                  transition={{ duration: 0.3, delay: isExpanded ? 0.1 : 0 }}
-                  sx={{ pt: 4 }}
-                >
-                  {/* THE PROJECT */}
-                  <Box sx={{ mb: 6 }}>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 2,
-                      }}
-                    >
-                      The Project
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      sx={{ color: 'text.primary', lineHeight: 1.8 }}
-                    >
-                      {videoAICaseStudy.projectSummary}
-                    </Typography>
-                  </Box>
-
-                  {/* WHAT PROBLEM WE SOLVED */}
-                  <Box sx={{ mb: 6 }}>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 3,
-                      }}
-                    >
-                      What Problem We Solved
-                    </Typography>
-                    <Grid container spacing={3}>
-                      {videoAICaseStudy.challenges.map((challenge, i) => (
-                        <Grid size={12} key={i}>
-                          <Box
-                            sx={{
-                              p: 3,
-                              borderRadius: 2,
-                              border: '1px solid',
-                              borderColor: 'divider',
-                              bgcolor: 'background.surface',
-                              display: 'flex',
-                              gap: 2,
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                width: 48,
-                                height: 48,
-                                borderRadius: 2,
-                                bgcolor: 'rgba(1, 69, 132, 0.1)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: 'primary.main',
-                                flexShrink: 0,
-                              }}
-                            >
-                              {challenge.icon}
-                            </Box>
-                            <Box>
-                              <Typography
-                                variant="subtitle2"
-                                sx={{ fontWeight: 600, mb: 1 }}
-                              >
-                                Challenge {i + 1}: {challenge.title}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                sx={{ color: 'text.secondary', lineHeight: 1.7 }}
-                              >
-                                {challenge.description}
-                              </Typography>
-                            </Box>
-                          </Box>
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Box>
-
-                  {/* OUR APPROACH */}
-                  <Box sx={{ mb: 6 }}>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 3,
-                      }}
-                    >
-                      Our Approach
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                      {videoAICaseStudy.approach.map((item, i) => (
-                        <Box key={i}>
-                          <Typography
-                            variant="subtitle2"
-                            sx={{ fontWeight: 600, mb: 1, color: 'primary.main' }}
-                          >
-                            {item.title}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            sx={{ color: 'text.secondary', lineHeight: 1.7 }}
-                          >
-                            {item.description}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Box>
-                  </Box>
-
-                  {/* THE TECHNICAL SOLUTION */}
-                  <Box sx={{ mb: 6 }}>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 3,
-                      }}
-                    >
-                      The Technical Solution
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                      {videoAICaseStudy.technicalSolution.map((item, i) => (
-                        <Box key={i}>
-                          <Typography
-                            variant="subtitle2"
-                            sx={{ fontWeight: 600, mb: 1, color: 'primary.main' }}
-                          >
-                            {item.title}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            sx={{ color: 'text.secondary', lineHeight: 1.7 }}
-                          >
-                            {item.description}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Box>
-                  </Box>
-
-                  {/* USE CASES */}
-                  <Box sx={{ mb: 6 }}>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 3,
-                      }}
-                    >
-                      Use Cases
-                    </Typography>
-                    <Grid container spacing={3}>
-                      {videoAICaseStudy.useCases.map((useCase, i) => (
-                        <Grid size={{ xs: 12, md: 6 }} key={i}>
-                          <Box
-                            sx={{
-                              p: 3,
-                              borderRadius: 2,
-                              border: '1px solid',
-                              borderColor: 'divider',
-                              bgcolor: 'background.surface',
-                              height: '100%',
-                              display: 'flex',
-                              gap: 2,
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                width: 40,
-                                height: 40,
-                                borderRadius: 2,
-                                bgcolor: 'rgba(1, 69, 132, 0.1)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: 'primary.main',
-                                flexShrink: 0,
-                              }}
-                            >
-                              {useCase.icon}
-                            </Box>
-                            <Box>
-                              <Typography
-                                variant="subtitle2"
-                                sx={{ fontWeight: 600, mb: 1 }}
-                              >
-                                {useCase.title}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                sx={{ color: 'text.secondary', lineHeight: 1.7 }}
-                              >
-                                {useCase.description}
-                              </Typography>
-                            </Box>
-                          </Box>
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Box>
-
-                  {/* DETAILED RESULTS */}
-                  <Box sx={{ mb: 6 }}>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 3,
-                      }}
-                    >
-                      Results
-                    </Typography>
-                    <Grid container spacing={2}>
-                      {videoAICaseStudy.detailedResults.map((result, i) => (
-                        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
-                          <Box
-                            sx={{
-                              p: 3,
-                              borderRadius: 2,
-                              border: '1px solid',
-                              borderColor: 'divider',
-                              bgcolor: 'background.surface',
-                              textAlign: 'center',
-                            }}
-                          >
-                            <Typography
-                              variant="h4"
-                              sx={{ fontWeight: 700, color: videoAICaseStudy.color, mb: 0.5 }}
-                            >
-                              {result.metric}
-                            </Typography>
-                            <Typography
-                              variant="subtitle2"
-                              sx={{ fontWeight: 600, mb: 1 }}
-                            >
-                              {result.label}
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              sx={{ color: 'text.secondary', fontSize: '0.75rem' }}
-                            >
-                              {result.context}
-                            </Typography>
-                          </Box>
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Box>
-
-                  {/* TECH STACK */}
-                  <Box>
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: 'text.secondary',
-                        letterSpacing: '0.1em',
-                        display: 'block',
-                        mb: 2,
-                      }}
-                    >
-                      Tech Stack
-                    </Typography>
-                    <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                      {videoAICaseStudy.techStack.map((tech, i) => (
-                        <Chip
-                          key={i}
-                          label={tech}
-                          size="medium"
-                          sx={{
-                            bgcolor: 'rgba(1, 69, 132, 0.1)',
-                            color: 'primary.main',
-                            fontWeight: 500,
-                          }}
-                        />
-                      ))}
-                    </Box>
-                  </Box>
-                </Box>
-              </Collapse>
-            </Box>
-          </Card>
+          {renderCaseStudy(videoAICaseStudy)}
+          {renderCaseStudy(atsCaseStudy)}
         </Container>
       </Box>
 
