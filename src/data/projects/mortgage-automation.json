@@ -1,0 +1,133 @@
+{
+  "id": "mortgage-automation",
+  "title": "AI-Powered Mortgage Automation Platform",
+  "subtitle": "Agentic document intelligence for loan processing",
+  "description": "An intelligent agentic system built with LangGraph that automates the entire mortgage loan processing pipeline. The platform uses multi-agent workflows (Loan Processor, Underwriter, Loan Officer) to process documents, extract entities, create ontologies, and cross-reference information—achieving 99% accuracy while reducing processing time by 70% and ML costs by 60%.",
+  "color": "#059669",
+  "gradient": "linear-gradient(135deg, #059669 0%, #047857 100%)",
+  "iconKey": "Home",
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": false
+  },
+  "status": {
+    "isOngoing": false,
+    "label": "Completed"
+  },
+  "priorExperience": {
+    "enabled": true,
+    "note": "Developed through leadership experience at a prior organization"
+  },
+  "technologies": ["Python", "FastAPI", "LangGraph", "GPT-4", "VLLM", "RAG", "Qdrant", "MongoDB", "Redis", "Kafka", "Docker", "Kubernetes", "React", "Rego"],
+  "results": [
+    { "metric": "70%", "label": "Faster Processing" },
+    { "metric": "< 10 min", "label": "Document Validation" },
+    { "metric": "99%", "label": "Extraction Accuracy" },
+    { "metric": "60%", "label": "ML Cost Reduction" }
+  ],
+  "portfolio": {
+    "projectSummary": "We built an AI-powered mortgage automation platform that transforms loan processing from a days-long manual process into a sub-10-minute automated workflow. Using LangGraph, we created three specialized AI agents (Loan Processor, Underwriter, Loan Officer) that handle document ingestion, entity extraction, cross-referencing via ontologies, and compliance validation. The system processes 20-40+ documents per loan application, handling identity cards, tax returns, bank statements, property documents, and more—extracting entities, linking them across documents, and validating against institutional guidelines. Through ontology-based validation and Rego rules, we achieved 99% extraction accuracy while eliminating hallucinations. We started with GPT-4 for rapid prototyping, then migrated to in-house VLLM-hosted models, reducing ML costs by 60%. The platform includes RAG-powered chat with document citations, enabling loan officers to query loan data instantly with full source traceability.",
+    "challenges": [
+      {
+        "title": "Multi-Format Document Processing",
+        "description": "Mortgage applications involve 20-40+ documents that vary drastically by geographic region, language, and government requirements. A driver's license from California differs from one in Texas or internationally. Property documents, tax returns (W-2, 1040, business forms), bank statements, and identity cards all have different formats. Building a system that handles this variety without fixed templates required flexible ML models that learn document structures through transfer learning.",
+        "iconKey": "Description"
+      },
+      {
+        "title": "Cross-Document Entity Linking",
+        "description": "The same person's name might appear differently across documents (middle name variations, maiden names, nicknames). Income sources are complex—salary from multiple jobs, business income, self-employment, rental income. The system must match entities across identity cards, passports, tax returns, and property documents, then aggregate income from disparate sources. This required ontology-based entity resolution with fuzzy matching and confidence scoring.",
+        "iconKey": "AccountTree"
+      },
+      {
+        "title": "Hallucination Prevention for 99% Accuracy",
+        "description": "LLMs can hallucinate data when extracting from documents, which is catastrophic for financial applications. Every extracted field must be verifiable and traceable to source documents. We implemented ontology validation (entities must fit the knowledge graph), Rego rules (policy-as-code validation), mandatory citations, confidence thresholds, and cross-document verification to achieve 99% accuracy with zero tolerance for hallucinations.",
+        "iconKey": "Psychology"
+      },
+      {
+        "title": "Cost-Effective ML at Scale",
+        "description": "Using GPT-4 for every document extraction is prohibitively expensive at scale. We needed to balance speed-to-market with economic viability. The challenge was identifying which tasks truly require advanced models versus conventional programming, then migrating to in-house models without sacrificing the 99% accuracy baseline established with GPT-4.",
+        "iconKey": "TrendingUp"
+      }
+    ],
+    "approach": [
+      {
+        "title": "LangGraph Multi-Agent Workflows",
+        "description": "Created three specialized agents with distinct responsibilities: (1) Loan Processor Agent handles document ingestion, splitting multi-page PDFs, categorization (identity, passport, tax returns, bank statements, property documents), entity extraction, and ontology creation. (2) Underwriter Agent (AI persona) validates cross-referenced information, checks income sufficiency, validates property values, and applies lending criteria. (3) Loan Officer Agent performs final review, adds conditions, creates exceptions, and defines custom institutional rules. Agents communicate via intelligent handoffs—passing approved loans forward or returning exceptions to previous stages."
+      },
+      {
+        "title": "Document Intelligence Pipeline",
+        "description": "Built a four-stage pipeline: (1) Document Ingestion via Kafka queue handles customer uploads, including single PDFs with multiple embedded documents. (2) Document Splitter breaks large files into individual pages while maintaining relationships. (3) ML Classifier categorizes documents into predefined types (identity cards, passports, bank statements, tax returns, property deeds, etc.). (4) Entity Extractor pulls structured data (names, addresses, income, property values, loan amounts) from each document type using specialized models."
+      },
+      {
+        "title": "Ontology-Based Validation & Cross-Referencing",
+        "description": "Every extracted entity is placed into a knowledge graph that maps relationships: Person → Identity Documents, Person → Income Sources, Person → Property, Person → Existing Loans, and Document → Document (amendments, updates). Cross-validation rules ensure name consistency across all documents, address matching between identity and property documents, income totals matching tax returns and bank deposits, and employment verification across multiple sources. Rego rules enforce policy-as-code validation, ensuring every extraction meets institutional guidelines."
+      },
+      {
+        "title": "RAG Chat with Document Citations",
+        "description": "Implemented two chat systems: (1) Loan-Specific Chat allows loan officers to query individual applications ('What is the applicant's total monthly income?'), with every answer citing source documents and highlighting exact sections. (2) Global Chat enables management to query across all loans ('How many loans are awaiting additional documents?'). All documents are vectorized and stored in Qdrant. User queries undergo semantic search (cosine similarity), retrieve top-K relevant chunks, assemble LLM context, and generate answers with mandatory citations."
+      },
+      {
+        "title": "Zero-to-One Model Optimization",
+        "description": "Phase 1: Used GPT-4 for all document reading and extraction to rapidly prototype and establish a 99% accuracy baseline. This enabled fast customer demos despite higher costs. Phase 2: Evaluated which tasks truly need advanced models versus conventional programming. Deployed VLLM-hosted open-source models for document processing and extraction. Replaced ML with code where possible (e.g., regex for structured data). Result: 60% cost reduction while maintaining 99% accuracy and sub-10-minute processing times."
+      }
+    ],
+    "technicalSolution": [
+      {
+        "title": "Event-Driven Architecture with Kafka",
+        "description": "Loan applications flow into Kafka topics, triggering parallel processing by multiple consumers (splitter, categorizer, extractor, validator). Redis tracks the state of each document through the pipeline, enabling fault tolerance—failed operations retry without data loss. This architecture supports horizontal scaling by adding more consumers to handle increased load, with each document progressing independently through the workflow."
+      },
+      {
+        "title": "Predefined Document Categories",
+        "description": "The ML classifier categorizes documents into specific types essential for mortgage processing: identity cards (driver's license, national ID), passports, bank statements, loan statements (existing obligations), tax returns (W-2, 1040, business tax forms), salary/income documents (pay stubs, employment letters), business documents (for self-employed applicants), property documents (deeds, appraisals, purchase agreements), and other supporting documents. Each category triggers specialized extraction pipelines."
+      },
+      {
+        "title": "Multi-Language & Multi-Region Support",
+        "description": "Documents vary by geographic region, language, and government format. Implemented language detection and multi-language OCR to handle diverse document sources. Used transfer learning to adapt document classifiers to new regions with minimal training data. This flexibility enables the platform to process mortgages across different jurisdictions without manual template creation."
+      },
+      {
+        "title": "Exception Handling & Human-in-the-Loop",
+        "description": "When documents are missing or criteria gaps exist (insufficient income, property value mismatch, missing mandatory requirements), the system creates exception cards on the UI and notifies the appropriate persona. Two exception types: (1) Document Missing—system requests additional documents from customer. (2) Criteria Gap—loan returns to Loan Processor bucket for review. Human loan processors can add documents, which triggers re-processing with updated ontology validation."
+      },
+      {
+        "title": "Confidence Scoring & Quality Assurance",
+        "description": "Every entity extraction includes a confidence score. Low-confidence matches are flagged for human review rather than auto-processing. Fuzzy matching handles name variations (middle names, maiden names) across documents. Cross-document verification ensures data from multiple sources aligns before approval. This layered validation achieves 99% accuracy while maintaining processing speed."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Home Purchase Mortgage Processing",
+        "description": "Customer applies for a home loan, submitting 25+ documents including identity cards, passport, tax returns, pay stubs, and property appraisal. The system automatically splits, categorizes, extracts entities, creates ontologies, cross-references data, and validates against lending criteria—processing the entire loan in under 10 minutes instead of days.",
+        "iconKey": "Home"
+      },
+      {
+        "title": "Refinancing Applications",
+        "description": "Existing customers seeking to refinance submit updated financial documents. The system cross-references with existing customer data, validates new income and property values, and processes refinancing decisions with complete audit trails. Fast turnaround improves customer experience while maintaining compliance.",
+        "iconKey": "Loop"
+      },
+      {
+        "title": "Compliance & Audit Support",
+        "description": "Regulatory audits require proof of loan approval criteria. The platform provides full document trails, extraction citations, rule validations, and ontology relationships. Auditors can query the system to see exactly which documents supported each decision, with AI-generated evidence and source highlighting.",
+        "iconKey": "Gavel"
+      },
+      {
+        "title": "Loan Officer Decision Support",
+        "description": "Loan officers use RAG-powered chat to instantly query loan details: 'What is the applicant's debt-to-income ratio?' or 'Does the property address match the applicant's residence?' Every answer includes document citations with highlighted sections, enabling informed decisions without manually reading hundreds of pages.",
+        "iconKey": "Business"
+      }
+    ],
+    "detailedResults": [
+      { "metric": "70%", "label": "Processing Time", "context": "Reduction in end-to-end loan validation" },
+      { "metric": "< 10 min", "label": "Validation Time", "context": "Complete document review per loan" },
+      { "metric": "99%", "label": "Accuracy", "context": "Data extraction correctness" },
+      { "metric": "60%", "label": "Cost Savings", "context": "ML costs via in-house models" },
+      { "metric": "3 Agents", "label": "Personas", "context": "Loan Processor, Underwriter, Officer" },
+      { "metric": "20-40+", "label": "Documents", "context": "Processed per loan application" }
+    ],
+    "techStack": ["Python", "FastAPI", "LangGraph", "GPT-4", "VLLM", "Custom ML Models", "RAG Systems", "Qdrant", "MongoDB", "Redis", "Kafka", "Docker", "Kubernetes", "SLRM Clusters", "React.js", "WebSocket", "Ontologies", "Rego Rules", "OCR"]
+  },
+  "homepage": {
+    "useCases": [],
+    "metrics": []
+  }
+}
+

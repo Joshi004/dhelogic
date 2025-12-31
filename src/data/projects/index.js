@@ -3,6 +3,7 @@ import atsData from './ats.json';
 import privacyPlatformData from './privacy-platform.json';
 import contractDigitizationData from './contract-digitization.json';
 import tickerStreamSystemData from './ticker-stream-system.json';
+import mortgageAutomationData from './mortgage-automation.json';
 
 /**
  * All projects data from JSON files
@@ -13,6 +14,7 @@ const allProjects = [
   privacyPlatformData,
   contractDigitizationData,
   tickerStreamSystemData,
+  mortgageAutomationData,
 ];
 
 /**

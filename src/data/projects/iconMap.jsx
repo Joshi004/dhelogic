@@ -25,6 +25,7 @@ import TimelineIcon from '@mui/icons-material/Timeline';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ShieldIcon from '@mui/icons-material/Shield';
 import ScienceIcon from '@mui/icons-material/Science';
+import HomeIcon from '@mui/icons-material/Home';
 
 export const iconMap = {
   PlayCircleOutline: PlayCircleOutlineIcon,
@@ -54,6 +55,7 @@ export const iconMap = {
   AccessTime: AccessTimeIcon,
   Shield: ShieldIcon,
   Science: ScienceIcon,
+  Home: HomeIcon,
 };
 
 /**
