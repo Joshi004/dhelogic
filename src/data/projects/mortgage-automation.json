@@ -116,11 +116,8 @@
       }
     ],
     "detailedResults": [
-      { "metric": "70%", "label": "Processing Time", "context": "Reduction in end-to-end loan validation" },
       { "metric": "< 10 min", "label": "Validation Time", "context": "Complete document review per loan" },
       { "metric": "99%", "label": "Accuracy", "context": "Data extraction correctness" },
-      { "metric": "60%", "label": "Cost Savings", "context": "ML costs via in-house models" },
-      { "metric": "3 Agents", "label": "Personas", "context": "Loan Processor, Underwriter, Officer" },
       { "metric": "20-40+", "label": "Documents", "context": "Processed per loan application" }
     ],
     "techStack": ["Python", "FastAPI", "LangGraph", "GPT-4", "VLLM", "Custom ML Models", "RAG Systems", "Qdrant", "MongoDB", "Redis", "Kafka", "Docker", "Kubernetes", "SLRM Clusters", "React.js", "WebSocket", "Ontologies", "Rego Rules", "OCR"]
