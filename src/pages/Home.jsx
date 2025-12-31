@@ -12,7 +12,7 @@ const Home = () => {
     <PageTransition>
       <Helmet>
         <title>TechSergy | IT Consultancy & Software Development</title>
-        <meta name="description" content="A lean team of developers building AI/ML solutions, web apps, and providing IT consulting. Direct communication, no overhead. 24h response time." />
+        <meta name="description" content="Specialists in FinTech solutions, AI-powered SaaS, and enterprise platforms. A lean team with direct communication, no overhead. 24h response time." />
         <link rel="canonical" href="https://techsergy.com/" />
       </Helmet>
       <Hero />

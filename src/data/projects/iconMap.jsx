@@ -21,6 +21,10 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ShieldIcon from '@mui/icons-material/Shield';
+import ScienceIcon from '@mui/icons-material/Science';
 
 export const iconMap = {
   PlayCircleOutline: PlayCircleOutlineIcon,
@@ -46,6 +50,10 @@ export const iconMap = {
   AccountTree: AccountTreeIcon,
   Psychology: PsychologyIcon,
   SyncAlt: SyncAltIcon,
+  Timeline: TimelineIcon,
+  AccessTime: AccessTimeIcon,
+  Shield: ShieldIcon,
+  Science: ScienceIcon,
 };
 
 /**

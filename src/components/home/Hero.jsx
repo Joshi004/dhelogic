@@ -111,7 +111,7 @@ const Hero = () => {
               lineHeight: 1.7,
             }}
           >
-            A lean team of developers who work closely with you. No account managers, no handoffs, just direct communication and solid work.
+            A lean team building FinTech solutions, AI-powered SaaS, and enterprise software. No account managers, no handoffs—just direct communication and solid work.
           </Typography>
 
           {/* CTA Buttons */}

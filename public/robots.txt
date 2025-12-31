@@ -5,3 +5,4 @@ Sitemap: https://techsergy.com/sitemap.xml
 # Disallow API routes
 Disallow: /api/
 
+

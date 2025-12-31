@@ -1,0 +1,122 @@
+{
+  "id": "ticker-stream-system",
+  "title": "Ticker Stream Generation System",
+  "subtitle": "Multi-index synthetic markets for continuous trading",
+  "description": "A real-time ticker stream generation system that aggregates data from multiple stock market indexes to create synthetic ticks with natural volatility. Built with event-driven architecture for sub-50ms latency, enabling 24/7 algorithmic trading and strategy testing independent of market hours.",
+  "color": "#7C3AED",
+  "gradient": "linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)",
+  "iconKey": "Timeline",
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": false
+  },
+  "status": {
+    "isOngoing": false,
+    "label": "Completed"
+  },
+  "priorExperience": {
+    "enabled": true,
+    "note": "Prior Leadership Experience"
+  },
+  "technologies": ["C++", "Node.js", "Kafka", "TimescaleDB", "WebSocket", "Docker", "AWS", "Prometheus", "Grafana"],
+  "results": [
+    { "metric": "< 50ms", "label": "Latency" },
+    { "metric": "24/7", "label": "Operation" },
+    { "metric": "3 Indexes", "label": "Aggregation" }
+  ],
+  "portfolio": {
+    "projectSummary": "We built a ticker stream generation system that creates synthetic market ticks by aggregating data from three real stock market indexes. Unlike traditional synthetic indexes that rely purely on algorithms, this system injects genuine market randomness while maintaining control and predictability. The result: a 24/7 ticker stream with natural volatility, perfect for algorithm testing and synthetic trading environments.",
+    "challenges": [
+      {
+        "title": "Sub-50ms Latency Requirements",
+        "description": "Real-time ticker generation demands extremely low latency (~50ms end-to-end). With data arriving from three different stock market indexes (~50ms), the core processing had to complete within a 20-30ms window. Coordinating between Node.js services and a C++ performance engine added complexity to an already tight time constraint.",
+        "iconKey": "Speed"
+      },
+      {
+        "title": "Multi-Index Data Synchronization",
+        "description": "Three different stock market indexes with varying update frequencies and time zones required precise synchronization. The system needed to handle missing or delayed data from individual sources without blocking the entire pipeline, while ensuring consistent 1 tick/second delivery regardless of source irregularities.",
+        "iconKey": "IntegrationInstructions"
+      },
+      {
+        "title": "Real Randomness vs Algorithmic Control",
+        "description": "Traditional synthetic indexes are purely algorithmic—predictable and lacking real market volatility. We needed to inject natural market randomness from real indexes while balancing stability through multi-index averaging. The algorithmic processing had to enhance, not override, genuine market behavior.",
+        "iconKey": "AutoAwesome"
+      },
+      {
+        "title": "24/7 Operational Resilience",
+        "description": "Continuous operation even when real markets are closed required geographic distribution of indexes. The system dynamically selects three active indexes for every time domain, gracefully handles source failures, and maintains tick generation consistency across all operational states including market closures and holidays.",
+        "iconKey": "CloudSync"
+      }
+    ],
+    "approach": [
+      {
+        "title": "Multi-Index Aggregation Strategy",
+        "description": "The system subscribes to three real stock market indexes simultaneously, receiving tick updates approximately every 50ms. By aggregating and averaging real market data, we inject natural volatility while providing resilience against single-source failures. Geographic distribution ensures at least three indexes are always active, with the system dynamically switching based on market hours."
+      },
+      {
+        "title": "Event-Driven Data Pipeline",
+        "description": "Built on Kafka streams for multi-source market data ingestion. Node.js consumers process events from multiple market indexes with varying update frequencies, coordinate the data aggregation, and delegate core processing to the C++ engine. This architecture enables independent scaling and natural retry mechanisms for failed operations."
+      },
+      {
+        "title": "C++ Performance Engine with IPC",
+        "description": "Core price calculation algorithm implemented in C++ by a specialized team for maximum performance. The Node.js coordination layer communicates with the C++ engine via Inter-Process Communication using sockets and pipes, allowing independent development while maintaining the 20-30ms processing window required for real-time tick generation."
+      },
+      {
+        "title": "Volume-Independent Pricing",
+        "description": "Synthetic tick generation is completely decoupled from trade volume. Prices are derived solely from source market indexes plus algorithmic processing, ensuring trading activity has zero impact on ticker values. This provides a manipulation-resistant environment ideal for algorithm testing and validation."
+      },
+      {
+        "title": "Algorithmic Normalization & Outlier Handling",
+        "description": "All index data undergoes algorithmic normalization before processing, with configurable volatility limits to filter extreme outliers or Flash Crash scenarios. This ensures the system maintains natural market behavior within acceptable bounds while preventing anomalous data from corrupting the synthetic tick stream."
+      },
+      {
+        "title": "Time-Series Data Management",
+        "description": "TimescaleDB provides efficient tick history storage optimized for high-frequency time-series writes. Historical data enables backtesting and analysis while Prometheus and Grafana deliver real-time monitoring, health checks, and auto-recovery mechanisms to maintain consistent 1 tick/second delivery."
+      }
+    ],
+    "technicalSolution": [
+      {
+        "title": "Geographic Index Distribution",
+        "description": "For every time domain, three indexes are identified and can be dynamically changed based on availability. This geographic distribution strategy ensures at least three indexes are always active regardless of individual market closures, enabling true 24/7 operation without manual intervention."
+      },
+      {
+        "title": "Containerized Deployment",
+        "description": "Deployed as a multi-container Docker application on AWS infrastructure. Separate services for data ingestion (Node.js), core calculation (C++ engine), and client delivery (WebSocket) run independently with proper health checks and automatic restart policies."
+      },
+      {
+        "title": "Real-Time WebSocket Delivery",
+        "description": "Node.js broadcasts synthetic ticks via WebSocket to connected clients. The system tracks active subscriptions and optimizes resource usage, ensuring consistent 1 tick/second delivery while maintaining sub-50ms end-to-end latency from source indexes to client reception."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Algorithm Testing & Validation",
+        "description": "Test trading algorithms in a controlled, repeatable environment with consistent 1 tick/second data streams. Volume-independent pricing eliminates test trade impact, while real market volatility provides genuine behavior without emotional trader influence.",
+        "iconKey": "Science"
+      },
+      {
+        "title": "24/7 Synthetic Trading",
+        "description": "Operate trading systems outside traditional market hours with weekend and holiday trading capabilities. Continuous tick generation enables round-the-clock algorithm validation and synthetic trading operations independent of real market status.",
+        "iconKey": "AccessTime"
+      },
+      {
+        "title": "Real Randomness with Predictability",
+        "description": "Unlike purely algorithmic synthetic indexes, this system provides natural market volatility from real index aggregation. Get the best of both worlds: controllable yet genuinely random price movements that mirror actual market behavior.",
+        "iconKey": "AutoAwesome"
+      },
+      {
+        "title": "Multi-Index Stability",
+        "description": "Three-source aggregation reduces single-market dependency while preserving natural volatility. The system remains resilient to individual market disruptions and continues operation even if one source fails, providing stable yet realistic tick streams.",
+        "iconKey": "Shield"
+      }
+    ],
+    "detailedResults": [
+      { "metric": "< 50ms", "label": "End-to-End Latency", "context": "From source indexes to client delivery" },
+      { "metric": "24/7", "label": "Continuous Operation", "context": "Independent of market hours" },
+      { "metric": "3 Indexes", "label": "Multi-Source Aggregation", "context": "Natural volatility with stability" },
+      { "metric": "1 tick/sec", "label": "Consistent Delivery", "context": "Reliable predictable stream" }
+    ],
+    "techStack": ["C++", "Node.js", "Kafka", "TimescaleDB", "WebSocket", "Docker", "AWS", "Prometheus", "Grafana", "React"]
+  }
+}
+
