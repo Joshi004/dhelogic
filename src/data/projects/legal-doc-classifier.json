@@ -45,7 +45,7 @@
     }
   ],
   "portfolio": {
-    "projectSummary": "Knowledge distillation is the most underutilized optimization technique in production AI. The idea: use a powerful frontier model (the teacher) to label your data, then train a small model (the student) to replicate the teacher's behavior on your specific task. The student never needs to be generally intelligent — it just needs to be excellent at your one job. For this legal client, GPT-4 labeled 60,000 contract samples across 14 clause types. We then fine-tuned Phi-4 Mini using QLoRA on the resulting dataset and quantized it to INT4 for deployment. The result: 98.2% classification accuracy (vs. GPT-4's 98.7% on the same test set) at $0.04/M tokens instead of $15/M.",
+    "projectSummary": "Knowledge distillation is the most underutilized optimization technique in production AI. The idea: use a powerful frontier model (the teacher) to label your data, then train a small model (the student) to replicate the teacher's behavior on your specific task. The student never needs to be generally intelligent — it just needs to be excellent at your one job. For this legal client, GPT-4 was already classifying and extracting clauses from contracts effectively, but at $22K/month — and because it ran as a cloud API, it couldn't be used for the air-gapped client environments a chunk of their business required.\n\nWe used GPT-4 as the teacher to label 60,000 contract samples across 14 clause types, driving accuracy with structured chain-of-thought prompting and a 5% manual review pass in which low-confidence labels were regenerated with additional context — bringing final label accuracy to 99.1%. We then fine-tuned Phi-4 Mini on the resulting dataset using QLoRA and quantized it to INT4 with GPTQ so it would fit on modest, self-hosted hardware.\n\nThe distilled model reached 98.2% classification accuracy versus GPT-4's 98.7% on the same held-out test set, while running at $0.04/M tokens instead of $15/M. Monthly AI spend dropped from $22,000 to $1,320, and the client now owns a model they can deploy on-premises — including the air-gapped environments a cloud API dependency had previously ruled out. The full engagement took five weeks.",
     "challenges": [
       {
         "title": "Label Quality from the Teacher",
@@ -56,14 +56,112 @@
         "title": "Handling Out-of-Distribution Contract Types",
         "description": "The client regularly receives contracts from new jurisdictions and in new formats. We fine-tuned the model on a deliberately diverse set including edge cases, and built a confidence-scoring layer that routes low-confidence predictions to a human reviewer queue rather than auto-classifying them.",
         "iconKey": "AccountTree"
+      },
+      {
+        "title": "Shrinking the Model for On-Prem Hardware",
+        "description": "The whole point of distillation here was a model the client could run themselves — including in air-gapped environments with limited hardware. We quantized Phi-4 Mini to INT4 using GPTQ, shrinking its memory and compute footprint enough to fit that infrastructure while holding classification accuracy at 98.2%, statistically on par with the full-precision model.",
+        "iconKey": "Speed"
       }
     ],
-    "outcome": "Monthly AI spend reduced from $22,000 to $1,320. The client now has a model they own — deployable on-premises for their air-gapped client environments, which was previously impossible with a cloud API dependency.",
-    "timeline": "5 weeks",
-    "teamSize": "2 engineers"
+    "approach": [
+      {
+        "title": "Teacher Labeling with GPT-4",
+        "description": "We used GPT-4 as the teacher to label 60,000 contracts across 14 clause types. Structured chain-of-thought prompting pushed the teacher to reason through each classification rather than guess, which directly raises the ceiling on what the student model can learn."
+      },
+      {
+        "title": "Label Quality Assurance",
+        "description": "Distillation inherits the teacher's mistakes, so labels weren't taken on faith. A 5% sample was manually reviewed, and any label below a confidence threshold was regenerated with additional context. Final label accuracy reached 99.1% before a single training step ran."
+      },
+      {
+        "title": "Student Fine-Tuning with QLoRA",
+        "description": "We fine-tuned Phi-4 Mini on the distilled dataset using QLoRA, which makes training a small model fast and memory-efficient. The training set deliberately over-weighted edge cases and diverse jurisdictions so the student would generalize beyond the common contract types."
+      },
+      {
+        "title": "INT4 Quantization for Deployment",
+        "description": "We quantized the fine-tuned model to INT4 with GPTQ so it fits self-hosted and air-gapped hardware. Quantization was validated against the held-out test set to confirm the compression didn't cost meaningful accuracy."
+      },
+      {
+        "title": "Confidence Routing Layer",
+        "description": "Rather than auto-classifying everything, the system scores each prediction and routes low-confidence cases — typically new jurisdictions or unusual formats — to a human reviewer queue, keeping accuracy high on the long tail without a frontier model in the loop."
+      }
+    ],
+    "technicalSolution": [
+      {
+        "title": "Distillation Pipeline",
+        "description": "The architecture is a clean teacher-student pipeline: GPT-4 generates a labeled dataset, Phi-4 Mini learns to replicate the teacher's behavior on the 14 clause types. The student never needs to be generally intelligent — only excellent at this one classification task — which is exactly why a 14B-class frontier model can be replaced by a few-billion-parameter one."
+      },
+      {
+        "title": "Quantized On-Prem Serving",
+        "description": "The INT4-quantized Phi-4 Mini is served via vLLM on the client's own (Azure or on-prem) infrastructure. Because nothing leaves their environment, the same model can run in fully air-gapped deployments that a GPT-4 API integration could never satisfy."
+      },
+      {
+        "title": "Accuracy Guardrails",
+        "description": "Quality is measured, not assumed: a held-out test set confirms parity (98.2% vs. GPT-4's 98.7%), and the runtime confidence-scoring layer escalates uncertain predictions to humans, so the rare out-of-distribution contract never gets silently misclassified."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Clause Classification",
+        "description": "Classifies contracts across 14 clause types at accuracy statistically on par with GPT-4, at a fraction of the per-token cost.",
+        "iconKey": "Gavel"
+      },
+      {
+        "title": "Key Clause Extraction",
+        "description": "Surfaces the specific clauses legal teams need to review from each contract, turning a manual read-through into a targeted check.",
+        "iconKey": "Description"
+      },
+      {
+        "title": "New-Jurisdiction Handling",
+        "description": "Diverse, edge-case-weighted training plus confidence routing keeps accuracy steady on contracts from new jurisdictions and unfamiliar formats.",
+        "iconKey": "AccountTree"
+      },
+      {
+        "title": "Air-Gapped Deployment",
+        "description": "Runs entirely on the client's own hardware, enabling on-prem and air-gapped use for environments where cloud APIs are not permitted.",
+        "iconKey": "Lock"
+      }
+    ],
+    "detailedResults": [
+      { "metric": "94%", "label": "Cost Reduction", "context": "Monthly AI spend cut from $22,000 to $1,320" },
+      { "metric": "98.2%", "label": "Classification Accuracy", "context": "vs. GPT-4's 98.7% on the same held-out test set" },
+      { "metric": "$0.04/M", "label": "Token Cost", "context": "Distilled Phi-4 Mini vs. $15/M tokens on GPT-4" },
+      { "metric": "60K", "label": "Labeled Samples", "context": "Contracts labeled by GPT-4 across 14 clause types" },
+      { "metric": "99.1%", "label": "Label Accuracy", "context": "Teacher labels after QA review and regeneration" },
+      { "metric": "5 wks", "label": "Time to Delivery", "context": "From teacher labeling to deployed on-prem model" }
+    ],
+    "techStack": [
+      "GPT-4 (teacher)",
+      "Phi-4 Mini",
+      "QLoRA",
+      "GPTQ / INT4",
+      "vLLM",
+      "Python",
+      "Azure"
+    ]
   },
   "homepage": {
-    "useCases": [],
-    "metrics": []
+    "useCases": [
+      {
+        "iconKey": "AutoAwesome",
+        "bgcolor": "rgba(5, 150, 105, 0.04)",
+        "borderColor": "rgba(5, 150, 105, 0.1)",
+        "iconBg": "#059669",
+        "title": "Distilled GPT-4 into Phi-4 Mini",
+        "description": "We used GPT-4 itself to label 60K contracts across 14 clause types, then trained a small Phi-4 Mini student to match it — at 6% of the per-token cost."
+      },
+      {
+        "iconKey": "Lock",
+        "bgcolor": "rgba(1, 69, 132, 0.04)",
+        "borderColor": "rgba(1, 69, 132, 0.1)",
+        "iconBg": "#014584",
+        "title": "On-Prem & Air-Gapped",
+        "description": "The distilled model runs entirely on the client's own hardware, unlocking air-gapped deployments that a cloud-API dependency had made impossible."
+      }
+    ],
+    "metrics": [
+      { "value": "94%", "label": "Cost Reduction", "color": "#059669" },
+      { "value": "98.2%", "label": "Classification Accuracy", "color": "#047857" },
+      { "value": "On-Prem", "label": "Deployable", "color": "#014584" }
+    ]
   }
 }
