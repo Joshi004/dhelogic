@@ -9,29 +9,29 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import LockIcon from '@mui/icons-material/Lock';
 import ShieldIcon from '@mui/icons-material/Shield';
-import SpeedIcon from '@mui/icons-material/Speed';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
 const features = [
   {
-    icon: <ReceiptLongIcon sx={{ fontSize: 28 }} />,
-    title: 'Outcome-Based Pricing',
-    description: 'We commit to a cost reduction target before the engagement starts. You know the ROI before you sign.',
+    icon: <AssessmentIcon sx={{ fontSize: 28 }} />,
+    title: 'Measured, Not Promised',
+    description: 'We benchmark your current AI system on real production examples before proposing changes, and only move to production when the optimized system meets your agreed quality bar. Evidence first, claims second.',
   },
   {
     icon: <LockIcon sx={{ fontSize: 28 }} />,
-    title: 'You Own the Model',
-    description: 'After delivery you hold a model artifact — no API dependency, no usage limits, no price hikes from a vendor.',
+    title: 'Built for Your Control',
+    description: 'Wherever possible, we hand over what we build — trained artifacts, configuration, and documentation — so your team can run and maintain the system without depending on us to keep it going.',
   },
   {
     icon: <ShieldIcon sx={{ fontSize: 28 }} />,
-    title: 'Data Stays Yours',
-    description: 'Self-hosted inference means your prompts and responses never leave your infrastructure. Vital for HIPAA, GDPR, and SOC2.',
+    title: 'Your Data, Your Environment',
+    description: 'When your requirements call for it, we work inside your own cloud so sensitive data and inference traffic stay under your control — important for regulated industries like healthcare, finance, and legal.',
   },
   {
-    icon: <SpeedIcon sx={{ fontSize: 28 }} />,
-    title: 'Fast to Deliver',
-    description: '6–8 weeks from audit to deployed, optimized model. Not a 6-month consulting engagement.',
+    icon: <ReceiptLongIcon sx={{ fontSize: 28 }} />,
+    title: 'Savings That Last',
+    description: 'We design for durable cost reduction rather than a one-time patch. As your traffic and the model landscape change, we can help keep your AI systems efficient over time.',
   },
 ];
 
@@ -86,7 +86,7 @@ const WhyUs = () => {
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                Most vendors will help you optimize prompts or switch models. We go further — we build models you own and infrastructure you control, so your AI costs are structurally lower, not temporarily patched.
+                Most vendors stop at prompt tweaks or swapping one API for another. We look at your whole production pipeline and rework the expensive parts so costs come down structurally — not as a temporary patch — while the quality your users rely on holds.
               </Typography>
               
               {/* Features List */}
@@ -187,10 +187,10 @@ const WhyUs = () => {
                   <HandshakeIcon sx={{ color: 'white', fontSize: '1.75rem' }} />
                 </Box>
                 <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
-                  You Own the Output
+                  Built to Hand Over
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  Delivered model artifact, inference server config, and cost dashboard. Everything you need to run independently.
+                  Optimized workflows, configuration, and documentation, set up so your team can run and maintain the system without depending on us to keep it running.
                 </Typography>
               </Box>
 

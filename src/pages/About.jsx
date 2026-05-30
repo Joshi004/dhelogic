@@ -10,11 +10,9 @@ import CardContent from '@mui/material/CardContent';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import SectionHeader from '../components/common/SectionHeader';
+import WhyUs from '../components/home/WhyUs';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import VerifiedIcon from '@mui/icons-material/Verified';
 import SearchIcon from '@mui/icons-material/Search';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import BuildIcon from '@mui/icons-material/Build';
@@ -23,33 +21,6 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-
-const values = [
-  {
-    icon: <LightbulbIcon sx={{ fontSize: 28 }} />,
-    title: 'Innovation',
-    description: 'We stay current with new tech, but we won\'t rebuild your app in the latest framework just because it\'s trendy.',
-    color: '#014584',
-  },
-  {
-    icon: <HandshakeIcon sx={{ fontSize: 28 }} />,
-    title: 'Partnership',
-    description: 'Most of our clients come back for their next project. That\'s how we measure success.',
-    color: '#014584',
-  },
-  {
-    icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
-    title: 'Excellence',
-    description: 'We write tests, do code reviews, and don\'t ship broken features. Quality isn\'t optional for us.',
-    color: '#014584',
-  },
-  {
-    icon: <VerifiedIcon sx={{ fontSize: 28 }} />,
-    title: 'Integrity',
-    description: 'We give honest estimates. If something will take 3 months, we say 3 months - not 6 weeks to win the bid.',
-    color: '#F59E0B',
-  },
-];
 
 const processSteps = [
   {
@@ -195,8 +166,9 @@ const About = () => {
                     Our Mission
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                    To empower ambitious teams building new things with technology solutions 
-                    that drive growth, efficiency, and competitive advantage in the digital era.
+                    To help companies running AI in production bring their inference costs
+                    under control — replacing unnecessary frontier-model usage with leaner,
+                    task-specific systems, without sacrificing the quality their users rely on.
                   </Typography>
                 </Box>
 
@@ -249,62 +221,8 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Values Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'white' }}>
-        <Container maxWidth="lg">
-          <SectionHeader
-            overline="Our Values"
-            title="What Drives Us"
-            subtitle="Our core values guide every decision we make and every solution we deliver."
-          />
-
-          <Grid container spacing={3}>
-            {values.map((value, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-                <Box
-                  component={motion.div}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  sx={{
-                    height: '100%',
-                    textAlign: 'center',
-                    p: 4,
-                    bgcolor: 'white',
-                    borderRadius: 3,
-                    border: '1px solid',
-                    borderColor: 'divider',
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 80,
-                      height: 80,
-                      borderRadius: '50%',
-                      bgcolor: `${value.color}10`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: value.color,
-                      mx: 'auto',
-                      mb: 3,
-                    }}
-                  >
-                    {value.icon}
-                  </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1.5, fontSize: '1.125rem' }}>
-                    {value.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                    {value.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
+      {/* Why Us Section */}
+      <WhyUs />
 
       {/* Process Section */}
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.surface' }}>
@@ -639,8 +557,8 @@ const About = () => {
                 >
                   One thing I kept seeing: companies prototype on GPT-4 because it's the fastest path
                   forward, then never revisit the decision as scale changes the economics. We built a
-                  methodology around that specific transition — from expensive frontier model dependency
-                  to efficient, owned, task-specific models. That's what Techsergy does.
+                  methodology around that specific transition — from expensive frontier-model dependency
+                  to leaner, task-specific systems built around your workload. That's what Techsergy does.
                 </Typography>
 
                 <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
@@ -651,9 +569,9 @@ const About = () => {
                   {[
                     'Audit first — no optimization begins without a documented baseline and cost map',
                     'Founder oversight on every engagement — I personally review model selection and architecture',
-                    'You own the deliverables — model files, infra config, dashboards — no lock-in',
+                    'You keep the deliverables — trained artifacts, configuration, and dashboards — set up for your team to run',
                     'Weekly progress updates with quantified cost reduction projections',
-                    'Trained on your data, deployed in your cloud — your data never touches our systems',
+                    'Where your requirements call for it, we train and deploy inside your own cloud so sensitive data stays under your control',
                   ].map((item, index) => (
                     <Box
                       key={index}
