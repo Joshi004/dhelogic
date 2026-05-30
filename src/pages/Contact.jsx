@@ -16,13 +16,6 @@ import { useForm, Controller } from 'react-hook-form';
 import PageTransition from '../components/common/PageTransition';
 import SendIcon from '@mui/icons-material/Send';
 
-const services = [
-  { value: 'ai-ml', label: 'AI/ML Solutions & Data Analytics' },
-  { value: 'web-dev', label: 'Application Development' },
-  { value: 'consulting', label: 'IT Strategy & Consulting' },
-  { value: 'staff-augmentation', label: 'Staff Augmentation' },
-  { value: 'other', label: 'Other / Not Sure' },
-];
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,7 +37,6 @@ const Contact = () => {
       monthlySpend: '',
       useCase: '',
       currentProvider: '',
-      service: '',
       message: '',
       website: '', // Honeypot field
     },
@@ -372,29 +364,6 @@ const Contact = () => {
                         )}
                       />
                     </Grid>
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <Controller
-                        name="service"
-                        control={control}
-                        rules={{ required: 'Please select a service' }}
-                        render={({ field }) => (
-                          <TextField
-                            {...field}
-                            select
-                            label="Service Interested In"
-                            fullWidth
-                            error={!!errors.service}
-                            helperText={errors.service?.message}
-                          >
-                            {services.map((option) => (
-                              <MenuItem key={option.value} value={option.value}>
-                                {option.label}
-                              </MenuItem>
-                            ))}
-                          </TextField>
-                        )}
-                      />
-                    </Grid>
                     <Grid size={12}>
                       <Controller
                         name="message"
@@ -489,36 +458,52 @@ const Contact = () => {
           <Grid container spacing={3}>
             {[
               {
-                q: 'How quickly can you start on my project?',
-                a: 'We typically begin new projects within 1-2 weeks of agreement, depending on scope and current workload.',
+                q: 'Will our AI output quality drop after optimization?',
+                a: 'Not without your approval. We first benchmark your current AI system against real production examples, edge cases, and business-specific acceptance criteria. That baseline becomes the standard for any optimized model or workflow we propose. We only move to production when the optimized system meets the agreed quality threshold, and we keep fallback paths to larger models for complex or low-confidence cases.',
               },
               {
-                q: 'Do you work with startups?',
-                a: 'Yes - startups are actually our sweet spot. We understand limited budgets and tight timelines. We can start small and scale up as you grow.',
+                q: 'How do you reduce AI inference cost?',
+                a: 'We analyze your production AI traffic and identify where large frontier models are being overused. Then we replace unnecessary model calls with the right execution path: deterministic code, lightweight ML models, encoder-based models, smaller open-source LLMs, fine-tuned task-specific models, caching, routing, or selective fallback to GPT, Claude, or Gemini only when needed.',
               },
               {
-                q: 'What\'s your typical project timeline?',
-                a: 'Most projects take 4-12 weeks. We\'ll give you a realistic timeline after understanding your scope - no generic estimates.',
+                q: 'Do you fully replace GPT, Claude, or Gemini?',
+                a: 'Not always. Full replacement is not the goal. The goal is to reduce unnecessary frontier-model usage while preserving quality and reliability. Many production systems work best with a hybrid architecture where simple tasks use code or smaller models, repetitive workflows use task-specific models, and frontier models are reserved for complex edge cases.',
               },
               {
-                q: 'Do you offer ongoing support?',
-                a: 'Yes. We offer hourly support packages, monthly retainers, or on-call help. We don\'t disappear after launch.',
+                q: 'How do you make sure the optimized system does not break production workflows?',
+                a: 'We do not replace your current AI workflow blindly. We first run the optimized workflow offline against historical examples, then test it in parallel against live-like traffic, compare outputs, validate response formats, measure accuracy, latency, and failure modes, and only then roll it out gradually. For critical workflows, we use schema validation, confidence scoring, human review queues, and fallback routing.',
               },
               {
-                q: 'How do you handle communication?',
-                a: 'We join your Slack/Teams, provide weekly updates, and are available for calls as needed. You\'ll never be left wondering what\'s happening.',
+                q: 'Do we own the fine-tuned models and infrastructure after the engagement?',
+                a: 'Yes. You own the fine-tuned model weights, training artifacts, evaluation datasets, deployment configuration, and infrastructure setup created for your environment. You are not locked into TechSergy to continue running the system. If you want ongoing support, we can provide optional managed monitoring, retraining, benchmarking, and optimization as your production traffic evolves.',
               },
               {
-                q: 'What if I\'m not happy with the work?',
-                a: 'We build in review checkpoints throughout the project. If something\'s not right, we fix it before moving forward. We want you happy - it\'s that simple.',
+                q: 'Does our data leave our cloud environment?',
+                a: 'By default, no. We can work inside your AWS, GCP, Azure, or private cloud environment so training data, evaluation data, and inference traffic remain under your control. For regulated industries such as healthcare, finance, insurance, and legal, we structure the engagement around your compliance requirements, including data minimization, access control, audit logs, and environment-specific deployment constraints.',
               },
               {
-                q: 'Do you sign NDAs?',
-                a: 'Yes, we\'re happy to sign NDAs before any discussions about sensitive projects.',
+                q: 'We do not have labeled training data. Can you still help?',
+                a: 'Yes. Many clients start without labeled datasets. We can create training and evaluation data from existing production examples, historical model outputs, human-reviewed samples, synthetic examples, or teacher-model generated labels. The important first step is building a reliable evaluation set so we can measure whether an optimized system is safe to deploy.',
               },
               {
-                q: 'Can I see more examples of your work?',
-                a: 'Check our Portfolio page, or ask us directly - we can share relevant examples based on what you\'re building.',
+                q: 'What kinds of AI workloads are best suited for optimization?',
+                a: 'The best candidates are repetitive, high-volume, structured workflows where inputs and outputs follow predictable patterns. Examples include support ticket classification, document extraction, contract review, underwriting workflows, claims processing, internal knowledge assistants, summarization pipelines, routing, tagging, and structured data generation.',
+              },
+              {
+                q: 'What does this cost, and when do we break even?',
+                a: 'We usually start with a fixed-fee AI Cost Audit. The audit identifies where your current AI spend is going, which workflows are overusing large models, and where optimization is economically justified. If the savings opportunity is strong enough, we scope an implementation project around a target reduction. For high-volume AI systems, break-even is often measured in weeks or a few months after deployment, depending on your current monthly spend and optimization complexity.',
+              },
+              {
+                q: 'How long does an optimization engagement take?',
+                a: 'Most engagements run in stages. A cost audit and workload analysis can usually be completed first, followed by prototype optimization, benchmarking, shadow testing, controlled rollout, and production monitoring. A typical optimization project takes 6–8 weeks, depending on the number of workflows, data availability, deployment requirements, and compliance constraints.',
+              },
+              {
+                q: 'What happens after deployment?',
+                a: 'After deployment, the optimized AI system should be monitored like any production system. We track quality, latency, cost, failure modes, drift, input distribution changes, and fallback usage. You can manage this internally, or TechSergy can provide ongoing managed optimization to retrain models, update routing rules, benchmark new model options, and keep the system cost-efficient over time.',
+              },
+              {
+                q: 'Is this a risky long-term project?',
+                a: 'No. The work is staged so risk is controlled at every step. We start with audit and benchmarking before changing production systems. If the audit does not show enough savings or reliability upside, we stop there instead of forcing an implementation project. You are never committed beyond the phase you approve.',
               },
             ].map((faq, index) => (
               <Grid size={{ xs: 12, sm: 6 }} key={index}>

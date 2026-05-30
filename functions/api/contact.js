@@ -154,7 +154,6 @@ export async function onRequestPost(context) {
     const name = sanitizeInput(clampString(body?.name ?? '', 120));
     const email = sanitizeInput(clampString(body?.email ?? '', 254));
     const company = sanitizeInput(clampString(body?.company ?? '', 200));
-    const service = sanitizeInput(clampString(body?.service ?? '', 50));
     const message = sanitizeInput(clampString(body?.message ?? '', 5000));
     const monthlySpend = sanitizeInput(clampString(body?.monthlySpend ?? '', 50));
     const useCase = sanitizeInput(clampString(body?.useCase ?? '', 100));
@@ -186,7 +185,6 @@ export async function onRequestPost(context) {
     const errors = {};
     if (!isNonEmptyString(name)) errors.name = 'Name is required.';
     if (!isValidEmail(email)) errors.email = 'Valid email is required.';
-    if (!isNonEmptyString(service)) errors.service = 'Service is required.';
     if (!isNonEmptyString(message) || message.length < 20) errors.message = 'Message must be at least 20 characters.';
 
     if (Object.keys(errors).length > 0) {
@@ -204,7 +202,7 @@ export async function onRequestPost(context) {
     const toEmail = isNonEmptyString(env?.CONTACT_TO_EMAIL) ? env.CONTACT_TO_EMAIL : DEFAULT_TO_EMAIL;
     const fromEmail = isNonEmptyString(env?.CONTACT_FROM_EMAIL) ? env.CONTACT_FROM_EMAIL : 'noreply@contact.techsergy.com';
 
-    const subject = `[Audit Request] ${name} — ${useCase || service || 'General'} — ${monthlySpend || 'spend not provided'}`;
+    const subject = `[Audit Request] ${name} — ${useCase || 'General'} — ${monthlySpend || 'spend not provided'}`;
     const text = [
       'TechSergy New contact form submission:',
       '',
@@ -214,7 +212,6 @@ export async function onRequestPost(context) {
       `Monthly AI Spend: ${monthlySpend || 'Not provided'}`,
       `Primary Use Case: ${useCase || 'Not provided'}`,
       `Current Provider: ${currentProvider || 'Not provided'}`,
-      `Service: ${service}`,
       '',
       'Message:',
       message,
