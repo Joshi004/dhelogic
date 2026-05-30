@@ -7,8 +7,8 @@
   "gradient": "linear-gradient(135deg, #014584 0%, #0260a8 100%)",
   "iconKey": "PlayCircleOutline",
   "visibility": {
-    "showOnPortfolio": true,
-    "showOnHomepage": true
+    "showOnPortfolio": false,
+    "showOnHomepage": false
   },
   "status": {
     "isOngoing": true,

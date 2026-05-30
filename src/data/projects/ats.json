@@ -7,8 +7,8 @@
   "gradient": "linear-gradient(135deg, #10B981 0%, #059669 100%)",
   "iconKey": "TrendingUp",
   "visibility": {
-    "showOnPortfolio": true,
-    "showOnHomepage": true
+    "showOnPortfolio": false,
+    "showOnHomepage": false
   },
   "status": {
     "isOngoing": true,

@@ -7,7 +7,7 @@
   "gradient": "linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)",
   "iconKey": "Timeline",
   "visibility": {
-    "showOnPortfolio": true,
+    "showOnPortfolio": false,
     "showOnHomepage": false
   },
   "status": {

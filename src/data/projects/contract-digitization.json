@@ -7,7 +7,7 @@
   "gradient": "linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%)",
   "iconKey": "Gavel",
   "visibility": {
-    "showOnPortfolio": true,
+    "showOnPortfolio": false,
     "showOnHomepage": false
   },
   "status": {

@@ -6,15 +6,43 @@
   "color": "#7C3AED",
   "gradient": "linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)",
   "iconKey": "SupportAgent",
-  "visibility": { "showOnPortfolio": true, "showOnHomepage": true },
-  "status": { "isOngoing": false, "label": "Completed" },
-  "priorExperience": { "enabled": false },
-  "technologies": ["Llama 3.1 8B", "Unsloth", "LoRA", "vLLM", "AWS", "Python", "LangSmith"],
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": true
+  },
+  "status": {
+    "isOngoing": false,
+    "label": "Completed"
+  },
+  "priorExperience": {
+    "enabled": false
+  },
+  "technologies": [
+    "Llama 3.1 8B",
+    "Unsloth",
+    "LoRA",
+    "vLLM",
+    "AWS",
+    "Python",
+    "LangSmith"
+  ],
   "results": [
-    { "metric": "89%", "label": "Cost Reduction" },
-    { "metric": "$34K", "label": "Monthly Savings" },
-    { "metric": "680ms", "label": "P95 Latency" },
-    { "metric": "96%", "label": "Quality Parity Score" }
+    {
+      "metric": "89%",
+      "label": "Cost Reduction"
+    },
+    {
+      "metric": "$34K",
+      "label": "Monthly Savings"
+    },
+    {
+      "metric": "680ms",
+      "label": "P95 Latency"
+    },
+    {
+      "metric": "96%",
+      "label": "Quality Parity Score"
+    }
   ],
   "portfolio": {
     "projectSummary": "The client's support automation was built on GPT-4o — fast to build, expensive to run. At 1.2M API calls per month with an average of 800 tokens per call, their bill had grown to $38K/month with no ceiling in sight. We fine-tuned a Llama 3.1 8B model on their support corpus using LoRA adapters via Unsloth, benchmarked it against GPT-4o on 2,000 held-out tickets, and deployed it on two AWS A10G instances via vLLM. The fine-tuned model matched or exceeded GPT-4o on their specific task distribution (intent classification, reply drafting, ticket routing) in 96% of test cases, while running at $0.08/M tokens vs $15/M. The full migration took seven weeks from audit to production.",

@@ -6,15 +6,43 @@
   "color": "#059669",
   "gradient": "linear-gradient(135deg, #059669 0%, #047857 100%)",
   "iconKey": "Gavel",
-  "visibility": { "showOnPortfolio": true, "showOnHomepage": false },
-  "status": { "isOngoing": false, "label": "Completed" },
-  "priorExperience": { "enabled": false },
-  "technologies": ["GPT-4", "Phi-4 Mini", "QLoRA", "GPTQ", "vLLM", "Python", "Azure"],
+  "visibility": {
+    "showOnPortfolio": true,
+    "showOnHomepage": true
+  },
+  "status": {
+    "isOngoing": false,
+    "label": "Completed"
+  },
+  "priorExperience": {
+    "enabled": false
+  },
+  "technologies": [
+    "GPT-4",
+    "Phi-4 Mini",
+    "QLoRA",
+    "GPTQ",
+    "vLLM",
+    "Python",
+    "Azure"
+  ],
   "results": [
-    { "metric": "94%", "label": "Cost Reduction" },
-    { "metric": "60K", "label": "Training Samples" },
-    { "metric": "98.2%", "label": "Classification Accuracy" },
-    { "metric": "5 wks", "label": "Delivery" }
+    {
+      "metric": "94%",
+      "label": "Cost Reduction"
+    },
+    {
+      "metric": "60K",
+      "label": "Training Samples"
+    },
+    {
+      "metric": "98.2%",
+      "label": "Classification Accuracy"
+    },
+    {
+      "metric": "5 wks",
+      "label": "Delivery"
+    }
   ],
   "portfolio": {
     "projectSummary": "Knowledge distillation is the most underutilized optimization technique in production AI. The idea: use a powerful frontier model (the teacher) to label your data, then train a small model (the student) to replicate the teacher's behavior on your specific task. The student never needs to be generally intelligent — it just needs to be excellent at your one job. For this legal client, GPT-4 labeled 60,000 contract samples across 14 clause types. We then fine-tuned Phi-4 Mini using QLoRA on the resulting dataset and quantized it to INT4 for deployment. The result: 98.2% classification accuracy (vs. GPT-4's 98.7% on the same test set) at $0.04/M tokens instead of $15/M.",
