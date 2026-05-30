@@ -26,6 +26,9 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ShieldIcon from '@mui/icons-material/Shield';
 import ScienceIcon from '@mui/icons-material/Science';
 import HomeIcon from '@mui/icons-material/Home';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import VerifiedIcon from '@mui/icons-material/Verified';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
 
 export const iconMap = {
   PlayCircleOutline: PlayCircleOutlineIcon,
@@ -56,6 +59,9 @@ export const iconMap = {
   Shield: ShieldIcon,
   Science: ScienceIcon,
   Home: HomeIcon,
+  SupportAgent: SupportAgentIcon,
+  Verified: VerifiedIcon,
+  FactCheck: FactCheckIcon,
 };
 
 /**

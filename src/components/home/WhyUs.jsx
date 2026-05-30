@@ -4,33 +4,34 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 import SectionHeader from '../common/SectionHeader';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import GroupsIcon from '@mui/icons-material/Groups';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import HandshakeIcon from '@mui/icons-material/Handshake';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import LockIcon from '@mui/icons-material/Lock';
+import ShieldIcon from '@mui/icons-material/Shield';
+import SpeedIcon from '@mui/icons-material/Speed';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
 const features = [
   {
-    icon: <RocketLaunchIcon sx={{ fontSize: 28 }} />,
-    title: 'Innovation First',
-    description: 'We move fast and iterate quickly with cutting-edge technologies that keep you ahead of the curve.',
+    icon: <ReceiptLongIcon sx={{ fontSize: 28 }} />,
+    title: 'Outcome-Based Pricing',
+    description: 'We commit to a cost reduction target before the engagement starts. You know the ROI before you sign.',
   },
   {
-    icon: <GroupsIcon sx={{ fontSize: 28 }} />,
-    title: 'Collaborative Approach',
-    description: 'We join your Slack, attend your standups, and work like we\'re in-house. You\'ll always know what\'s happening.',
+    icon: <LockIcon sx={{ fontSize: 28 }} />,
+    title: 'You Own the Model',
+    description: 'After delivery you hold a model artifact — no API dependency, no usage limits, no price hikes from a vendor.',
   },
   {
-    icon: <SupportAgentIcon sx={{ fontSize: 28 }} />,
-    title: 'Dedicated Support',
-    description: 'Ongoing support that\'s actually responsive. Not a ticketing system, just reach out.',
+    icon: <ShieldIcon sx={{ fontSize: 28 }} />,
+    title: 'Data Stays Yours',
+    description: 'Self-hosted inference means your prompts and responses never leave your infrastructure. Vital for HIPAA, GDPR, and SOC2.',
   },
   {
-    icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
-    title: 'Results Driven',
-    description: 'Focused on shipping. We set deadlines and actually hit them.',
+    icon: <SpeedIcon sx={{ fontSize: 28 }} />,
+    title: 'Fast to Deliver',
+    description: '6–8 weeks from audit to deployed, optimized model. Not a 6-month consulting engagement.',
   },
 ];
 
@@ -63,13 +64,13 @@ const WhyUs = () => {
                   display: 'block',
                 }}
               >
-                Why Choose Us
+                Why Techsergy
               </Typography>
               <Typography
                 variant="h2"
                 sx={{ mb: 3 }}
               >
-                What's Different{' '}
+                What Makes This{' '}
                 <Box
                   component="span"
                   sx={{
@@ -78,14 +79,14 @@ const WhyUs = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  About Us
+                  Different
                 </Box>
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                We're a small team, which means you work directly with the people building your product. No layers, no account managers, just clear communication and quality work.
+                Most vendors will help you optimize prompts or switch models. We go further — we build models you own and infrastructure you control, so your AI costs are structurally lower, not temporarily patched.
               </Typography>
               
               {/* Features List */}
@@ -186,10 +187,10 @@ const WhyUs = () => {
                   <HandshakeIcon sx={{ color: 'white', fontSize: '1.75rem' }} />
                 </Box>
                 <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
-                  Partnership Approach
+                  You Own the Output
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  We're not vendors, we're collaborators. When you win, we win.
+                  Delivered model artifact, inference server config, and cost dashboard. Everything you need to run independently.
                 </Typography>
               </Box>
 

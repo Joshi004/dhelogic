@@ -1,0 +1,41 @@
+{
+  "id": "legal-doc-classifier",
+  "title": "Legal Contract Classifier: 94% Cost Reduction via Distillation",
+  "subtitle": "Knowledge distillation from GPT-4 to Phi-4 Mini for contract classification",
+  "description": "A legal tech company was using GPT-4 to classify and extract key clauses from contracts — effective, but expensive at $22K/month. We used GPT-4 itself as a teacher to generate a labeled training dataset of 60,000 classified contracts, then fine-tuned a Phi-4 Mini model on the resulting data. The distilled model matches GPT-4's classification accuracy on their contract types at 6% of the per-token cost.",
+  "color": "#059669",
+  "gradient": "linear-gradient(135deg, #059669 0%, #047857 100%)",
+  "iconKey": "Gavel",
+  "visibility": { "showOnPortfolio": true, "showOnHomepage": false },
+  "status": { "isOngoing": false, "label": "Completed" },
+  "priorExperience": { "enabled": false },
+  "technologies": ["GPT-4", "Phi-4 Mini", "QLoRA", "GPTQ", "vLLM", "Python", "Azure"],
+  "results": [
+    { "metric": "94%", "label": "Cost Reduction" },
+    { "metric": "60K", "label": "Training Samples" },
+    { "metric": "98.2%", "label": "Classification Accuracy" },
+    { "metric": "5 wks", "label": "Delivery" }
+  ],
+  "portfolio": {
+    "projectSummary": "Knowledge distillation is the most underutilized optimization technique in production AI. The idea: use a powerful frontier model (the teacher) to label your data, then train a small model (the student) to replicate the teacher's behavior on your specific task. The student never needs to be generally intelligent — it just needs to be excellent at your one job. For this legal client, GPT-4 labeled 60,000 contract samples across 14 clause types. We then fine-tuned Phi-4 Mini using QLoRA on the resulting dataset and quantized it to INT4 for deployment. The result: 98.2% classification accuracy (vs. GPT-4's 98.7% on the same test set) at $0.04/M tokens instead of $15/M.",
+    "challenges": [
+      {
+        "title": "Label Quality from the Teacher",
+        "description": "Distillation is only as good as the teacher's labels. We used structured prompting with chain-of-thought to maximize GPT-4 label accuracy, then ran a 5% manual review sample. Labels with confidence below a threshold were regenerated with additional context. Final label accuracy: 99.1%.",
+        "iconKey": "FactCheck"
+      },
+      {
+        "title": "Handling Out-of-Distribution Contract Types",
+        "description": "The client regularly receives contracts from new jurisdictions and in new formats. We fine-tuned the model on a deliberately diverse set including edge cases, and built a confidence-scoring layer that routes low-confidence predictions to a human reviewer queue rather than auto-classifying them.",
+        "iconKey": "AccountTree"
+      }
+    ],
+    "outcome": "Monthly AI spend reduced from $22,000 to $1,320. The client now has a model they own — deployable on-premises for their air-gapped client environments, which was previously impossible with a cloud API dependency.",
+    "timeline": "5 weeks",
+    "teamSize": "2 engineers"
+  },
+  "homepage": {
+    "useCases": [],
+    "metrics": []
+  }
+}

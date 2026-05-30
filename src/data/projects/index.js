@@ -4,17 +4,21 @@ import privacyPlatformData from './privacy-platform.json';
 import contractDigitizationData from './contract-digitization.json';
 import tickerStreamSystemData from './ticker-stream-system.json';
 import mortgageAutomationData from './mortgage-automation.json';
+import saasLlmCostCutData from './saas-llm-cost-cut.json';
+import legalDocClassifierData from './legal-doc-classifier.json';
 
 /**
  * All projects data from JSON files
  */
 const allProjects = [
+  saasLlmCostCutData,
+  mortgageAutomationData,
+  legalDocClassifierData,
   videoAiData,
   atsData,
   privacyPlatformData,
   contractDigitizationData,
   tickerStreamSystemData,
-  mortgageAutomationData,
 ];
 
 /**

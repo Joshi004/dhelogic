@@ -1,0 +1,41 @@
+{
+  "id": "saas-llm-cost-cut",
+  "title": "SaaS Support Platform: 89% Inference Cost Reduction",
+  "subtitle": "Fine-tuned Llama 3.1 8B replacing GPT-4o for customer support automation",
+  "description": "A B2B SaaS company was spending $38K/month on OpenAI API calls to power their customer support automation — answering tickets, classifying intent, and drafting replies. We fine-tuned a Llama 3.1 8B model on three years of their support history, deployed it on vLLM with two A10G instances, and reduced their monthly AI spend to $4,200. P95 latency dropped from 2.1s to 680ms.",
+  "color": "#7C3AED",
+  "gradient": "linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)",
+  "iconKey": "SupportAgent",
+  "visibility": { "showOnPortfolio": true, "showOnHomepage": true },
+  "status": { "isOngoing": false, "label": "Completed" },
+  "priorExperience": { "enabled": false },
+  "technologies": ["Llama 3.1 8B", "Unsloth", "LoRA", "vLLM", "AWS", "Python", "LangSmith"],
+  "results": [
+    { "metric": "89%", "label": "Cost Reduction" },
+    { "metric": "$34K", "label": "Monthly Savings" },
+    { "metric": "680ms", "label": "P95 Latency" },
+    { "metric": "96%", "label": "Quality Parity Score" }
+  ],
+  "portfolio": {
+    "projectSummary": "The client's support automation was built on GPT-4o — fast to build, expensive to run. At 1.2M API calls per month with an average of 800 tokens per call, their bill had grown to $38K/month with no ceiling in sight. We fine-tuned a Llama 3.1 8B model on their support corpus using LoRA adapters via Unsloth, benchmarked it against GPT-4o on 2,000 held-out tickets, and deployed it on two AWS A10G instances via vLLM. The fine-tuned model matched or exceeded GPT-4o on their specific task distribution (intent classification, reply drafting, ticket routing) in 96% of test cases, while running at $0.08/M tokens vs $15/M. The full migration took seven weeks from audit to production.",
+    "challenges": [
+      {
+        "title": "Quality Bar Without Regression",
+        "description": "The client needed confidence that the fine-tuned model wouldn't introduce quality regressions on edge cases — unusual ticket types, angry customers, multi-language queries. We built a benchmark of 2,000 stratified test cases covering the long tail of their ticket distribution and required 95%+ parity before signing off on production deployment.",
+        "iconKey": "Verified"
+      },
+      {
+        "title": "Latency Requirements",
+        "description": "The existing GPT-4o setup averaged 2.1s P95 latency, which was already a UX concern. The self-hosted vLLM deployment needed to match or beat this. Through continuous batching configuration and quantization to INT8, we achieved 680ms P95 — a 3x improvement alongside the 89% cost reduction.",
+        "iconKey": "Speed"
+      }
+    ],
+    "outcome": "The client now runs their support AI on infrastructure they own and control. Monthly AI spend: $4,200. Annual savings vs. prior setup: approximately $405,000.",
+    "timeline": "7 weeks",
+    "teamSize": "2 engineers"
+  },
+  "homepage": {
+    "useCases": [],
+    "metrics": []
+  }
+}

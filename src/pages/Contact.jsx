@@ -41,6 +41,9 @@ const Contact = () => {
       name: '',
       email: '',
       company: '',
+      monthlySpend: '',
+      useCase: '',
+      currentProvider: '',
       service: '',
       message: '',
       website: '', // Honeypot field
@@ -160,8 +163,8 @@ const Contact = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Contact Us | TechSergy - Start a Project</title>
-        <meta name="description" content="Ready to build something? Get in touch with TechSergy. We respond within 24 hours. No hard sell, just a conversation about your project." />
+        <title>Book a Free AI Cost Audit | TechSergy</title>
+        <meta name="description" content="Tell us your monthly AI spend and use case. We'll send back a realistic cost reduction estimate and a plan to get there — no sales pitch." />
         <link rel="canonical" href="https://techsergy.com/contact" />
       </Helmet>
       {/* Hero Section */}
@@ -202,7 +205,7 @@ const Contact = () => {
               Get in Touch
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              Let's Start a{' '}
+              Book a Free{' '}
               <Box
                 component="span"
                 sx={{
@@ -211,15 +214,14 @@ const Contact = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Conversation
+                Cost Audit
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              Have a project in mind? We'd love to hear from you. Send us a message 
-              and we'll respond as soon as possible.
+              Tell us what you're spending and what you're building. We'll come back within 24 hours with a realistic savings estimate.
             </Typography>
           </Box>
         </Container>
@@ -303,6 +305,70 @@ const Contact = () => {
                             label="Company (Optional)"
                             fullWidth
                           />
+                        )}
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 6 }}>
+                      <Controller
+                        name="monthlySpend"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            select
+                            label="Current Monthly AI API Spend"
+                            fullWidth
+                          >
+                            <MenuItem value="">Prefer not to say</MenuItem>
+                            <MenuItem value="under-5k">Under $5,000/month</MenuItem>
+                            <MenuItem value="5k-25k">$5,000 – $25,000/month</MenuItem>
+                            <MenuItem value="25k-100k">$25,000 – $100,000/month</MenuItem>
+                            <MenuItem value="over-100k">Over $100,000/month</MenuItem>
+                          </TextField>
+                        )}
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 6 }}>
+                      <Controller
+                        name="useCase"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            select
+                            label="Primary AI Use Case"
+                            fullWidth
+                          >
+                            <MenuItem value="">Select a use case</MenuItem>
+                            <MenuItem value="support">Customer Support / Chatbot</MenuItem>
+                            <MenuItem value="document">Document Processing / Extraction</MenuItem>
+                            <MenuItem value="classification">Content Classification</MenuItem>
+                            <MenuItem value="generation">Content / Code Generation</MenuItem>
+                            <MenuItem value="search">Search / Semantic Retrieval</MenuItem>
+                            <MenuItem value="other">Other</MenuItem>
+                          </TextField>
+                        )}
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 6 }}>
+                      <Controller
+                        name="currentProvider"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            select
+                            label="Current AI Provider"
+                            fullWidth
+                          >
+                            <MenuItem value="">Select provider</MenuItem>
+                            <MenuItem value="openai">OpenAI (GPT-4, GPT-4o)</MenuItem>
+                            <MenuItem value="anthropic">Anthropic (Claude)</MenuItem>
+                            <MenuItem value="google">Google (Gemini)</MenuItem>
+                            <MenuItem value="azure-openai">Azure OpenAI</MenuItem>
+                            <MenuItem value="multiple">Multiple providers</MenuItem>
+                            <MenuItem value="other">Other</MenuItem>
+                          </TextField>
                         )}
                       />
                     </Grid>
@@ -392,7 +458,7 @@ const Contact = () => {
                         endIcon={<SendIcon />}
                         sx={{ color: 'white', py: 1.5 }}
                       >
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                        {isSubmitting ? 'Sending...' : 'Book My Free Audit'}
                       </Button>
                     </Grid>
                   </Grid>

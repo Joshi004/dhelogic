@@ -90,9 +90,9 @@ const Hero = () => {
               },
             }}
           >
-            Need Something Built?
+            Your AI Costs Are
             <br />
-            <span className="gradient">Let's Talk.</span>
+            <span className="gradient">Out of Control.</span>
           </Typography>
 
           {/* Subtitle */}
@@ -111,7 +111,7 @@ const Hero = () => {
               lineHeight: 1.7,
             }}
           >
-            A lean team building FinTech solutions, AI-powered SaaS, and enterprise software. No account managers, no handoffs - just direct communication and solid work.
+            We replace expensive frontier model API calls with small, fast, task-specific models cutting your OpenAI and Anthropic bills by 60–85% without sacrificing output quality.
           </Typography>
 
           {/* CTA Buttons */}
@@ -138,7 +138,7 @@ const Hero = () => {
                 fontSize: '1rem',
               }}
             >
-              Get Started
+              Book a Free Cost Audit
             </Button>
             <Button
               component={Link}
@@ -157,7 +157,7 @@ const Hero = () => {
                 },
               }}
             >
-              View Our Work
+              See Our Results
             </Button>
           </Stack>
 
@@ -177,19 +177,34 @@ const Hero = () => {
             <Box sx={{ textAlign: 'center' }}>
               <Typography
                 variant="h3"
-                sx={{
-                  fontWeight: 700,
-                  color: '#F59E0B',
-                  fontSize: { xs: '1.75rem', md: '2rem' },
-                }}
+                sx={{ fontWeight: 700, color: '#F59E0B', fontSize: { xs: '1.75rem', md: '2rem' } }}
               >
-                24h
+                85%
               </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+                Avg Cost Reduction
+              </Typography>
+            </Box>
+            <Box sx={{ textAlign: 'center' }}>
               <Typography
-                variant="body2"
-                sx={{ color: 'text.secondary', fontWeight: 500 }}
+                variant="h3"
+                sx={{ fontWeight: 700, color: '#F59E0B', fontSize: { xs: '1.75rem', md: '2rem' } }}
               >
-                Response Time
+                6–8 wks
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+                Typical Delivery
+              </Typography>
+            </Box>
+            <Box sx={{ textAlign: 'center' }}>
+              <Typography
+                variant="h3"
+                sx={{ fontWeight: 700, color: '#F59E0B', fontSize: { xs: '1.75rem', md: '2rem' } }}
+              >
+                {'<2%'}
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+                Quality Delta
               </Typography>
             </Box>
           </Box>

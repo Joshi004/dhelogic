@@ -352,6 +352,7 @@ const CaseStudyCard = ({ caseStudy }) => {
             </Box>
 
             {/* OUR APPROACH */}
+            {caseStudy.portfolio.approach?.length > 0 && (
             <Box sx={{ mb: 6 }}>
               <Typography
                 variant="overline"
@@ -383,8 +384,10 @@ const CaseStudyCard = ({ caseStudy }) => {
                 ))}
               </Box>
             </Box>
+            )}
 
             {/* THE TECHNICAL SOLUTION */}
+            {caseStudy.portfolio.technicalSolution?.length > 0 && (
             <Box sx={{ mb: 6 }}>
               <Typography
                 variant="overline"
@@ -416,8 +419,10 @@ const CaseStudyCard = ({ caseStudy }) => {
                 ))}
               </Box>
             </Box>
+            )}
 
             {/* USE CASES */}
+            {caseStudy.portfolio.useCases?.length > 0 && (
             <Box sx={{ mb: 6 }}>
               <Typography
                 variant="overline"
@@ -479,8 +484,10 @@ const CaseStudyCard = ({ caseStudy }) => {
                 ))}
               </Grid>
             </Box>
+            )}
 
             {/* DETAILED RESULTS */}
+            {caseStudy.portfolio.detailedResults?.length > 0 && (
             <Box sx={{ mb: 6 }}>
               <Typography
                 variant="overline"
@@ -529,8 +536,10 @@ const CaseStudyCard = ({ caseStudy }) => {
                 ))}
               </Grid>
             </Box>
+            )}
 
             {/* TECH STACK */}
+            {caseStudy.portfolio.techStack?.length > 0 && (
             <Box sx={{ mb: caseStudy.priorExperience.enabled ? 4 : 0 }}>
               <Typography
                 variant="overline"
@@ -558,6 +567,7 @@ const CaseStudyCard = ({ caseStudy }) => {
                 ))}
               </Box>
             </Box>
+            )}
 
             {/* PRIOR EXPERIENCE FOOTNOTE */}
             {caseStudy.priorExperience.enabled && (

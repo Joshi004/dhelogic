@@ -192,7 +192,7 @@ const FeaturedWork = () => {
 
                     {/* Use Cases */}
                     <Grid container spacing={2} sx={{ mb: 4 }}>
-                      {currentStudy.homepage.useCases.map((useCase, i) => (
+                      {(currentStudy.homepage?.useCases ?? []).map((useCase, i) => (
                         <Grid size={12} key={i}>
                           <Box
                             sx={{
@@ -235,7 +235,7 @@ const FeaturedWork = () => {
 
                     {/* Feature Highlights */}
                     <Grid container spacing={2} sx={{ mb: 4 }}>
-                      {currentStudy.homepage.metrics.map((feature, index) => (
+                      {(currentStudy.homepage?.metrics ?? []).map((feature, index) => (
                         <Grid size={4} key={index}>
                           <Box
                             sx={{

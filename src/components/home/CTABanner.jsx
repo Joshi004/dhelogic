@@ -92,7 +92,7 @@ const CTABanner = () => {
               fontWeight: 700,
             }}
           >
-            Ready to Build Something Great?
+            Find Out How Much You're Overpaying
           </Typography>
           <Typography
             variant="subtitle1"
@@ -104,8 +104,7 @@ const CTABanner = () => {
               fontSize: '1.15rem',
             }}
           >
-            Whether you're starting fresh or leveling up, we'd love to hear what you're 
-            working on. Let's chat about how we can help.
+            Tell us your monthly AI API spend and your use case. We'll come back with a realistic cost reduction estimate and a plan to get there.
           </Typography>
           <Box
             sx={{
@@ -135,11 +134,11 @@ const CTABanner = () => {
                 },
               }}
             >
-              Start a Project
+              Book a Free Audit
             </Button>
             <Button
               component={Link}
-              to="/services"
+              to="/portfolio"
               variant="outlined"
               size="large"
               sx={{
@@ -154,7 +153,7 @@ const CTABanner = () => {
                 },
               }}
             >
-              Learn More
+              See Case Studies
             </Button>
           </Box>
         </Box>

@@ -9,38 +9,38 @@ import { motion } from 'framer-motion';
 import SectionHeader from '../common/SectionHeader';
 
 // Icons
-import SmartToyIcon from '@mui/icons-material/SmartToy';
-import WebIcon from '@mui/icons-material/Web';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import GroupsIcon from '@mui/icons-material/Groups';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import DnsIcon from '@mui/icons-material/Dns';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const services = [
   {
-    icon: <SmartToyIcon sx={{ fontSize: 32 }} />,
-    title: 'AI/ML Solutions',
-    description: 'Custom AI and machine learning solutions. We figure out if AI makes sense for your use case first, then build it right.',
+    icon: <ManageSearchIcon sx={{ fontSize: 32 }} />,
+    title: 'AI Cost Audit',
+    description: 'We map every dollar of your API spend to its use case and deliver a prioritized optimization roadmap. The entry point — typically pays for itself in week one.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
   {
-    icon: <WebIcon sx={{ fontSize: 32 }} />,
-    title: 'Application Development',
-    description: 'Clean, fast web applications. We focus on getting things working first, then making them beautiful.',
+    icon: <PsychologyIcon sx={{ fontSize: 32 }} />,
+    title: 'Model Fine-Tuning & Distillation',
+    description: 'We train task-specific models on your data. A fine-tuned Llama 3 8B outperforms GPT-4 on narrow tasks at 5–10% of the per-token cost.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
   {
-    icon: <BusinessCenterIcon sx={{ fontSize: 32 }} />,
-    title: 'IT Strategy & Consulting',
-    description: 'We help you plan your tech stack, avoid expensive mistakes, and make smart decisions about what to build.',
+    icon: <DnsIcon sx={{ fontSize: 32 }} />,
+    title: 'Self-Hosted Inference',
+    description: 'We deploy vLLM or TGI on your cloud. Your queries never hit a third-party API. You own the model, control the cost, and satisfy compliance requirements.',
     color: '#F59E0B',
     bgColor: 'rgba(245, 158, 11, 0.1)',
   },
   {
-    icon: <GroupsIcon sx={{ fontSize: 32 }} />,
-    title: 'Staff Augmentation',
-    description: 'Need extra developers? We embed with your team and work like we\'re part of it - same tools, same meetings, same Slack.',
+    icon: <TrendingDownIcon sx={{ fontSize: 32 }} />,
+    title: 'Ongoing Cost Intelligence',
+    description: 'Cost dashboards, model routing layers, and quarterly refresh cycles as new open-source models release. Savings compound over time.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },
@@ -76,8 +76,8 @@ const ServicesGrid = () => {
       <Container maxWidth="lg">
         <SectionHeader
           overline="What We Do"
-          title="How We Help"
-          subtitle="We help you build and launch products that matter. From AI-powered solutions to responsive and scalable applications, we move fast and iterate alongside you."
+          title="Four Ways We Cut Your AI Bill"
+          subtitle="A focused set of services that take you from runaway API spend to a model you own, control, and can run at a fraction of the cost."
         />
 
         <Grid

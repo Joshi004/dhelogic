@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
@@ -33,7 +34,7 @@ const TrustedBy = () => {
               display: 'block',
             }}
           >
-            Recent Client
+            Trusted By & Built With
           </Typography>
 
           <Box
@@ -126,6 +127,40 @@ const TrustedBy = () => {
               >
                 Currently accepting new clients
               </Typography>
+            </Box>
+          </Box>
+
+          {/* Tech partner chips row */}
+          <Box sx={{ mt: 5, textAlign: 'center' }}>
+            <Typography
+              variant="overline"
+              sx={{
+                color: 'text.secondary',
+                letterSpacing: '0.15em',
+                fontSize: '0.65rem',
+                mb: 2,
+                display: 'block',
+              }}
+            >
+              Open Source Models & Inference Stack
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                gap: 1,
+              }}
+            >
+              {['Meta Llama', 'Mistral AI', 'Microsoft Phi', 'Google Gemma', 'vLLM', 'HuggingFace TGI', 'Unsloth'].map((label) => (
+                <Chip
+                  key={label}
+                  label={label}
+                  size="small"
+                  variant="outlined"
+                  sx={{ opacity: 0.6 }}
+                />
+              ))}
             </Box>
           </Box>
         </Box>

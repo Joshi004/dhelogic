@@ -1,14 +1,14 @@
 {
   "id": "mortgage-automation",
   "title": "AI-Powered Mortgage Automation Platform",
-  "subtitle": "Agentic document intelligence for loan processing",
-  "description": "An intelligent agentic system built with LangGraph that automates the entire mortgage loan processing pipeline. The platform uses multi-agent workflows (Loan Processor, Underwriter, Loan Officer) to process documents, extract entities, create ontologies, and cross-reference information—achieving 99% accuracy while reducing processing time by 70% and ML costs by 60%.",
+  "subtitle": "60% ML cost reduction through VLLM migration and fine-tuning",
+  "description": "A production AI platform that started on GPT-4 and was systematically migrated to self-hosted VLLM-served models — achieving 60% ML cost reduction with zero regression in accuracy. The system uses multi-agent LangGraph workflows to process mortgage documents end-to-end. The platform uses multi-agent workflows (Loan Processor, Underwriter, Loan Officer) to process documents, extract entities, create ontologies, and cross-reference information—achieving 99% accuracy while reducing processing time by 70% and ML costs by 60%.",
   "color": "#059669",
   "gradient": "linear-gradient(135deg, #059669 0%, #047857 100%)",
   "iconKey": "Home",
   "visibility": {
     "showOnPortfolio": true,
-    "showOnHomepage": false
+    "showOnHomepage": true
   },
   "status": {
     "isOngoing": false,
@@ -20,13 +20,13 @@
   },
   "technologies": ["Python", "FastAPI", "LangGraph", "GPT-4", "VLLM", "RAG", "Qdrant", "MongoDB", "Redis", "Kafka", "Docker", "Kubernetes", "React", "Rego"],
   "results": [
+    { "metric": "60%", "label": "ML Cost Reduction" },
     { "metric": "70%", "label": "Faster Processing" },
     { "metric": "< 10 min", "label": "Document Validation" },
-    { "metric": "99%", "label": "Extraction Accuracy" },
-    { "metric": "60%", "label": "ML Cost Reduction" }
+    { "metric": "99%", "label": "Extraction Accuracy" }
   ],
   "portfolio": {
-    "projectSummary": "We built an AI-powered mortgage automation platform that transforms loan processing from a days-long manual process into a sub-10-minute automated workflow. Using LangGraph, we created three specialized AI agents (Loan Processor, Underwriter, Loan Officer) that handle document ingestion, entity extraction, cross-referencing via ontologies, and compliance validation. The system processes 20-40+ documents per loan application, handling identity cards, tax returns, bank statements, property documents, and more—extracting entities, linking them across documents, and validating against institutional guidelines. Through ontology-based validation and Rego rules, we achieved 99% extraction accuracy while eliminating hallucinations. We started with GPT-4 for rapid prototyping, then migrated to in-house VLLM-hosted models, reducing ML costs by 60%. The platform includes RAG-powered chat with document citations, enabling loan officers to query loan data instantly with full source traceability.",
+    "projectSummary": "This project is a live example of the Techsergy optimization playbook: we built the system on GPT-4 for rapid prototyping, then migrated to in-house VLLM-hosted models — cutting ML costs by 60% while maintaining 99% extraction accuracy. The platform automates the entire mortgage loan processing pipeline using LangGraph multi-agent workflows. We built an AI-powered mortgage automation platform that transforms loan processing from a days-long manual process into a sub-10-minute automated workflow. Using LangGraph, we created three specialized AI agents (Loan Processor, Underwriter, Loan Officer) that handle document ingestion, entity extraction, cross-referencing via ontologies, and compliance validation. The system processes 20-40+ documents per loan application, handling identity cards, tax returns, bank statements, property documents, and more—extracting entities, linking them across documents, and validating against institutional guidelines. Through ontology-based validation and Rego rules, we achieved 99% extraction accuracy while eliminating hallucinations. We started with GPT-4 for rapid prototyping, then migrated to in-house VLLM-hosted models, reducing ML costs by 60%. The platform includes RAG-powered chat with document citations, enabling loan officers to query loan data instantly with full source traceability.",
     "challenges": [
       {
         "title": "Multi-Format Document Processing",

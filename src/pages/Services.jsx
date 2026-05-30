@@ -14,78 +14,81 @@ import SectionHeader from '../components/common/SectionHeader';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 // Icons
-import SmartToyIcon from '@mui/icons-material/SmartToy';
-import WebIcon from '@mui/icons-material/Web';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import GroupsIcon from '@mui/icons-material/Groups';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import DnsIcon from '@mui/icons-material/Dns';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 
 const services = [
   {
-    id: 'ai-ml',
-    icon: <SmartToyIcon sx={{ fontSize: 40 }} />,
-    title: 'AI/ML Solutions & Data Analytics',
-    subtitle: 'Custom AI tools that actually solve problems',
-    description: 'We build AI tools for real use cases: chatbots that actually help users, prediction models that work in production, and automation that saves time. Not AI for AI\'s sake.',
+    id: 'cost-audit',
+    icon: <ManageSearchIcon sx={{ fontSize: 40 }} />,
+    title: 'AI Cost Audit',
+    subtitle: 'Know exactly where your money is going',
+    description: 'Before optimizing anything, we map your entire AI spend. We analyze API logs, classify each use case by complexity, and identify the top opportunities ranked by ROI. Delivered in two weeks.',
     features: [
-      'Custom Machine Learning Models',
-      'Natural Language Processing',
-      'Computer Vision Systems',
-      'Predictive Analytics',
-      'Data Pipeline Development',
-      'AI Integration & Deployment',
+      'API usage pattern analysis',
+      'Cost-per-feature attribution',
+      'Model complexity classification',
+      'ROI-ranked optimization roadmap',
+      'Baseline quality benchmarking',
+      'Written report + live walkthrough',
     ],
-    technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'scikit-learn', 'AWS SageMaker'],
+    technologies: ['OpenAI API', 'Anthropic API', 'LangSmith', 'Datadog', 'Custom dashboards'],
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.08)',
   },
   {
-    id: 'web-dev',
-    icon: <WebIcon sx={{ fontSize: 40 }} />,
-    title: 'Application Development',
-    subtitle: 'Full-stack development',
-    description: 'We build web applications. Frontend, backend, databases, APIs, deployment - the whole thing. Whatever your stack, we can work with it or help you choose the right one.',
+    id: 'model-optimization',
+    icon: <PsychologyIcon sx={{ fontSize: 40 }} />,
+    title: 'Model Fine-Tuning & Distillation',
+    subtitle: 'Task-specific models at 5–10% of frontier model cost',
+    description: 'We train open-source models (Llama 3, Mistral, Phi-4, Gemma 3) on your specific task and data. For complex pipelines we use distillation — using GPT-4 as a teacher to label training data, then train a small student model. Result: frontier-quality on your task at a fraction of the cost.',
     features: [
-      'React & Next.js Applications',
-      'Backend APIs & Microservices',
-      'Database Design & Optimization',
-      'REST & GraphQL APIs',
-      'Performance Optimization',
+      'LoRA & QLoRA fine-tuning',
+      'Knowledge distillation pipelines',
+      'INT8 / INT4 quantization (GPTQ, AWQ)',
+      'Quality benchmarking vs. current model',
+      'Delivered as portable model artifact',
+      'Supports Llama, Mistral, Phi, Gemma, Qwen',
     ],
-    technologies: ['React', 'Next.js', 'Node.js', 'Python', 'Java', 'TypeScript', 'PostgreSQL', 'MongoDB', 'GraphQL'],
+    technologies: ['Unsloth', 'Axolotl', 'HuggingFace TRL', 'GPTQ', 'AWQ', 'GGUF', 'PyTorch'],
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.08)',
   },
   {
-    id: 'consulting',
-    icon: <BusinessCenterIcon sx={{ fontSize: 40 }} />,
-    title: 'IT Strategy & Consulting',
-    subtitle: 'Figure out what to build before building it',
-    description: 'Not sure what to build or what tech to use? We help you figure that out before spending money on the wrong thing. Architecture reviews, tech stack decisions, build-vs-buy analysis.',
+    id: 'inference-infra',
+    icon: <DnsIcon sx={{ fontSize: 40 }} />,
+    title: 'Self-Hosted Inference Infrastructure',
+    subtitle: 'Your model, your cloud, your data',
+    description: 'We deploy and configure production-grade inference servers on your cloud (AWS, GCP, or Azure). Your queries stay inside your infrastructure — no third-party API, no usage limits, no data leaving your control. We also build intelligent routing layers that send simple queries to small models and escalate only when needed.',
     features: [
-      'Modernizing legacy systems',
-      'Tech stack planning',
-      'Vendor Selection',
-      'Architecture Review',
-      'Development workflow improvements',
+      'vLLM and TGI deployment & tuning',
+      'Autoscaling and continuous batching',
+      'Semantic caching (40–70% cache hit rates)',
+      'LLM routing (simple → small, complex → large)',
+      'HIPAA / GDPR / SOC2 compatible setup',
+      'Cost and latency monitoring dashboards',
     ],
-    technologies: ['TOGAF', 'Agile', 'Scrum', 'SAFe', 'ITIL', 'Design Thinking'],
+    technologies: ['vLLM', 'HuggingFace TGI', 'Ollama', 'LiteLLM', 'GPTCache', 'AWS', 'GCP', 'Azure', 'NVIDIA'],
     color: '#F59E0B',
     bgColor: 'rgba(245, 158, 11, 0.08)',
   },
   {
-    id: 'staff-augmentation',
-    icon: <GroupsIcon sx={{ fontSize: 40 }} />,
-    title: 'Staff Augmentation',
-    subtitle: 'Developers who work like they\'re in-house',
-    description: 'Need more developers but don\'t want to hire full-time? We embed with your team - join your Slack, attend your standups, use your tools. It\'s like having more teammates without the hiring overhead.',
+    id: 'ongoing',
+    icon: <TrendingDownIcon sx={{ fontSize: 40 }} />,
+    title: 'Ongoing Cost Intelligence',
+    subtitle: 'Savings that compound as the model landscape evolves',
+    description: 'The open-source model landscape moves fast — a model released today may outperform last quarter\'s fine-tune at half the size. We keep your stack current with quarterly model reviews, anomaly alerting when costs spike unexpectedly, and routing optimizations as your usage patterns evolve.',
     features: [
-      'Skilled Developers & Engineers',
-      'UI/UX Designers',
-      'Technical Consultants',
-      'QA & Testing Specialists',
-      'Hourly, weekly, or project-based contracts',
+      'Real-time cost dashboards by feature',
+      'Spend anomaly alerts',
+      'Quarterly model refresh cycles',
+      'Routing layer optimization',
+      'Usage pattern analysis',
+      'Retainer or project-based',
     ],
-    technologies: ['React', 'Node.js', 'Python', 'Java', 'DevOps', 'Agile'],
+    technologies: ['LangSmith', 'Grafana', 'Prometheus', 'Custom dashboards', 'LiteLLM'],
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.08)',
   },
@@ -95,8 +98,8 @@ const Services = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI/ML, Web Development & IT Services | TechSergy</title>
-        <meta name="description" content="Custom AI/ML solutions, application development, IT consulting, and staff augmentation. Expert developers who work directly with your team." />
+        <title>AI Inference Cost Reduction Services | TechSergy</title>
+        <meta name="description" content="AI cost audits, model fine-tuning, distillation, and self-hosted inference deployment. We cut your OpenAI and Anthropic bills by 60–85%." />
         <link rel="canonical" href="https://techsergy.com/services" />
       </Helmet>
       {/* Hero Section */}
@@ -138,7 +141,7 @@ const Services = () => {
               Our Services
             </Typography>
             <Typography variant="h1" sx={{ mb: 3 }}>
-              Focused Solutions for{' '}
+              Four Services. One Goal:{' '}
               <Box
                 component="span"
                 sx={{
@@ -147,14 +150,14 @@ const Services = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                What Matters Most
+                Lower Your AI Bill.
               </Box>
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              Development, consulting, and team extension. Here's what we offer and how it works.
+              From a two-week cost audit to a fully deployed self-hosted inference stack — structured to deliver measurable ROI at every stage.
             </Typography>
           </Box>
         </Container>
@@ -398,13 +401,13 @@ const Services = () => {
             }}
           >
             <Typography variant="h3" sx={{ mb: 2, fontWeight: 700 }}>
-              Not Sure Which Service You Need?
+              Not Sure Where to Start?
             </Typography>
             <Typography
               variant="body1"
               sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.95)', maxWidth: 500, mx: 'auto' }}
             >
-              Schedule a call. No hard sell - just a conversation about what you need and whether we're the right fit.
+              Book a free 30-minute call. Tell us what you're spending and what you're building. We'll tell you exactly where the savings are.
             </Typography>
             <Button
               component={Link}
@@ -423,7 +426,7 @@ const Services = () => {
                 },
               }}
             >
-              Schedule Consultation
+              Book a Free Audit Call
             </Button>
           </Card>
         </Container>

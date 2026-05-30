@@ -55,26 +55,26 @@ const processSteps = [
   {
     icon: <SearchIcon sx={{ fontSize: 32 }} />,
     step: '01',
-    title: 'Discover',
-    description: 'Week 1: We learn your business, talk to stakeholders, and audit your current setup.',
+    title: 'Audit',
+    description: 'Two weeks: we analyze your API logs, map every dollar to a use case, and identify the top cost reduction opportunities.',
   },
   {
     icon: <DesignServicesIcon sx={{ fontSize: 32 }} />,
     step: '02',
     title: 'Design',
-    description: 'Week 2: We propose a technical architecture and timeline. You review, we refine.',
+    description: 'We select the right model architecture and training approach for your use case. You review and approve before any training begins.',
   },
   {
     icon: <BuildIcon sx={{ fontSize: 32 }} />,
     step: '03',
-    title: 'Develop',
-    description: 'Weeks 3-8: We ship working software every week. You see progress in real-time.',
+    title: 'Build & Deploy',
+    description: 'Weeks 3–8: we fine-tune, quantize, and deploy your inference stack. Weekly progress updates throughout.',
   },
   {
     icon: <RocketLaunchIcon sx={{ fontSize: 32 }} />,
     step: '04',
-    title: 'Deploy',
-    description: 'Week 9+: We deploy to production and stick around for support and improvements.',
+    title: 'Monitor',
+    description: 'Cost dashboards go live on day one of deployment. Quarterly model reviews keep your savings growing as the landscape evolves.',
   },
 ];
 
@@ -82,8 +82,8 @@ const About = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>About Us | TechSergy - Engineers from Apple & Tether</title>
-        <meta name="description" content="TechSergy is a small IT consultancy run by engineers from Apple, Tether, and fast-growing startups. We help companies ship better software, faster." />
+        <title>About Techsergy | AI Inference Cost Reduction Specialists</title>
+        <meta name="description" content="Techsergy helps companies slash AI API costs using model fine-tuning, distillation, and self-hosted inference. Founded by engineers from Apple, Tether, and high-growth AI startups." />
         <link rel="canonical" href="https://techsergy.com/about" />
       </Helmet>
       {/* Hero Section */}
@@ -143,11 +143,10 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', fontSize: '1.1rem', lineHeight: 1.8 }}
                 >
-                  TechSergy is a small IT consultancy run by engineers who've built 
-                  products at Apple, Tether, and fast-growing startups. We help 
-                  companies ship better software, faster. We know how it works - 
-                  how to scale from 0 to large-scale systems. You're working with 
-                  the specialists.
+                  TechSergy is a specialist AI inference optimization firm. We help
+                  companies that have already integrated AI into production workflows
+                  take back control of their costs — through fine-tuning, distillation,
+                  quantization, and self-hosted deployment of models they own.
                 </Typography>
               </Box>
             </Grid>
@@ -439,16 +438,13 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  TechSergy exists to be the kind of engineering partner teams can rely on - 
-                  clear communication, strong architecture, and steady delivery.
+                  TechSergy was founded after watching companies repeatedly build excellent AI products — then get blindsided by the infrastructure cost of running them in production. A mortgage platform processing thousands of documents a day. A support system handling millions of queries a month. All of them started on GPT-4. None of them had to stay there.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  We've worked with teams like Tether to build production AI systems, 
-                  trading platforms, and web apps. We stay small and hands-on so 
-                  projects move fast and stay maintainable.
+                  We've built production AI systems across fintech, document intelligence, and SaaS — and in every case, the pattern is the same: prototype on frontier models, then optimize. We do the optimization part, systematically, at production scale.
                 </Typography>
                 <Button
                   component={Link}
@@ -475,10 +471,10 @@ const About = () => {
                 }}
               >
                 {[
-                  { value: 'Zero', label: 'Overhead', accent: false },
-                  { value: '24h', label: 'Response Time', accent: true },
-                  { value: 'Weekly', label: 'Demos', accent: false },
-                  { value: 'Founder', label: 'Oversight', accent: true },
+                  { value: '85%', label: 'Avg Cost Reduction', accent: false },
+                  { value: '6–8 wks', label: 'Delivery', accent: true },
+                  { value: '<2%', label: 'Quality Delta', accent: false },
+                  { value: '$0', label: 'Third-Party API After Deploy', accent: true },
                 ].map((stat, index) => (
                   <Box
                     key={index}
@@ -633,18 +629,18 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  Hi, I'm Naresh Joshi, Founder & CEO of TechSergy. I'm an engineer at heart, and I 
-                  started TechSergy because I love solving complex technical challenges - especially 
-                  the ones that require both deep systems thinking and rapid execution.
+                  Hi, I'm Naresh Joshi, Founder & CEO of TechSergy. My background is in building
+                  production AI systems — I've led teams that shipped document intelligence platforms,
+                  trading pipelines, and AI-powered SaaS products across fintech and enterprise.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  Over the years, I've built production systems across fintech, AI/ML platforms, and 
-                  enterprise software. I've worked at companies like Apple, Tether, and high-growth 
-                  startups, and learned what consistently makes projects succeed: strong architecture, 
-                  clear communication, and shipping in measurable steps.
+                  One thing I kept seeing: companies prototype on GPT-4 because it's the fastest path
+                  forward, then never revisit the decision as scale changes the economics. We built a
+                  methodology around that specific transition — from expensive frontier model dependency
+                  to efficient, owned, task-specific models. That's what Techsergy does.
                 </Typography>
 
                 <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
@@ -653,11 +649,11 @@ const About = () => {
 
                 <Box sx={{ mb: 4 }}>
                   {[
-                    'Lean, senior-led team - you get focused specialists, not layers of management',
-                    'Founder oversight on every project - I personally review architecture and key decisions',
-                    'Weekly demos and written updates - you always know where we are',
-                    'Continuous delivery - we ship working software every sprint, not at the end',
-                    'Long-term thinking - we build systems that scale and teams can maintain',
+                    'Audit first — no optimization begins without a documented baseline and cost map',
+                    'Founder oversight on every engagement — I personally review model selection and architecture',
+                    'You own the deliverables — model files, infra config, dashboards — no lock-in',
+                    'Weekly progress updates with quantified cost reduction projections',
+                    'Trained on your data, deployed in your cloud — your data never touches our systems',
                   ].map((item, index) => (
                     <Box
                       key={index}

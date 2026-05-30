@@ -3,23 +3,25 @@ import PageTransition from '../components/common/PageTransition';
 import Hero from '../components/home/Hero';
 import TrustedBy from '../components/home/TrustedBy';
 import ServicesGrid from '../components/home/ServicesGrid';
+import ProblemStatement from '../components/home/ProblemStatement';
+import HowItWorks from '../components/home/HowItWorks';
 import FeaturedWork from '../components/home/FeaturedWork';
-import WhyUs from '../components/home/WhyUs';
 import CTABanner from '../components/home/CTABanner';
 
 const Home = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>TechSergy | IT Consultancy & Software Development</title>
-        <meta name="description" content="Specialists in FinTech solutions, AI-powered SaaS, and enterprise platforms. A lean team with direct communication, no overhead. 24h response time." />
+        <title>TechSergy | AI Inference Cost Reduction</title>
+        <meta name="description" content="We cut AI API costs by 60–85%. Fine-tuning, distillation, and self-hosted inference for companies overpaying OpenAI and Anthropic." />
         <link rel="canonical" href="https://techsergy.com/" />
       </Helmet>
       <Hero />
+      <ProblemStatement />
       <TrustedBy />
       <ServicesGrid />
+      <HowItWorks />
       <FeaturedWork />
-      <WhyUs />
       <CTABanner />
     </PageTransition>
   );

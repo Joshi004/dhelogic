@@ -156,6 +156,9 @@ export async function onRequestPost(context) {
     const company = sanitizeInput(clampString(body?.company ?? '', 200));
     const service = sanitizeInput(clampString(body?.service ?? '', 50));
     const message = sanitizeInput(clampString(body?.message ?? '', 5000));
+    const monthlySpend = sanitizeInput(clampString(body?.monthlySpend ?? '', 50));
+    const useCase = sanitizeInput(clampString(body?.useCase ?? '', 100));
+    const currentProvider = sanitizeInput(clampString(body?.currentProvider ?? '', 100));
 
     // Detect and log suspicious content
     const rawInputs = [
@@ -201,13 +204,16 @@ export async function onRequestPost(context) {
     const toEmail = isNonEmptyString(env?.CONTACT_TO_EMAIL) ? env.CONTACT_TO_EMAIL : DEFAULT_TO_EMAIL;
     const fromEmail = isNonEmptyString(env?.CONTACT_FROM_EMAIL) ? env.CONTACT_FROM_EMAIL : 'noreply@contact.techsergy.com';
 
-    const subject = `[Website Contact] ${name} — ${service}`;
+    const subject = `[Audit Request] ${name} — ${useCase || service || 'General'} — ${monthlySpend || 'spend not provided'}`;
     const text = [
       'TechSergy New contact form submission:',
       '',
       `Name: ${name}`,
       `Email: ${email}`,
       `Company: ${company || '-'}`,
+      `Monthly AI Spend: ${monthlySpend || 'Not provided'}`,
+      `Primary Use Case: ${useCase || 'Not provided'}`,
+      `Current Provider: ${currentProvider || 'Not provided'}`,
       `Service: ${service}`,
       '',
       'Message:',
