@@ -53,8 +53,8 @@ const About = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>About Techsergy | AI Inference Cost Reduction Specialists</title>
-        <meta name="description" content="Techsergy helps companies slash AI API costs using model fine-tuning, distillation, and self-hosted inference. Founded by engineers from Apple, Tether, and high-growth AI startups." />
+        <title>About TechSergy | AI Inference Cost Reduction Specialists</title>
+        <meta name="description" content="TechSergy helps companies slash AI API costs using model fine-tuning, distillation, and self-hosted inference. Founded by engineers from Apple, Tether, and high-growth AI startups." />
         <link rel="canonical" href="https://techsergy.com/about" />
       </Helmet>
       {/* Hero Section */}
@@ -230,7 +230,7 @@ const About = () => {
           <SectionHeader
             overline="Our Process"
             title="How We Work"
-            subtitle="A proven methodology that ensures successful project delivery every time."
+            subtitle="The same staged methodology we run on every engagement — benchmark first, optimize, then hand over the model and infra. Measured at each step, not promised."
           />
 
           <Grid container spacing={4}>
@@ -371,7 +371,7 @@ const About = () => {
                   endIcon={<ArrowForwardIcon />}
                   sx={{ color: 'white' }}
                 >
-                  Work With Us
+                  Book a Free Cost Audit
                 </Button>
               </Box>
             </Grid>
@@ -682,7 +682,7 @@ const About = () => {
                 },
               }}
             >
-              Get in Touch
+              Book a Free Cost Audit
             </Button>
           </Box>
         </Container>

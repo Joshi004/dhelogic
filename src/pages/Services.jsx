@@ -171,6 +171,7 @@ const Services = () => {
           sx={{
             py: { xs: 8, md: 10 },
             bgcolor: index % 2 === 0 ? 'white' : 'background.surface',
+            scrollMarginTop: { xs: 72, md: 88 }, // offset for fixed navbar
           }}
         >
           <Container maxWidth="lg">
@@ -290,7 +291,7 @@ const Services = () => {
                       },
                     }}
                   >
-                    Get Started
+                    Book a Free Cost Audit
                   </Button>
                 </Box>
               </Grid>
@@ -426,7 +427,7 @@ const Services = () => {
                 },
               }}
             >
-              Book a Free Audit Call
+              Book a Free Cost Audit
             </Button>
           </Card>
         </Container>

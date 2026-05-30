@@ -18,8 +18,8 @@ const Portfolio = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Our Work & Case Studies | TechSergy</title>
-        <meta name="description" content="See what we've built - from AI video analysis platforms processing 5M+ hours to custom web applications. Real projects, real results." />
+        <title>Case Studies: AI Inference Cost Reduction | TechSergy</title>
+        <meta name="description" content="Real production results: an 89% inference cost reduction for a SaaS platform and 94% via distillation for a legal classifier — quality held. Inference cost reduction is all we do." />
         <link rel="canonical" href="https://techsergy.com/portfolio" />
       </Helmet>
       {/* Hero Section */}
@@ -78,7 +78,7 @@ const Portfolio = () => {
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              A few examples of what we've built. We're still growing, but we're proud of what we've shipped so far.
+              We show only inference cost-reduction work — it's all we do. Here's what that looks like in production.
             </Typography>
           </Box>
         </Container>
@@ -140,13 +140,13 @@ const Portfolio = () => {
               <LightbulbOutlinedIcon sx={{ fontSize: '2.5rem', color: 'primary.main' }} />
             </Box>
             <Typography variant="h4" sx={{ mb: 2, fontWeight: 700 }}>
-              Your Project Could Be Next
+              Your Bill Could Be Next
             </Typography>
             <Typography
               variant="body1"
               sx={{ color: 'text.secondary', mb: 4, maxWidth: 500, mx: 'auto' }}
             >
-              We're selective about the projects we take on. If you've got something interesting, let's talk.
+              These teams cut their production inference bills by 80–94% with quality held. Tell us what you're spending and we'll estimate yours.
             </Typography>
             <Button
               component={Link}
@@ -155,7 +155,7 @@ const Portfolio = () => {
               endIcon={<ArrowForwardIcon />}
               sx={{ color: 'white' }}
             >
-              Start a Conversation
+              Book a Free Cost Audit
             </Button>
           </Card>
         </Container>
@@ -181,13 +181,13 @@ const Portfolio = () => {
               variant="h2"
               sx={{ color: 'white', mb: 2, fontWeight: 700 }}
             >
-              Got a Project in Mind?
+              Overpaying for Production AI?
             </Typography>
             <Typography
               variant="subtitle1"
               sx={{ color: 'rgba(255, 255, 255, 0.95)', mb: 4, maxWidth: 600, mx: 'auto' }}
             >
-              Let's talk about your project. No commitment, no hard sell—just a conversation about what you need.
+              Get a free cost audit — a realistic estimate of how much you could cut your OpenAI or Anthropic bill, and exactly how we'd do it. No sales pitch.
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
               <Button
@@ -206,7 +206,7 @@ const Portfolio = () => {
                   },
                 }}
               >
-                Start a Project
+                Book a Free Cost Audit
               </Button>
               <Button
                 component={Link}

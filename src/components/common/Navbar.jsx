@@ -108,9 +108,9 @@ const Navbar = () => {
           fullWidth
           size="large"
           onClick={handleDrawerToggle}
-          sx={{ color: 'white' }}
+          sx={{ color: 'white', whiteSpace: 'nowrap' }}
         >
-          Get Started
+          Free Cost Audit
         </Button>
       </Box>
     </Box>
@@ -206,10 +206,11 @@ const Navbar = () => {
                 variant="contained"
                 sx={{
                   color: 'white',
-                  px: 3,
+                  px: 2.5,
+                  whiteSpace: 'nowrap',
                 }}
               >
-                Get Started
+                Free Cost Audit
               </Button>
             </Box>
 

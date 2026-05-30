@@ -16,10 +16,10 @@ const footerLinks = {
     { label: 'Contact', path: '/contact' },
   ],
   services: [
-    { label: 'AI/ML Solutions', path: '/services#ai-ml' },
-    { label: 'Web Development', path: '/services#web-dev' },
-    { label: 'IT Consulting', path: '/services#consulting' },
-    { label: 'Staff Augmentation', path: '/services#staff-augmentation' },
+    { label: 'AI Cost Audit', path: '/services#cost-audit' },
+    { label: 'Fine-Tuning & Distillation', path: '/services#model-optimization' },
+    { label: 'Self-Hosted Inference', path: '/services#inference-infra' },
+    { label: 'Ongoing Cost Intelligence', path: '/services#ongoing' },
   ],
   contact: [
     { label: 'sales@techsergy.com', href: 'mailto:sales@techsergy.com', description: 'New Business' },
@@ -91,8 +91,8 @@ const Footer = () => {
               variant="body2Light"
               sx={{ opacity: 0.78, mb: 2, maxWidth: 300 }}
             >
-              We build technology with you, not just for you. Let's create something 
-              great together.
+              We cut production AI inference costs — through fine-tuning, distillation,
+              and self-hosted inference.
             </Typography>
             
             {/* Status badge */}

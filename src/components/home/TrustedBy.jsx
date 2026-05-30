@@ -125,7 +125,7 @@ const TrustedBy = () => {
                   fontWeight: 500,
                 }}
               >
-                Currently accepting new clients
+                Production inference cost reduction — that's all we do.
               </Typography>
             </Box>
           </Box>
