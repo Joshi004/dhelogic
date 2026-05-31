@@ -15,6 +15,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { motion } from 'framer-motion';
+import Logo from './Logo';
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -61,15 +62,7 @@ const Navbar = () => {
           borderColor: 'divider',
         }}
       >
-        <Box
-          component="img"
-          src="/techsergy_logo_transparent.png"
-          alt="TechSergy"
-          sx={{
-            width: 100,
-            height: 'auto',
-          }}
-        />
+        <Logo variant="dark" height={26} />
         <IconButton onClick={handleDrawerToggle} aria-label="close menu">
           <CloseIcon />
         </IconButton>
@@ -143,15 +136,7 @@ const Navbar = () => {
                 textDecoration: 'none',
               }}
             >
-              <Box
-                component="img"
-                src="/techsergy_logo_transparent.png"
-                alt="TechSergy"
-                sx={{
-                  width: { xs: 110, md: 140 },
-                  height: 'auto',
-                }}
-              />
+              <Logo variant="dark" height={{ xs: 24, md: 30 }} />
             </Box>
 
             {/* Desktop Navigation */}

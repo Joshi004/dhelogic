@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 210" fill="none">
+  <!-- Color palette -->
+  <!-- navy   #1b2433 -->
+  <!-- blue   #2f6fd0 -->
+  <!-- NOTE: path geometry is duplicated in src/components/common/Logo.jsx — keep both in sync. -->
+
+  <style>
+    .ink { fill: #1b2433; }
+    /* Keep the navy mark visible against dark browser-tab chrome. */
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #ffffff; }
+    }
+  </style>
+
+  <!-- "A": hollow mountain triangle (outer triangle minus inner cutout) -->
+  <path class="ink" d="M105 15 L195 195 L15 195 Z
+           M105 90 L155 195 L55 195 Z"
+        fill-rule="evenodd"/>
+
+  <!-- Inner blue peak inside the "A" -->
+  <path d="M105 120 L138 195 L72 195 Z" fill="#2f6fd0"/>
+
+  <!-- "I": vertical bar, navy body (stem below the dot) -->
+  <path class="ink" d="M214 70 L248 70 L248 195 L214 195 Z"/>
+
+  <!-- "I": blue "dot" above the stem, separated by a gap -->
+  <path d="M214 25 L248 25 L248 59 L214 59 Z" fill="#2f6fd0"/>
+</svg>

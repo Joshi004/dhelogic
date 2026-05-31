@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import Logo from './Logo';
 
 const footerLinks = {
   company: [
@@ -52,18 +53,7 @@ const Footer = () => {
           <Grid size={{ xs: 12, md: 3 }} sx={{ display: 'flex', flexDirection: 'column' }}>
             {/* Brand name + LinkedIn on same line */}
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
-              <Typography
-                variant="h5"
-                sx={{
-                  fontFamily: '"General Sans", sans-serif',
-                  fontWeight: 700,
-                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
-                TechSergy
-              </Typography>
+              <Logo variant="light" showTagline height={28} />
               {socialLinks.map((social) => (
                 <IconButton
                   key={social.label}
