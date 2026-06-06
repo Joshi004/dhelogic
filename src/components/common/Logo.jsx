@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-// AI-mark geometry — keep these path strings in sync with /public/ai-logo.svg.
+// AI-mark geometry  keep these path strings in sync with /public/ai-logo.svg.
 // viewBox is 0 0 260 210. "ink" paths recolor per variant; "accent" stays blue.
 const AI_MARK = {
   aHollow: 'M105 15 L195 195 L15 195 Z M105 90 L155 195 L55 195 Z', // hollow "A" (fill-rule evenodd)

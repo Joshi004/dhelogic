@@ -39,7 +39,7 @@
       },
       {
         "title": "Real Randomness vs Algorithmic Control",
-        "description": "Traditional synthetic indexes are purely algorithmic—predictable and lacking real market volatility. We needed to inject natural market randomness from real indexes while balancing stability through multi-index averaging. The algorithmic processing had to enhance, not override, genuine market behavior.",
+        "description": "Traditional synthetic indexes are purely algorithmicpredictable and lacking real market volatility. We needed to inject natural market randomness from real indexes while balancing stability through multi-index averaging. The algorithmic processing had to enhance, not override, genuine market behavior.",
         "iconKey": "AutoAwesome"
       },
       {

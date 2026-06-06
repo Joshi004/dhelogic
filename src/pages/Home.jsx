@@ -5,6 +5,7 @@ import TrustedBy from '../components/home/TrustedBy';
 import ServicesGrid from '../components/home/ServicesGrid';
 import ProblemStatement from '../components/home/ProblemStatement';
 import HowItWorks from '../components/home/HowItWorks';
+import WhyUs from '../components/home/WhyUs';
 import FeaturedWork from '../components/home/FeaturedWork';
 import CTABanner from '../components/home/CTABanner';
 
@@ -21,6 +22,7 @@ const Home = () => {
       <TrustedBy />
       <ServicesGrid />
       <HowItWorks />
+      <WhyUs />
       <FeaturedWork />
       <CTABanner />
     </PageTransition>

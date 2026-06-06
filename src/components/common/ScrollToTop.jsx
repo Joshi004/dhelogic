@@ -11,7 +11,7 @@ const ScrollToTop = () => {
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return !!el;
       };
-      // Target may not be mounted yet (pages mount under AnimatePresence) — retry once.
+      // Target may not be mounted yet (pages mount under AnimatePresence)  retry once.
       if (scrollToEl()) return;
       const t = setTimeout(scrollToEl, 250);
       return () => clearTimeout(t);

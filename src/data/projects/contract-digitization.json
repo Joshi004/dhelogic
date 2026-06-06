@@ -25,16 +25,16 @@
     { "metric": "30-40%", "label": "Cost Reduction" }
   ],
   "portfolio": {
-    "projectSummary": "We built an enterprise contract digitization platform that solves a critical problem: companies with 10-20+ years of history accumulate millions of contracts that become inaccessible sources of truth. This creates significant revenue leakage—companies lose money on renewals, pricing, and compliance because salespeople can't interpret legal contracts and legal teams can't read millions of documents. Our platform ingests contracts at scale, uses ML-powered extraction with RAG systems and specialized models (LegolBERT, YOLO), and provides a searchable repository that puts contract intelligence at anyone's fingertips. Through a two-phase transformation—first optimizing architecture and UX (30-40% improvement), then implementing ML pipelines (80-90% improvement)—we enabled exponential rather than linear business scaling.",
+    "projectSummary": "We built an enterprise contract digitization platform that solves a critical problem: companies with 10-20+ years of history accumulate millions of contracts that become inaccessible sources of truth. This creates significant revenue leakagecompanies lose money on renewals, pricing, and compliance because salespeople can't interpret legal contracts and legal teams can't read millions of documents. Our platform ingests contracts at scale, uses ML-powered extraction with RAG systems and specialized models (LegolBERT, YOLO), and provides a searchable repository that puts contract intelligence at anyone's fingertips. Through a two-phase transformationfirst optimizing architecture and UX (30-40% improvement), then implementing ML pipelines (80-90% improvement)we enabled exponential rather than linear business scaling.",
     "challenges": [
       {
         "title": "Scale and Volume",
-        "description": "Enterprise companies accumulate millions of contracts spanning 100-200 pages each. No human team can process this volume—it would require prohibitively large legal teams. The sheer magnitude makes contracts effectively inaccessible despite being the source of truth for customer relationships, pricing, and obligations.",
+        "description": "Enterprise companies accumulate millions of contracts spanning 100-200 pages each. No human team can process this volumeit would require prohibitively large legal teams. The sheer magnitude makes contracts effectively inaccessible despite being the source of truth for customer relationships, pricing, and obligations.",
         "iconKey": "Analytics"
       },
       {
         "title": "Legacy System Bottlenecks",
-        "description": "The original monolithic architecture couldn't scale. The UI forced context switching—legal teams had to open PDFs in separate tabs while filling forms. Loading 100-200 page PDFs took too long, creating frustrating delays. These architectural and UX issues severely limited digitization throughput.",
+        "description": "The original monolithic architecture couldn't scale. The UI forced context switchinglegal teams had to open PDFs in separate tabs while filling forms. Loading 100-200 page PDFs took too long, creating frustrating delays. These architectural and UX issues severely limited digitization throughput.",
         "iconKey": "AccountTree"
       },
       {
@@ -51,15 +51,15 @@
     "approach": [
       {
         "title": "Microservices Decomposition",
-        "description": "Transformed the monolithic architecture into independent services: Upload Service (contract ingestion), Preprocessing Service (OCR + image generation), Digitization Service (core extraction logic), and Rendering Service (UI display). Used event-driven communication via Kafka for asynchronous processing. This enabled independent scaling—we could add more digitization workers without affecting upload or rendering performance."
+        "description": "Transformed the monolithic architecture into independent services: Upload Service (contract ingestion), Preprocessing Service (OCR + image generation), Digitization Service (core extraction logic), and Rendering Service (UI display). Used event-driven communication via Kafka for asynchronous processing. This enabled independent scalingwe could add more digitization workers without affecting upload or rendering performance."
       },
       {
         "title": "Smart PDF Processing Pipeline",
-        "description": "Created dual-format processing: generated OCR text for extraction and converted PDFs to individual page images for UI rendering. This solved the load time problem—we lazy-load the first 5 pages immediately, then load additional pages on scroll. Since most critical data appears in the first few pages, users experienced fast load times even with 200-page contracts."
+        "description": "Created dual-format processing: generated OCR text for extraction and converted PDFs to individual page images for UI rendering. This solved the load time problemwe lazy-load the first 5 pages immediately, then load additional pages on scroll. Since most critical data appears in the first few pages, users experienced fast load times even with 200-page contracts."
       },
       {
         "title": "UX-Driven Digitization",
-        "description": "Redesigned the interface with a 20-80 split layout: PDF viewer on the left, form on the right. Eliminated context switching entirely. Implemented citation-based auto-extraction—legal teams mark regions on the PDF, and using coordinate mapping + OCR data, the system automatically extracts and populates form fields. This reduced manual typing and improved accuracy."
+        "description": "Redesigned the interface with a 20-80 split layout: PDF viewer on the left, form on the right. Eliminated context switching entirely. Implemented citation-based auto-extractionlegal teams mark regions on the PDF, and using coordinate mapping + OCR data, the system automatically extracts and populates form fields. This reduced manual typing and improved accuracy."
       },
       {
         "title": "RAG-Based Key Term Extraction",
@@ -73,7 +73,7 @@
     "technicalSolution": [
       {
         "title": "Two-Phase Performance Journey",
-        "description": "Phase 1 focused on architecture and UX optimization: microservices, micro-frontends (Single-SPA + Module Federation), lazy loading, network compression, and service mesh. This delivered 30-40% faster digitization speed and cost reduction. Phase 2 added ML pipelines with RAG systems, achieving 80-90% total improvement—enabling exponential rather than linear business scaling."
+        "description": "Phase 1 focused on architecture and UX optimization: microservices, micro-frontends (Single-SPA + Module Federation), lazy loading, network compression, and service mesh. This delivered 30-40% faster digitization speed and cost reduction. Phase 2 added ML pipelines with RAG systems, achieving 80-90% total improvementenabling exponential rather than linear business scaling."
       },
       {
         "title": "Micro-Frontend Architecture",

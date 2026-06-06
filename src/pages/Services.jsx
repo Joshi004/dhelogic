@@ -43,7 +43,7 @@ const services = [
     icon: <PsychologyIcon sx={{ fontSize: 40 }} />,
     title: 'Model Fine-Tuning & Distillation',
     subtitle: 'Task-specific models at 5–10% of frontier model cost',
-    description: 'We train open-source models (Llama 3, Mistral, Phi-4, Gemma 3) on your specific task and data. For complex pipelines we use distillation — using GPT-4 as a teacher to label training data, then train a small student model. Result: frontier-quality on your task at a fraction of the cost.',
+    description: 'We train open-source models (Llama 3, Mistral, Phi-4, Gemma 3) on your specific task and data. For complex pipelines we use distillation  using GPT-4 as a teacher to label training data, then train a small student model. Result: frontier-quality on your task at a fraction of the cost.',
     features: [
       'LoRA & QLoRA fine-tuning',
       'Knowledge distillation pipelines',
@@ -61,7 +61,7 @@ const services = [
     icon: <DnsIcon sx={{ fontSize: 40 }} />,
     title: 'Self-Hosted Inference Infrastructure',
     subtitle: 'Your model, your cloud, your data',
-    description: 'We deploy and configure production-grade inference servers on your cloud (AWS, GCP, or Azure). Your queries stay inside your infrastructure — no third-party API, no usage limits, no data leaving your control. We also build intelligent routing layers that send simple queries to small models and escalate only when needed.',
+    description: 'We deploy and configure production-grade inference servers on your cloud (AWS, GCP, or Azure). Your queries stay inside your infrastructure  no third-party API, no usage limits, no data leaving your control. We also build intelligent routing layers that send simple queries to small models and escalate only when needed.',
     features: [
       'vLLM and TGI deployment & tuning',
       'Autoscaling and continuous batching',
@@ -79,7 +79,7 @@ const services = [
     icon: <TrendingDownIcon sx={{ fontSize: 40 }} />,
     title: 'Ongoing Cost Intelligence',
     subtitle: 'Savings that compound as the model landscape evolves',
-    description: 'The open-source model landscape moves fast — a model released today may outperform last quarter\'s fine-tune at half the size. We keep your stack current with quarterly model reviews, anomaly alerting when costs spike unexpectedly, and routing optimizations as your usage patterns evolve.',
+    description: 'The open-source model landscape moves fast  a model released today may outperform last quarter\'s fine-tune at half the size. We keep your stack current with quarterly model reviews, anomaly alerting when costs spike unexpectedly, and routing optimizations as your usage patterns evolve.',
     features: [
       'Real-time cost dashboards by feature',
       'Spend anomaly alerts',
@@ -157,7 +157,7 @@ const Services = () => {
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              From a two-week cost audit to a fully deployed self-hosted inference stack — structured to deliver measurable ROI at every stage.
+              From a two-week cost audit to a fully deployed self-hosted inference stack  structured to deliver measurable ROI at every stage.
             </Typography>
           </Box>
         </Container>

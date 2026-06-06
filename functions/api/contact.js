@@ -202,7 +202,7 @@ export async function onRequestPost(context) {
     const toEmail = isNonEmptyString(env?.CONTACT_TO_EMAIL) ? env.CONTACT_TO_EMAIL : DEFAULT_TO_EMAIL;
     const fromEmail = isNonEmptyString(env?.CONTACT_FROM_EMAIL) ? env.CONTACT_FROM_EMAIL : 'noreply@contact.techsergy.com';
 
-    const subject = `[Audit Request] ${name} — ${useCase || 'General'} — ${monthlySpend || 'spend not provided'}`;
+    const subject = `[Audit Request] ${name}  ${useCase || 'General'}  ${monthlySpend || 'spend not provided'}`;
     const text = [
       'TechSergy New contact form submission:',
       '',

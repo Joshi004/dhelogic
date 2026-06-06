@@ -19,7 +19,7 @@ const services = [
   {
     icon: <ManageSearchIcon sx={{ fontSize: 32 }} />,
     title: 'AI Cost Audit',
-    description: 'We map every dollar of your API spend to its use case and deliver a prioritized optimization roadmap. The entry point — typically pays for itself in week one.',
+    description: 'We map every dollar of your API spend to its use case and deliver a prioritized optimization roadmap. The entry point  typically pays for itself in week one.',
     color: '#014584',
     bgColor: 'rgba(1, 69, 132, 0.1)',
   },

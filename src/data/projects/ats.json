@@ -25,7 +25,7 @@
     { "metric": "Multi-Broker", "label": "Support" }
   ],
   "portfolio": {
-    "projectSummary": "We built an algorithmic trading system that automates trading strategies across multiple financial markets. The platform features a modular, pluggable architecture allowing seamless integration with various broker APIs—from stock exchanges to cryptocurrency platforms—enabling traders to execute sophisticated strategies 24/7.",
+    "projectSummary": "We built an algorithmic trading system that automates trading strategies across multiple financial markets. The platform features a modular, pluggable architecture allowing seamless integration with various broker APIsfrom stock exchanges to cryptocurrency platformsenabling traders to execute sophisticated strategies 24/7.",
     "challenges": [
       {
         "title": "Real-Time Market Scanning at Scale",
@@ -34,7 +34,7 @@
       },
       {
         "title": "Multi-Broker Integration",
-        "description": "Each broker has different APIs, authentication flows, and data formats. We needed a flexible architecture that could connect to any trading platform without rewriting core logic—supporting stocks, crypto, derivatives, and custom markets.",
+        "description": "Each broker has different APIs, authentication flows, and data formats. We needed a flexible architecture that could connect to any trading platform without rewriting core logicsupporting stocks, crypto, derivatives, and custom markets.",
         "iconKey": "IntegrationInstructions"
       },
       {
@@ -72,7 +72,7 @@
       },
       {
         "title": "Real-Time Communication Layer",
-        "description": "Built WebSocket gateway using Django Channels for live updates to frontend. Clients subscribe to specific channels (trade updates, scanner events, session status). The system tracks active subscriptions to optimize resource usage—stopping unnecessary processing when no clients are listening."
+        "description": "Built WebSocket gateway using Django Channels for live updates to frontend. Clients subscribe to specific channels (trade updates, scanner events, session status). The system tracks active subscriptions to optimize resource usagestopping unnecessary processing when no clients are listening."
       },
       {
         "title": "Comprehensive Testing",

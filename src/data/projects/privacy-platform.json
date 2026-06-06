@@ -25,7 +25,7 @@
     { "metric": "Flexible", "label": "Scan Frequency" }
   ],
   "portfolio": {
-    "projectSummary": "We built a comprehensive digital privacy platform that tackles a growing problem: your personal information is scattered across hundreds of data broker websites, being bought and sold without your knowledge. This platform automates the discovery and removal of personal data from these brokers, giving individuals control over their digital footprint. The system serves privacy-conscious users including public figures, media personalities, legal professionals (judges, attorneys), and anyone concerned about their personal data being exposed online. It continuously monitors data brokers based on flexible scan schedules—from daily monitoring for high-risk individuals to weekly, monthly, or quarterly scans—and automatically submits opt-out requests, tracking the removal process and providing detailed reports.",
+    "projectSummary": "We built a comprehensive digital privacy platform that tackles a growing problem: your personal information is scattered across hundreds of data broker websites, being bought and sold without your knowledge. This platform automates the discovery and removal of personal data from these brokers, giving individuals control over their digital footprint. The system serves privacy-conscious users including public figures, media personalities, legal professionals (judges, attorneys), and anyone concerned about their personal data being exposed online. It continuously monitors data brokers based on flexible scan schedulesfrom daily monitoring for high-risk individuals to weekly, monthly, or quarterly scansand automatically submits opt-out requests, tracking the removal process and providing detailed reports.",
     "challenges": [
       {
         "title": "Scale of Data Broker Ecosystem",
@@ -34,7 +34,7 @@
       },
       {
         "title": "Anti-Crawling Measures",
-        "description": "Data brokers don't want their data scraped or automated opt-out requests sent—it's against their business model. They employ CAPTCHAs (Cloudflare, reCAPTCHA, hCaptcha), rate limiting, IP blocking, and frequently change their website structure to break crawlers.",
+        "description": "Data brokers don't want their data scraped or automated opt-out requests sentit's against their business model. They employ CAPTCHAs (Cloudflare, reCAPTCHA, hCaptcha), rate limiting, IP blocking, and frequently change their website structure to break crawlers.",
         "iconKey": "Security"
       },
       {
@@ -44,7 +44,7 @@
       },
       {
         "title": "Opt-Out Complexity",
-        "description": "Sending opt-out requests at scale creates problems: domain reputation damage, email blocking, and tracking which requests succeeded. Data also resurfaces—brokers frequently re-acquire data, requiring continuous monitoring and re-submission at varying intervals based on user needs.",
+        "description": "Sending opt-out requests at scale creates problems: domain reputation damage, email blocking, and tracking which requests succeeded. Data also resurfacesbrokers frequently re-acquire data, requiring continuous monitoring and re-submission at varying intervals based on user needs.",
         "iconKey": "Loop"
       }
     ],
@@ -81,7 +81,7 @@
       },
       {
         "title": "Continuous Monitoring",
-        "description": "The system runs on a flexible subscription model where users can choose their scan frequency based on their plan—ranging from daily scans for high-priority cases to weekly, monthly, or quarterly scans. When data resurfaces (as it often does), new opt-out requests are automatically submitted and tracked."
+        "description": "The system runs on a flexible subscription model where users can choose their scan frequency based on their planranging from daily scans for high-priority cases to weekly, monthly, or quarterly scans. When data resurfaces (as it often does), new opt-out requests are automatically submitted and tracked."
       },
       {
         "title": "Reporting & Documentation",

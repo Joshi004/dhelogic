@@ -125,7 +125,7 @@ const TrustedBy = () => {
                   fontWeight: 500,
                 }}
               >
-                Production inference cost reduction — that's all we do.
+                Production inference cost reduction  that's all we do.
               </Typography>
             </Box>
           </Box>

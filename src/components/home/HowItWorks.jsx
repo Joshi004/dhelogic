@@ -56,11 +56,11 @@ const HowItWorks = () => {
         <SectionHeader
           overline="OUR PROCESS"
           title="From Audit to Deployed in 6–8 Weeks"
-          subtitle="A structured engagement — each stage delivers standalone value even if you stop there."
+          subtitle="A structured engagement  each stage delivers standalone value even if you stop there."
         />
 
         <Box sx={{ position: 'relative' }}>
-          {/* Dashed connector line — desktop only */}
+          {/* Dashed connector line  desktop only */}
           <Box
             sx={{
               display: { xs: 'none', md: 'block' },

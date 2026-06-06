@@ -25,7 +25,7 @@
     { "metric": "95%", "label": "Detection Accuracy" }
   ],
   "portfolio": {
-    "projectSummary": "We built a video analysis platform that does two things: finds specific moments from massive video libraries and enables intelligent search across actual video content—not just metadata.",
+    "projectSummary": "We built a video analysis platform that does two things: finds specific moments from massive video libraries and enables intelligent search across actual video contentnot just metadata.",
     "challenges": [
       {
         "title": "Context Length Limits",
@@ -50,7 +50,7 @@
       },
       {
         "title": "Vector Indexing Strategy",
-        "description": "We evaluated multiple approaches for creating searchable indexes. The solution uses rich vector embeddings generated from each stream, then merged into a unified index. This allows semantic search—finding content by meaning, not just keywords."
+        "description": "We evaluated multiple approaches for creating searchable indexes. The solution uses rich vector embeddings generated from each stream, then merged into a unified index. This allows semantic searchfinding content by meaning, not just keywords."
       },
       {
         "title": "Smart Clustering",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Model Selection & Fine-Tuning",
-        "description": "We explored multiple models for each use case—video analysis, audio analysis, object detection. We then fine-tuned these models for the specific domain, improving accuracy significantly over off-the-shelf solutions."
+        "description": "We explored multiple models for each use casevideo analysis, audio analysis, object detection. We then fine-tuned these models for the specific domain, improving accuracy significantly over off-the-shelf solutions."
       },
       {
         "title": "Algorithmic Efficiency",
@@ -76,7 +76,7 @@
       },
       {
         "title": "Extensibility",
-        "description": "The platform extends to content with minimal metadata—live streams, gaming videos, concerts—where moments are driven by viewer comments at specific timestamps rather than traditional scene detection."
+        "description": "The platform extends to content with minimal metadatalive streams, gaming videos, concertswhere moments are driven by viewer comments at specific timestamps rather than traditional scene detection."
       }
     ],
     "useCases": [

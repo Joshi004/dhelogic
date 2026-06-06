@@ -156,7 +156,7 @@ const Contact = () => {
     <PageTransition>
       <Helmet>
         <title>Book a Free AI Cost Audit | TechSergy</title>
-        <meta name="description" content="Tell us your monthly AI spend and use case. We'll send back a realistic cost reduction estimate and a plan to get there — no sales pitch." />
+        <meta name="description" content="Tell us your monthly AI spend and use case. We'll send back a realistic cost reduction estimate and a plan to get there  no sales pitch." />
         <link rel="canonical" href="https://techsergy.com/contact" />
       </Helmet>
       {/* Hero Section */}

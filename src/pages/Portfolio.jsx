@@ -19,7 +19,7 @@ const Portfolio = () => {
     <PageTransition>
       <Helmet>
         <title>Case Studies: AI Inference Cost Reduction | TechSergy</title>
-        <meta name="description" content="Real production results: an 89% inference cost reduction for a SaaS platform and 94% via distillation for a legal classifier — quality held. Inference cost reduction is all we do." />
+        <meta name="description" content="Real production results: an 89% inference cost reduction for a SaaS platform and 94% via distillation for a legal classifier  quality held. Inference cost reduction is all we do." />
         <link rel="canonical" href="https://techsergy.com/portfolio" />
       </Helmet>
       {/* Hero Section */}
@@ -78,7 +78,7 @@ const Portfolio = () => {
               variant="subtitle1"
               sx={{ color: 'text.secondary', fontSize: '1.2rem' }}
             >
-              We show only inference cost-reduction work — it's all we do. Here's what that looks like in production.
+              We show only inference cost-reduction work  it's all we do. Here's what that looks like in production.
             </Typography>
           </Box>
         </Container>
@@ -187,7 +187,7 @@ const Portfolio = () => {
               variant="subtitle1"
               sx={{ color: 'rgba(255, 255, 255, 0.95)', mb: 4, maxWidth: 600, mx: 'auto' }}
             >
-              Get a free cost audit — a realistic estimate of how much you could cut your OpenAI or Anthropic bill, and exactly how we'd do it. No sales pitch.
+              Get a free cost audit  a realistic estimate of how much you could cut your OpenAI or Anthropic bill, and exactly how we'd do it. No sales pitch.
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
               <Button

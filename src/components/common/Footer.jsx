@@ -81,7 +81,7 @@ const Footer = () => {
               variant="body2Light"
               sx={{ opacity: 0.78, mb: 2, maxWidth: 300 }}
             >
-              We cut production AI inference costs — through fine-tuning, distillation,
+              We cut production AI inference costs  through fine-tuning, distillation,
               and self-hosted inference.
             </Typography>
             

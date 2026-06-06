@@ -2,7 +2,7 @@
   "id": "saas-llm-cost-cut",
   "title": "SaaS Support Platform: 89% Inference Cost Reduction",
   "subtitle": "Fine-tuned Llama 3.1 8B replacing GPT-4o for customer support automation",
-  "description": "A B2B SaaS company was spending $38K/month on OpenAI API calls to power their customer support automation — answering tickets, classifying intent, and drafting replies. We fine-tuned a Llama 3.1 8B model on three years of their support history, deployed it on vLLM with two A10G instances, and reduced their monthly AI spend to $4,200. P95 latency dropped from 2.1s to 680ms.",
+  "description": "A B2B SaaS company was spending $38K/month on OpenAI API calls to power their customer support automation  answering tickets, classifying intent, and drafting replies. We fine-tuned a Llama 3.1 8B model on three years of their support history, deployed it on vLLM with two A10G instances, and reduced their monthly AI spend to $4,200. P95 latency dropped from 2.1s to 680ms.",
   "color": "#7C3AED",
   "gradient": "linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)",
   "iconKey": "SupportAgent",
@@ -45,28 +45,28 @@
     }
   ],
   "portfolio": {
-    "projectSummary": "The client's support automation was built on GPT-4o — fast to ship, expensive to run. Roughly 1.2M API calls per month at an average of 800 tokens each had pushed their monthly bill to $38K, and with ticket volume climbing there was no ceiling in sight. Every ticket touched the model multiple times: classifying intent, drafting a reply, and routing it to the right queue.\n\nWe started by auditing the workload to confirm a smaller model could carry it, then fine-tuned a Llama 3.1 8B model on three years of the client's resolved support history, using LoRA adapters via Unsloth for fast, memory-efficient training iterations. Before anything reached production, the fine-tuned model had to clear a quality gate: a benchmark of 2,000 stratified held-out tickets covering the long tail of their distribution — unusual ticket types, angry customers, multi-language queries. It matched or exceeded GPT-4o on 96% of those cases.\n\nWe deployed the model on two AWS A10G instances via vLLM, tuning continuous batching and INT8 quantization to hold 680ms P95 latency — a 3x improvement over the prior 2.1s — across 1.2M monthly calls. Self-hosted inference runs at roughly $0.08 per million tokens versus $15 on GPT-4o, cutting monthly AI spend from $38K to $4,200 (about $405,000 saved per year). The full migration took seven weeks from audit to production, and the client now runs their support AI on infrastructure they own and control.",
+    "projectSummary": "The client's support automation was built on GPT-4o  fast to ship, expensive to run. Roughly 1.2M API calls per month at an average of 800 tokens each had pushed their monthly bill to $38K, and with ticket volume climbing there was no ceiling in sight. Every ticket touched the model multiple times: classifying intent, drafting a reply, and routing it to the right queue.\n\nWe started by auditing the workload to confirm a smaller model could carry it, then fine-tuned a Llama 3.1 8B model on three years of the client's resolved support history, using LoRA adapters via Unsloth for fast, memory-efficient training iterations. Before anything reached production, the fine-tuned model had to clear a quality gate: a benchmark of 2,000 stratified held-out tickets covering the long tail of their distribution  unusual ticket types, angry customers, multi-language queries. It matched or exceeded GPT-4o on 96% of those cases.\n\nWe deployed the model on two AWS A10G instances via vLLM, tuning continuous batching and INT8 quantization to hold 680ms P95 latency  a 3x improvement over the prior 2.1s  across 1.2M monthly calls. Self-hosted inference runs at roughly $0.08 per million tokens versus $15 on GPT-4o, cutting monthly AI spend from $38K to $4,200 (about $405,000 saved per year). The full migration took seven weeks from audit to production, and the client now runs their support AI on infrastructure they own and control.",
     "challenges": [
       {
         "title": "Quality Bar Without Regression",
-        "description": "The client needed confidence that the fine-tuned model wouldn't introduce quality regressions on edge cases — unusual ticket types, angry customers, multi-language queries. We built a benchmark of 2,000 stratified test cases covering the long tail of their ticket distribution and required 95%+ parity before signing off on production deployment.",
+        "description": "The client needed confidence that the fine-tuned model wouldn't introduce quality regressions on edge cases  unusual ticket types, angry customers, multi-language queries. We built a benchmark of 2,000 stratified test cases covering the long tail of their ticket distribution and required 95%+ parity before signing off on production deployment.",
         "iconKey": "Verified"
       },
       {
         "title": "Latency Requirements",
-        "description": "The existing GPT-4o setup averaged 2.1s P95 latency, which was already a UX concern. The self-hosted vLLM deployment needed to match or beat this. Through continuous batching configuration and quantization to INT8, we achieved 680ms P95 — a 3x improvement alongside the 89% cost reduction.",
+        "description": "The existing GPT-4o setup averaged 2.1s P95 latency, which was already a UX concern. The self-hosted vLLM deployment needed to match or beat this. Through continuous batching configuration and quantization to INT8, we achieved 680ms P95  a 3x improvement alongside the 89% cost reduction.",
         "iconKey": "Speed"
       },
       {
         "title": "Migrating Without Downtime",
-        "description": "Support automation runs in production around the clock — a risky place to swap out the model powering it. We ran the fine-tuned Llama model in shadow mode against live GPT-4o traffic, comparing outputs on real tickets without affecting customers, until the parity numbers held steady. Only then did we cut over, keeping GPT-4o available as an instant fallback throughout the transition.",
+        "description": "Support automation runs in production around the clock  a risky place to swap out the model powering it. We ran the fine-tuned Llama model in shadow mode against live GPT-4o traffic, comparing outputs on real tickets without affecting customers, until the parity numbers held steady. Only then did we cut over, keeping GPT-4o available as an instant fallback throughout the transition.",
         "iconKey": "CloudSync"
       }
     ],
     "approach": [
       {
         "title": "Inference Workload Audit",
-        "description": "We mapped every model call in the support pipeline — intent classification, reply drafting, ticket routing — along with its token footprint, establishing the $38K/month baseline and the exact quality bar a replacement would have to clear."
+        "description": "We mapped every model call in the support pipeline  intent classification, reply drafting, ticket routing  along with its token footprint, establishing the $38K/month baseline and the exact quality bar a replacement would have to clear."
       },
       {
         "title": "Dataset Construction from Support History",
@@ -92,11 +92,11 @@
       },
       {
         "title": "Throughput & Latency Tuning",
-        "description": "Continuous batching lets the two-instance deployment absorb 1.2M calls per month, while INT8 quantization shrinks the model's memory and compute footprint. Together they hold P95 latency at 680ms — three times faster than the 2.1s GPT-4o baseline."
+        "description": "Continuous batching lets the two-instance deployment absorb 1.2M calls per month, while INT8 quantization shrinks the model's memory and compute footprint. Together they hold P95 latency at 680ms  three times faster than the 2.1s GPT-4o baseline."
       },
       {
         "title": "Quality Guardrails",
-        "description": "The 2,000-ticket held-out benchmark doubles as a regression suite, and LangSmith eval traces flag drift on edge cases — multi-language queries, escalations, unusual ticket types — so quality is monitored continuously rather than assumed."
+        "description": "The 2,000-ticket held-out benchmark doubles as a regression suite, and LangSmith eval traces flag drift on edge cases  multi-language queries, escalations, unusual ticket types  so quality is monitored continuously rather than assumed."
       }
     ],
     "useCases": [
@@ -117,14 +117,14 @@
       },
       {
         "title": "Edge-Case Quality Assurance",
-        "description": "A held-out benchmark and live eval traces continuously catch regressions on the hard cases — angry customers, multi-language tickets, and rare intents.",
+        "description": "A held-out benchmark and live eval traces continuously catch regressions on the hard cases  angry customers, multi-language tickets, and rare intents.",
         "iconKey": "Verified"
       }
     ],
     "detailedResults": [
       { "metric": "89%", "label": "Cost Reduction", "context": "Monthly AI spend cut from $38K to $4,200" },
       { "metric": "$405K", "label": "Annual Savings", "context": "Projected yearly savings vs. the prior GPT-4o setup" },
-      { "metric": "680ms", "label": "P95 Latency", "context": "Down from 2.1s on GPT-4o — a 3x improvement" },
+      { "metric": "680ms", "label": "P95 Latency", "context": "Down from 2.1s on GPT-4o  a 3x improvement" },
       { "metric": "96%", "label": "Quality Parity", "context": "Match or exceed GPT-4o across 2,000 held-out tickets" },
       { "metric": "$0.08/M", "label": "Token Cost", "context": "Self-hosted inference vs. $15/M tokens on GPT-4o" },
       { "metric": "7 wks", "label": "Time to Production", "context": "From inference audit to live self-hosted serving" }

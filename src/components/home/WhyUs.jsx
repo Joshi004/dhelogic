@@ -2,7 +2,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SectionHeader from '../common/SectionHeader';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
@@ -21,12 +23,12 @@ const features = [
   {
     icon: <LockIcon sx={{ fontSize: 28 }} />,
     title: 'Built for Your Control',
-    description: 'Wherever possible, we hand over what we build — trained artifacts, configuration, and documentation — so your team can run and maintain the system without depending on us to keep it going.',
+    description: 'Wherever possible, we hand over what we build  trained artifacts, configuration, and documentation  so your team can run and maintain the system without depending on us to keep it going.',
   },
   {
     icon: <ShieldIcon sx={{ fontSize: 28 }} />,
     title: 'Your Data, Your Environment',
-    description: 'When your requirements call for it, we work inside your own cloud so sensitive data and inference traffic stay under your control — important for regulated industries like healthcare, finance, and legal.',
+    description: 'When your requirements call for it, we work inside your own cloud so sensitive data and inference traffic stay under your control  important for regulated industries like healthcare, finance, and legal.',
   },
   {
     icon: <ReceiptLongIcon sx={{ fontSize: 28 }} />,
@@ -86,9 +88,27 @@ const WhyUs = () => {
                 variant="body1"
                 sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
               >
-                Most vendors stop at prompt tweaks or swapping one API for another. We look at your whole production pipeline and rework the expensive parts so costs come down structurally — not as a temporary patch — while the quality your users rely on holds.
+                Most vendors stop at prompt tweaks or swapping one API for another. We look at your whole production pipeline and rework the expensive parts so costs come down structurally  not as a temporary patch  while the quality your users rely on holds.
               </Typography>
-              
+
+              <Box
+                component={Link}
+                to="/about"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 0.5,
+                  mb: 4,
+                  color: 'primary.main',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  '&:hover': { textDecoration: 'underline' },
+                }}
+              >
+                The story behind why we started
+                <ArrowForwardIcon sx={{ fontSize: 18 }} />
+              </Box>
+
               {/* Features List */}
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                 {features.map((feature, index) => (

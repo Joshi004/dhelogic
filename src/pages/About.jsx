@@ -10,7 +10,6 @@ import CardContent from '@mui/material/CardContent';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/common/PageTransition';
 import SectionHeader from '../components/common/SectionHeader';
-import WhyUs from '../components/home/WhyUs';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SearchIcon from '@mui/icons-material/Search';
@@ -21,6 +20,12 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import HandymanIcon from '@mui/icons-material/Handyman';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import ShieldIcon from '@mui/icons-material/Shield';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import PublicIcon from '@mui/icons-material/Public';
 
 const processSteps = [
   {
@@ -49,12 +54,45 @@ const processSteps = [
   },
 ];
 
+const principles = [
+  {
+    icon: <HandymanIcon sx={{ fontSize: 28 }} />,
+    title: 'The right tool for the problem',
+    description: 'Capability is not the same as fitness. We optimize for the problem actually in front of you  no more, no less.',
+  },
+  {
+    icon: <AssessmentIcon sx={{ fontSize: 28 }} />,
+    title: 'Measured, not promised',
+    description: 'We benchmark before we propose and prove before we ship. Evidence first, claims second.',
+  },
+  {
+    icon: <HandshakeIcon sx={{ fontSize: 28 }} />,
+    title: 'Built to hand over',
+    description: 'You get the artifacts, configuration, and documentation to run the system yourself. Your independence is the goal, not your dependence on us.',
+  },
+  {
+    icon: <ShieldIcon sx={{ fontSize: 28 }} />,
+    title: 'Your data, your environment',
+    description: 'Privacy and control are features, not afterthoughts. When your requirements call for it, inference runs inside your own cloud.',
+  },
+  {
+    icon: <ReceiptLongIcon sx={{ fontSize: 28 }} />,
+    title: 'Savings that last',
+    description: 'We design for durable, structural cost reduction  not a one-time patch that erodes the moment your traffic or the model landscape shifts.',
+  },
+  {
+    icon: <PublicIcon sx={{ fontSize: 28 }} />,
+    title: 'Cost is never just financial',
+    description: 'Every wasteful system also carries an environmental and strategic cost. Removing waste is the responsible thing, not only the cheaper one.',
+  },
+];
+
 const About = () => {
   return (
     <PageTransition>
       <Helmet>
         <title>About TechSergy | AI Inference Cost Reduction Specialists</title>
-        <meta name="description" content="TechSergy helps companies slash AI API costs using model fine-tuning, distillation, and self-hosted inference. Founded by engineers from Apple, Tether, and high-growth AI startups." />
+        <meta name="description" content="TechSergy helps companies stop overpaying for AI  replacing oversized, general-purpose models with right-sized, task-specific systems you own and control, with quality proven by benchmarks." />
         <link rel="canonical" href="https://techsergy.com/about" />
       </Helmet>
       {/* Hero Section */}
@@ -116,7 +154,7 @@ const About = () => {
                 >
                   TechSergy is a specialist AI inference optimization firm. We help
                   companies that have already integrated AI into production workflows
-                  take back control of their costs — through fine-tuning, distillation,
+                  take back control of their costs  through fine-tuning, distillation,
                   quantization, and self-hosted deployment of models they own.
                 </Typography>
               </Box>
@@ -166,9 +204,9 @@ const About = () => {
                     Our Mission
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                    To help companies running AI in production bring their inference costs
-                    under control — replacing unnecessary frontier-model usage with leaner,
-                    task-specific systems, without sacrificing the quality their users rely on.
+                    We help companies stop overpaying for AI  replacing oversized,
+                    general-purpose inference with right-sized systems that match the quality
+                    you depend on, cost a fraction to run, and stay fully under your control.
                   </Typography>
                 </Box>
 
@@ -221,16 +259,13 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Why Us Section */}
-      <WhyUs />
-
       {/* Process Section */}
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.surface' }}>
         <Container maxWidth="lg">
           <SectionHeader
             overline="Our Process"
             title="How We Work"
-            subtitle="The same staged methodology we run on every engagement — benchmark first, optimize, then hand over the model and infra. Measured at each step, not promised."
+            subtitle="The same staged methodology we run on every engagement  benchmark first, optimize, then hand over the model and infra. Measured at each step, not promised."
           />
 
           <Grid container spacing={4}>
@@ -340,7 +375,7 @@ const About = () => {
                   Our Story
                 </Typography>
                 <Typography variant="h2" sx={{ mb: 3 }}>
-                  From Vision to{' '}
+                  The{' '}
                   <Box
                     component="span"
                     sx={{
@@ -349,20 +384,27 @@ const About = () => {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    Reality
+                    Right Tool
                   </Box>
+                  {' '}for the Job
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  TechSergy was founded after watching companies repeatedly build excellent AI products — then get blindsided by the infrastructure cost of running them in production. A mortgage platform processing thousands of documents a day. A support system handling millions of queries a month. All of them started on GPT-4. None of them had to stay there.
+                  For about ten years before TechSergy, our founder was an engineer raised on a simple discipline: don't repeat yourself, optimize the system, and never over-engineer. You reach for the right tool for the problem in front of you  no more, no less. That isn't bureaucracy; it's respect for the user, the budget, and whoever has to maintain the thing after you.
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
+                >
+                  Then large, general-purpose models  GPT, Claude, and the rest  arrived, and something shifted. They're remarkable, powerful enough to do almost anything, and that power is intoxicating. We became so impressed by how easy it had become to generate a solution that we quietly stopped asking the question every engineer used to ask first: what does this actually cost? Not just in dollars, but in energy, dependency, and control.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  We've built production AI systems across fintech, document intelligence, and SaaS — and in every case, the pattern is the same: prototype on frontier models, then optimize. We do the optimization part, systematically, at production scale.
+                  You don't use a bazooka to kill a mosquito, or a sword to chop vegetables. Both tools are perfectly capable  but neither is the right tool, and using them anyway costs you. Reaching for a massive frontier model to solve a small, well-defined task is the same mistake. TechSergy exists to fix it: to give you the right-sized AI for the job  leaner, cheaper, owned by you, and proven to hold the quality your users rely on.
                 </Typography>
                 <Button
                   component={Link}
@@ -440,8 +482,106 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Founder Section */}
+      {/* Vision + What We Believe Section */}
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.surface' }}>
+        <Container maxWidth="lg">
+          {/* Vision statement */}
+          <Box
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            sx={{ textAlign: 'center', maxWidth: 860, mx: 'auto', mb: { xs: 8, md: 10 } }}
+          >
+            <Typography
+              variant="overline"
+              sx={{
+                color: 'primary.main',
+                fontWeight: 600,
+                letterSpacing: '0.12em',
+                mb: 2,
+                display: 'block',
+              }}
+            >
+              Our Vision
+            </Typography>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: 600, lineHeight: 1.5, color: 'text.primary' }}
+            >
+              A world where companies use AI{' '}
+              <Box
+                component="span"
+                sx={{
+                  background: 'linear-gradient(135deg, #014584 0%, #0260a8 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                deliberately
+              </Box>
+              {' '} where the size of the model fits the size of the problem, intelligence is owned rather than rented, and "it works" is measured against a higher standard: the right tool, at the right cost, fully under your control, with the quality proven.
+            </Typography>
+          </Box>
+
+          {/* What We Believe */}
+          <SectionHeader
+            overline="What We Believe"
+            title="The Principles We Work By"
+            subtitle="The same convictions that started TechSergy guide every engagement we take on."
+          />
+
+          <Grid container spacing={4}>
+            {principles.map((principle, index) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                <Box
+                  component={motion.div}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  sx={{
+                    height: '100%',
+                    p: 4,
+                    bgcolor: 'white',
+                    borderRadius: 4,
+                    border: '1px solid',
+                    borderColor: 'divider',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 52,
+                      height: 52,
+                      borderRadius: 2.5,
+                      bgcolor: 'background.surface',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'primary.main',
+                      mb: 2.5,
+                      border: '1px solid',
+                      borderColor: 'divider',
+                    }}
+                  >
+                    {principle.icon}
+                  </Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontSize: '1.05rem' }}>
+                    {principle.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                    {principle.description}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* Founder Section */}
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'white' }}>
         <Container maxWidth="lg">
           <Typography
             variant="overline"
@@ -547,18 +687,21 @@ const About = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}
                 >
-                  Hi, I'm Naresh Joshi, Founder & CEO of TechSergy. My background is in building
-                  production AI systems — I've led teams that shipped document intelligence platforms,
-                  trading pipelines, and AI-powered SaaS products across fintech and enterprise.
+                  Hi, I'm Naresh Joshi, founder of TechSergy. I spent about a decade as an engineer
+                  under one rule I never outgrew: use the right tool for the job, and don't pay  in
+                  money, energy, or complexity  for capability the problem doesn't need.
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}
                 >
-                  One thing I kept seeing: companies prototype on GPT-4 because it's the fastest path
-                  forward, then never revisit the decision as scale changes the economics. We built a
-                  methodology around that specific transition — from expensive frontier-model dependency
-                  to leaner, task-specific systems built around your workload. That's what Techsergy does.
+                  When powerful general-purpose models arrived, I watched that discipline quietly
+                  disappear. Teams reached for the biggest model available to solve small, well-defined
+                  tasks because it was the fastest path under a deadline  and never revisited the
+                  decision as the bill grew. I started TechSergy to do the careful, research-heavy work
+                  most teams can't pause for: replace oversized inference with right-sized systems that
+                  cost a fraction to run, stay under your control, and prove  with real benchmarks 
+                  that quality holds.
                 </Typography>
 
                 <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
@@ -567,9 +710,9 @@ const About = () => {
 
                 <Box sx={{ mb: 4 }}>
                   {[
-                    'Audit first — no optimization begins without a documented baseline and cost map',
-                    'Founder oversight on every engagement — I personally review model selection and architecture',
-                    'You keep the deliverables — trained artifacts, configuration, and dashboards — set up for your team to run',
+                    'Audit first  no optimization begins without a documented baseline and cost map',
+                    'Founder oversight on every engagement  I personally review model selection and architecture',
+                    'You keep the deliverables  trained artifacts, configuration, and dashboards  set up for your team to run',
                     'Weekly progress updates with quantified cost reduction projections',
                     'Where your requirements call for it, we train and deploy inside your own cloud so sensitive data stays under your control',
                   ].map((item, index) => (

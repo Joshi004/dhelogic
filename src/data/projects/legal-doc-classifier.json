@@ -2,7 +2,7 @@
   "id": "legal-doc-classifier",
   "title": "Legal Contract Classifier: 94% Cost Reduction via Distillation",
   "subtitle": "Knowledge distillation from GPT-4 to Phi-4 Mini for contract classification",
-  "description": "A legal tech company was using GPT-4 to classify and extract key clauses from contracts — effective, but expensive at $22K/month. We used GPT-4 itself as a teacher to generate a labeled training dataset of 60,000 classified contracts, then fine-tuned a Phi-4 Mini model on the resulting data. The distilled model matches GPT-4's classification accuracy on their contract types at 6% of the per-token cost.",
+  "description": "A legal tech company was using GPT-4 to classify and extract key clauses from contracts  effective, but expensive at $22K/month. We used GPT-4 itself as a teacher to generate a labeled training dataset of 60,000 classified contracts, then fine-tuned a Phi-4 Mini model on the resulting data. The distilled model matches GPT-4's classification accuracy on their contract types at 6% of the per-token cost.",
   "color": "#059669",
   "gradient": "linear-gradient(135deg, #059669 0%, #047857 100%)",
   "iconKey": "Gavel",
@@ -45,7 +45,7 @@
     }
   ],
   "portfolio": {
-    "projectSummary": "Knowledge distillation is the most underutilized optimization technique in production AI. The idea: use a powerful frontier model (the teacher) to label your data, then train a small model (the student) to replicate the teacher's behavior on your specific task. The student never needs to be generally intelligent — it just needs to be excellent at your one job. For this legal client, GPT-4 was already classifying and extracting clauses from contracts effectively, but at $22K/month — and because it ran as a cloud API, it couldn't be used for the air-gapped client environments a chunk of their business required.\n\nWe used GPT-4 as the teacher to label 60,000 contract samples across 14 clause types, driving accuracy with structured chain-of-thought prompting and a 5% manual review pass in which low-confidence labels were regenerated with additional context — bringing final label accuracy to 99.1%. We then fine-tuned Phi-4 Mini on the resulting dataset using QLoRA and quantized it to INT4 with GPTQ so it would fit on modest, self-hosted hardware.\n\nThe distilled model reached 98.2% classification accuracy versus GPT-4's 98.7% on the same held-out test set, while running at $0.04/M tokens instead of $15/M. Monthly AI spend dropped from $22,000 to $1,320, and the client now owns a model they can deploy on-premises — including the air-gapped environments a cloud API dependency had previously ruled out. The full engagement took five weeks.",
+    "projectSummary": "Knowledge distillation is the most underutilized optimization technique in production AI. The idea: use a powerful frontier model (the teacher) to label your data, then train a small model (the student) to replicate the teacher's behavior on your specific task. The student never needs to be generally intelligent  it just needs to be excellent at your one job. For this legal client, GPT-4 was already classifying and extracting clauses from contracts effectively, but at $22K/month  and because it ran as a cloud API, it couldn't be used for the air-gapped client environments a chunk of their business required.\n\nWe used GPT-4 as the teacher to label 60,000 contract samples across 14 clause types, driving accuracy with structured chain-of-thought prompting and a 5% manual review pass in which low-confidence labels were regenerated with additional context  bringing final label accuracy to 99.1%. We then fine-tuned Phi-4 Mini on the resulting dataset using QLoRA and quantized it to INT4 with GPTQ so it would fit on modest, self-hosted hardware.\n\nThe distilled model reached 98.2% classification accuracy versus GPT-4's 98.7% on the same held-out test set, while running at $0.04/M tokens instead of $15/M. Monthly AI spend dropped from $22,000 to $1,320, and the client now owns a model they can deploy on-premises  including the air-gapped environments a cloud API dependency had previously ruled out. The full engagement took five weeks.",
     "challenges": [
       {
         "title": "Label Quality from the Teacher",
@@ -59,7 +59,7 @@
       },
       {
         "title": "Shrinking the Model for On-Prem Hardware",
-        "description": "The whole point of distillation here was a model the client could run themselves — including in air-gapped environments with limited hardware. We quantized Phi-4 Mini to INT4 using GPTQ, shrinking its memory and compute footprint enough to fit that infrastructure while holding classification accuracy at 98.2%, statistically on par with the full-precision model.",
+        "description": "The whole point of distillation here was a model the client could run themselves  including in air-gapped environments with limited hardware. We quantized Phi-4 Mini to INT4 using GPTQ, shrinking its memory and compute footprint enough to fit that infrastructure while holding classification accuracy at 98.2%, statistically on par with the full-precision model.",
         "iconKey": "Speed"
       }
     ],
@@ -82,13 +82,13 @@
       },
       {
         "title": "Confidence Routing Layer",
-        "description": "Rather than auto-classifying everything, the system scores each prediction and routes low-confidence cases — typically new jurisdictions or unusual formats — to a human reviewer queue, keeping accuracy high on the long tail without a frontier model in the loop."
+        "description": "Rather than auto-classifying everything, the system scores each prediction and routes low-confidence cases  typically new jurisdictions or unusual formats  to a human reviewer queue, keeping accuracy high on the long tail without a frontier model in the loop."
       }
     ],
     "technicalSolution": [
       {
         "title": "Distillation Pipeline",
-        "description": "The architecture is a clean teacher-student pipeline: GPT-4 generates a labeled dataset, Phi-4 Mini learns to replicate the teacher's behavior on the 14 clause types. The student never needs to be generally intelligent — only excellent at this one classification task — which is exactly why a 14B-class frontier model can be replaced by a few-billion-parameter one."
+        "description": "The architecture is a clean teacher-student pipeline: GPT-4 generates a labeled dataset, Phi-4 Mini learns to replicate the teacher's behavior on the 14 clause types. The student never needs to be generally intelligent  only excellent at this one classification task  which is exactly why a 14B-class frontier model can be replaced by a few-billion-parameter one."
       },
       {
         "title": "Quantized On-Prem Serving",
@@ -147,7 +147,7 @@
         "borderColor": "rgba(5, 150, 105, 0.1)",
         "iconBg": "#059669",
         "title": "Distilled GPT-4 into Phi-4 Mini",
-        "description": "We used GPT-4 itself to label 60K contracts across 14 clause types, then trained a small Phi-4 Mini student to match it — at 6% of the per-token cost."
+        "description": "We used GPT-4 itself to label 60K contracts across 14 clause types, then trained a small Phi-4 Mini student to match it  at 6% of the per-token cost."
       },
       {
         "iconKey": "Lock",
